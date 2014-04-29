@@ -3,6 +3,9 @@ ZippyClass - Classes for JavaScript
 
 ZippyClass offers the ability to easily define classes, call super or overriden methods, define static properties, and mixin objects in a very flexible way.
 
+Meant to be used in the browser and in node.js as well.
+
+
 ```js
     var Vehicle = ZippyClass.define({
       alias: 'vehicle',
@@ -167,3 +170,40 @@ Example
   }
   //...
 ```
+
+## Static properties
+
+You can easily define static properties for classes.
+
+```js
+
+   var Widget = ZippyClass.define({
+   
+      statics: {
+      
+         idSeed: 0,
+         
+         getDescription: function(){
+            return 'A Widget class'
+         },
+         
+         getNextId: function(){
+            return this.idSeed++
+         }
+      },
+      
+      init: function(){
+         this.id = this.$ownClass.getNextId()
+      }
+   })
+   
+   Widget.getDescription() == 'A Widget class' // === true
+   
+   var w = new Widget()
+   w.id === 0
+   
+   w = new Widget()
+   w.id === 1
+```
+
+On every instance, you can use the $ownClass property in order to get a reference to the class that created the instance.
