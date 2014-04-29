@@ -53,3 +53,40 @@ You can use the class ```alias``` in order to easily reference which class you w
   var Car = ZippyClass.getClass('car')
   var Vehicle = ZippyClass.getClass('vehicle')
 ```
+
+## ```init``` as constructor
+
+Use the ```init``` method as the constructor
+
+Example
+
+```js
+    var Animal = ZippyClass.define({
+    
+       //when a new Animal is created, the init method is called
+       init: function(config){
+           config = config || {}
+           
+           //we simply copy all the keys onto this
+           Object.keys(config).forEach(function(key){
+              this[key] = config[key]
+           }, this)
+       }
+    })
+    
+    var Cat = ZippyClass.define({
+        extend: Animal,
+        alias: 'cat',
+        
+        init: function(){
+           this.callSuper()
+           this.sound = 'meow'
+        },
+        
+        getName: function(){
+           return this.name
+        }
+    })
+    
+    var lizzy = new Cat({ name: 'lizzy' })
+```
