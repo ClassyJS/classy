@@ -1,0 +1,2377 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Re",
+				"REGISTRY"
+			],
+			[
+				"bind",
+				"bindArgsArray"
+			],
+			[
+				"isS",
+				"isSameOrSubclassOf"
+			],
+			[
+				"get",
+				"getInstance"
+			],
+			[
+				"destroy",
+				"destroyClass"
+			],
+			[
+				"Mixin",
+				"MixinProcessor"
+			],
+			[
+				"Class",
+				"ClassProcessor"
+			],
+			[
+				"proce",
+				"processors"
+			],
+			[
+				"pro",
+				"processors"
+			],
+			[
+				"getNe",
+				"getNextOverlayZIndex"
+			],
+			[
+				"spli",
+				"splitterIndex"
+			],
+			[
+				"ex",
+				"expected"
+			],
+			[
+				"con",
+				"consequent"
+			],
+			[
+				"prote",
+				"protective"
+			],
+			[
+				"f",
+				"f	function-keyword-snippet"
+			],
+			[
+				"allow",
+				"allowButtonTrigger"
+			],
+			[
+				"prepareMenu",
+				"prepareMenuHandler"
+			],
+			[
+				"closeI",
+				"closeIconCls"
+			],
+			[
+				"sort",
+				"sortInfo"
+			],
+			[
+				"instanti",
+				"instantiateItem"
+			],
+			[
+				"visi",
+				"visibility"
+			],
+			[
+				"white",
+				"white-space"
+			],
+			[
+				"toCen",
+				"toCenterDefered"
+			],
+			[
+				"top",
+				"topmost"
+			],
+			[
+				"onW",
+				"onWindowToTop"
+			],
+			[
+				"toolbar",
+				"toolbarButtons"
+			],
+			[
+				"bu",
+				"buttons"
+			],
+			[
+				"button",
+				"buttonAlign"
+			],
+			[
+				"prepareT",
+				"prepareToolbarButtons"
+			],
+			[
+				"getNext",
+				"getNextOverlayZIndex"
+			],
+			[
+				"over",
+				"overlayableZIndexPropertyName"
+			],
+			[
+				"prevent",
+				"preventDefault"
+			],
+			[
+				"preve",
+				"preventDefault"
+			],
+			[
+				"init",
+				"initFieldEvents"
+			],
+			[
+				"getTri",
+				"getTriggerItemScope"
+			],
+			[
+				"rowC",
+				"rowContextMenu"
+			],
+			[
+				"getRowC",
+				"getRowClickInfo"
+			],
+			[
+				"action",
+				"actionHandler"
+			],
+			[
+				"create",
+				"createAppEventObject"
+			],
+			[
+				"add",
+				"addItemizableItem"
+			],
+			[
+				"succe",
+				"successKey"
+			],
+			[
+				"isItemF",
+				"isItemFixedSized"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"stylu",
+				"stylusSrc"
+			],
+			[
+				"bodySty",
+				"bodyStyleProperties"
+			],
+			[
+				"bodyC",
+				"bodyClasses"
+			],
+			[
+				"z-list",
+				"z-list-wrap"
+			],
+			[
+				"disp",
+				"displayProperty"
+			],
+			[
+				"onDra",
+				"onDraggableTargetEnter"
+			],
+			[
+				"getDra",
+				"getDraggableItemSelector"
+			],
+			[
+				"getD",
+				"getDraggableItemSelector"
+			],
+			[
+				"dra",
+				"draggingPropertyName"
+			],
+			[
+				"onDraggableDra",
+				"onDraggableDragStart"
+			],
+			[
+				"dragHa",
+				"dragHandleSelector"
+			],
+			[
+				"dragga",
+				"draggableDDInit"
+			],
+			[
+				"selec",
+				"selectorTarget"
+			],
+			[
+				"z-drag",
+				"z-drag-handle"
+			],
+			[
+				"drag",
+				"dragHandleSelector"
+			],
+			[
+				"initi",
+				"initialItem"
+			],
+			[
+				"initial",
+				"initialIndex"
+			],
+			[
+				"dragI",
+				"dragInitialIndex"
+			],
+			[
+				"new",
+				"newHTML"
+			],
+			[
+				"prev",
+				"prevHTML"
+			],
+			[
+				"dragIn",
+				"dragInnerHTML"
+			],
+			[
+				"getRow",
+				"getRowDataIndex"
+			],
+			[
+				"onDragR",
+				"onDragRowEnter"
+			],
+			[
+				"append",
+				"appendTargetRegion"
+			],
+			[
+				"listWra",
+				"listWrapClass"
+			],
+			[
+				"getAll",
+				"getAllByName"
+			],
+			[
+				"getC",
+				"getClassForSortDirection"
+			],
+			[
+				"listSty",
+				"listStyleProperties"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"ani",
+				"animationDuration"
+			],
+			[
+				"destro",
+				"destroyFromManager"
+			],
+			[
+				"No",
+				"Notifier"
+			],
+			[
+				"positi",
+				"positionManagers"
+			],
+			[
+				"overla",
+				"overlayableToTop"
+			],
+			[
+				"do",
+				"doDismiss"
+			],
+			[
+				"type",
+				"typeofFnResult"
+			],
+			[
+				"z-ac",
+				"z-actiontool-spinner"
+			],
+			[
+				"call",
+				"callSuper"
+			],
+			[
+				"activeTo",
+				"activeToolIndex"
+			],
+			[
+				"onSpinne",
+				"onSpinnerToolMouseUp"
+			],
+			[
+				"whe",
+				"wheelDeltaY"
+			],
+			[
+				"getSele",
+				"getSelectedRange"
+			],
+			[
+				"getSe",
+				"getSelectionEnd"
+			],
+			[
+				"c",
+				"classes"
+			],
+			[
+				"apply",
+				"applyInvalidStyles"
+			],
+			[
+				"num",
+				"numbersOnly"
+			],
+			[
+				"allowFloat",
+				"allowFloatMsg"
+			],
+			[
+				"size",
+				"sizeName"
+			],
+			[
+				"parent",
+				"parentLayout"
+			],
+			[
+				"spl",
+				"splitterIndex"
+			],
+			[
+				"getIndex",
+				"getIndexInParent"
+			],
+			[
+				"lastN",
+				"lastNameField"
+			],
+			[
+				"first",
+				"firstNameField"
+			],
+			[
+				"subC",
+				"subClass"
+			],
+			[
+				"sub",
+				"subClass"
+			],
+			[
+				"z-collap",
+				"z-collapse-tool"
+			],
+			[
+				"collaps",
+				"collapseDirections"
+			],
+			[
+				"collap",
+				"collapseDirections"
+			],
+			[
+				"target",
+				"targetSize"
+			],
+			[
+				"resI",
+				"resizeInfo"
+			],
+			[
+				"next",
+				"nextIndex"
+			],
+			[
+				"lay",
+				"layoutItems"
+			],
+			[
+				"other",
+				"otherItem"
+			],
+			[
+				"aff",
+				"affectedIndex"
+			],
+			[
+				"collapseTo",
+				"collapseToolCls"
+			],
+			[
+				"getL",
+				"getLayoutItemSize"
+			],
+			[
+				"collapsed",
+				"collapsedCls"
+			],
+			[
+				"getParent",
+				"getParentLayout"
+			],
+			[
+				"strict",
+				"strictConstraints"
+			],
+			[
+				"cons",
+				"constrain"
+			],
+			[
+				"secondT",
+				"secondTargetIndex"
+			],
+			[
+				"flex",
+				"flexIndexes"
+			],
+			[
+				"secn",
+				"secondTargetSize"
+			],
+			[
+				"minS",
+				"minSizeName"
+			],
+			[
+				"constra",
+				"constrained"
+			],
+			[
+				"maxSize",
+				"maxSizeName"
+			],
+			[
+				"targetM",
+				"targetMinSize"
+			],
+			[
+				"getResize",
+				"getResizeConstrainedDiff"
+			],
+			[
+				"second",
+				"secondTargetSize"
+			],
+			[
+				"secon",
+				"secondTargetSize"
+			],
+			[
+				"constr",
+				"constrainDiffSign"
+			],
+			[
+				"const",
+				"constrainDiffSign"
+			],
+			[
+				"initia",
+				"initialDiff"
+			],
+			[
+				"getO",
+				"getOrientationSizeName"
+			],
+			[
+				"fle",
+				"flexedIndexes"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/extend.js",
+			"settings":
+			{
+				"buffer_size": 410,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/getInstantiatorFunction.js",
+			"settings":
+			{
+				"buffer_size": 513,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Base.js",
+			"settings":
+			{
+				"buffer_size": 6987,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 186,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/getClass.js",
+			"settings":
+			{
+				"buffer_size": 796,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Class.js",
+			"settings":
+			{
+				"buffer_size": 8563,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Registry.js",
+			"settings":
+			{
+				"buffer_size": 19,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test/testall.js",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test/TestPrimitives.js",
+			"settings":
+			{
+				"buffer_size": 2907,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Mixin.js",
+			"settings":
+			{
+				"buffer_size": 2421,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 1 file for \"bindargs\"\n\nUnable to open D:\\workspace\\ZippyClass\\src\\js\\\n0 matches across 0 files\n\n\nSearching 12 files for \"bindargs\"\n\nD:\\workspace\\ZippyClass\\src\\Class.all.js:\n 1534      }\n 1535  \n 1536:     var applyBefore   = root.Function.bindArgs(applyWhen, 'before', '$before'),\n 1537:         applyAfter    = root.Function.bindArgs(applyWhen, 'after' , '$after'),\n 1538:         applyCopyIf   = root.Function.bindArgs(applyWhen, 'copyIf', '$copyIf'),\n 1539:         applyOverride = root.Function.bindArgs(applyWhen, ''      , '$override')\n 1540  \n 1541      function applyMixin(target, mixin, config){\n\nD:\\workspace\\ZippyClass\\src\\processors\\MixinProcessor.js:\n  331      }\n  332  \n  333:     var applyBefore   = root.Function.bindArgs(applyWhen, 'before', '$before'),\n  334:         applyAfter    = root.Function.bindArgs(applyWhen, 'after' , '$after'),\n  335:         applyCopyIf   = root.Function.bindArgs(applyWhen, 'copyIf', '$copyIf'),\n  336:         applyOverride = root.Function.bindArgs(applyWhen, ''      , '$override')\n  337  \n  338      function applyMixin(target, mixin, config){\n\nD:\\workspace\\ZippyClass\\src\\utils\\function.js:\n    3      var SLICE = Array.prototype.slice,\n    4  \n    5:     function bindArgsArray(fn, args){\n    6          return function(){\n    7              var thisArgs = SLICE.call(args || [])\n    .\n   15      }\n   16  \n   17:     function bindArgs(fn){\n   18:         return bindArgsArray(fn, SLICE.call(arguments,1))\n   19      }\n   20  \n   21      return {\n   22:         bindArgs: bindArgs,\n   23:         bindArgsArray: bindArgsArray\n   24      }\n   25  }()\n\n15 matches across 3 files\n\n\nSearching 12 files for \"root.mixin\"\n\nD:\\workspace\\ZippyClass\\src\\Class.all.js:\n 1486      }\n 1487  \n 1488:     root.mixin = mixinFn\n 1489  \n 1490      var MixinClass\n\nD:\\workspace\\ZippyClass\\src\\processors\\MixinProcessor.js:\n  359      }\n  360  \n  361:     root.mixin = mixinFn\n  362  \n  363      var MixinClass\n\n2 matches across 2 files\n\n\nSearching 14 files for \"./copy\"\n\nD:\\workspace\\ZippyClass\\src\\Class.all.js:\n  293      var getInstantiatorFunction = require('./getInstantiatorFunction')\n  294      var processors              = require('./processors')\n  295:     var copyKeys                = require('./copy').copyKeys\n  296  \n  297      var ClassProcessor = processors.ClassProcessor\n  ...\n  583  }()\n  584  }).call(this,typeof self !== \"undefined\" ? self : typeof window !== \"undefined\" ? window : {})\n  585: },{\"./Base\":1,\"./Registry\":3,\"./copy\":5,\"./getClass\":7,\"./getInstantiatorFunction\":8,\"./processors\":11}],3:[function(require,module,exports){\n  586  module.exports = {}\n  587  },{}],4:[function(require,module,exports){\n  ...\n 1157      var FN = require('../utils/function')\n 1158      var bindArgs = FN.bindArgs\n 1159:     var copyIf = require('../copy')\n 1160      var getClass = require('../getClass')\n 1161  \n ....\n 1527      }\n 1528  }()\n 1529: },{\"../copy\":5,\"../getClass\":7,\"../utils/function\":12}],11:[function(require,module,exports){\n 1530  module.exports = {\n 1531      ClassProcessor : require('./ClassProcessor'),\n\nD:\\workspace\\ZippyClass\\src\\Class.js:\n   21      var getInstantiatorFunction = require('./getInstantiatorFunction')\n   22      var processors              = require('./processors')\n   23:     var copyKeys                = require('./copy').copyKeys\n   24  \n   25      var ClassProcessor = processors.ClassProcessor\n\nD:\\workspace\\ZippyClass\\src\\Mixin.js:\n   12  \n   13      var base = require('./Base')\n   14:     var copy = require('./copy').copy\n   15      var when = [ '$before', '$after', '$override', '$copyIf' ]\n   16  \n\nD:\\workspace\\ZippyClass\\src\\processors\\MixinProcessor.js:\n   15      var FN = require('../utils/function')\n   16      var bindArgs = FN.bindArgs\n   17:     var copyIf = require('../copy')\n   18      var getClass = require('../getClass')\n   19  \n\n7 matches across 4 files\n",
+			"settings":
+			{
+				"buffer_size": 3886,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/processors/MixinProcessor.js",
+			"settings":
+			{
+				"buffer_size": 11477,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/utils/function.js",
+			"settings":
+			{
+				"buffer_size": 1231,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/copy.js",
+			"settings":
+			{
+				"buffer_size": 11230,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/processors/index.js",
+			"settings":
+			{
+				"buffer_size": 119,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/buildClassFunctions.js",
+			"settings":
+			{
+				"buffer_size": 3649,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/JSHint/JSHint.sublime-build",
+	"command_palette":
+	{
+		"height": 288.0,
+		"selected_items":
+		[
+			[
+				"dele",
+				"File: Delete"
+			],
+			[
+				"delte",
+				"File: Delete"
+			],
+			[
+				"delete",
+				"File: Delete"
+			],
+			[
+				"du",
+				"File: Duplicate"
+			],
+			[
+				"dup",
+				"File: Duplicate"
+			],
+			[
+				"set syn javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set syn javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"ss javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set s ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"reove",
+				"Package Control: Remove Package"
+			],
+			[
+				"synta",
+				"Set Syntax: Stylus"
+			],
+			[
+				"gpu",
+				"Git: Push"
+			],
+			[
+				"gs",
+				"Git: Status"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"gcf",
+				"Git: Add Current File"
+			],
+			[
+				"git d",
+				"Git: Diff Current File"
+			],
+			[
+				"git dif",
+				"Git: Diff"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"gsta",
+				"Git: Status"
+			],
+			[
+				"tme",
+				"View: Toggle Menu"
+			],
+			[
+				"toggle s",
+				"View: Toggle Status Bar"
+			],
+			[
+				"toggle si",
+				"View: Toggle Side Bar"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"to",
+				"View: Toggle Menu"
+			],
+			[
+				"toggle me",
+				"View: Toggle Menu"
+			],
+			[
+				"toggle sta",
+				"View: Toggle Status Bar"
+			],
+			[
+				"dupl",
+				"File: Duplicate"
+			],
+			[
+				"instl",
+				"Package Control: Install Package"
+			],
+			[
+				"toggle mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"ss ja",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"gc",
+			"git commit",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/workspace/ZippyClass/node_modules/karma/node_modules/connect/lib/middleware/basicAuth.js",
+		"/D/workspace/ZippyClass/package.json",
+		"/D/workspace/ZippyClass/karma.conf.js",
+		"/D/workspace/ZippyClass/src/getClass.js",
+		"/D/workspace/ZippyClass/src/utils/function.js",
+		"/D/workspace/ZippyClass/node_modules/watchify/test/many_immediate.js",
+		"/D/workspace/ZippyClass/node_modules/browserify/node_modules/derequire/test/cjs-lazy.js",
+		"/D/workspace/ZippyClass/test/test-main.js",
+		"/D/workspace/ZippyClass/test/main.js",
+		"/D/workspace/ZippyClass/src/index.js",
+		"/D/workspace/ZippyClass/src/Class.js",
+		"/D/workspace/ZippyClass/src/copyKeys.js",
+		"/D/workspace/ZippyClass/src/processors/ClassProcessor.js",
+		"/D/workspace/ZippyClass/src/processors/MixinProcessor.js",
+		"/D/workspace/ZippyUI/test/ClassTests/ClassOwnProperties.js",
+		"/D/workspace/ZippyUI/docs-template/app/view/ClassGrid.js",
+		"/D/workspace/ZippyUI/docs-template/app/controller/Classes.js",
+		"/D/workspace/ZippyUI/test/MixinTests/ClassMixins.js",
+		"/D/workspace/ZippyUI/test/ClassTests/ClassStatics.js",
+		"/D/workspace/ZippyUI/changelog.md",
+		"/D/workspace/ZippyUI/node_modules/amdclean/node_modules/escodegen/node_modules/source-map/lib/source-map/binary-search.js",
+		"/D/workspace/ZippyUI/node_modules/karma/lib/reporters/BaseColor.js",
+		"/D/workspace/ZippyUI/node_modules/karma/lib/launchers/Base.js",
+		"/D/workspace/ZippyUI/src/js/util/submitable/BaseSubmitable.js",
+		"/D/workspace/ZippyUI/test/ComponentTemplate/BindAttr.js",
+		"/D/workspace/ZippyUI/bower.json",
+		"/D/workspace/ZippyUI/src/resources/stylus/zippy.styl",
+		"/D/workspace/ZippyUI/src/resources/stylus/layout/z-accordionlayout.styl",
+		"/D/workspace/ZippyUI/src/resources/stylus/ui/z-alert.styl",
+		"/D/workspace/ZippyUI/src/resources/stylus/ui/util/splitter/z-splitter.styl",
+		"/D/workspace/ZippyUI/app/js/fields.js",
+		"/D/workspace/ZippyUI/src/js/form/Field.js",
+		"/D/workspace/ZippyUI/src/js/form/NumberField.js",
+		"/D/workspace/ZippyUI/src/js/ui/Notifier.js",
+		"/D/workspace/ZippyUI/src/resources/stylus/ui/notifier/z-note.structure.styl",
+		"/D/workspace/ZippyUI/comparison/kendo/lib/js/cultures/kendo.culture.uz-Latn-UZ.min.js",
+		"/D/workspace/ZippyUI/src/resources/stylus/ui/notifier/z-note.styl",
+		"/D/workspace/ZippyUI/node_modules/karma/node_modules/log4js/test/gelfAppender-test.js",
+		"/D/workspace/ZippyUI/src/js/ui/grid/DataGrid-editable.js",
+		"/D/workspace/ZippyUI/graph.json",
+		"/D/workspace/ZippyUI/src/js/cache/Stateful.js",
+		"/D/workspace/ZippyUI/src/resources/stylus/ui/z-container.styl",
+		"/D/workspace/ZippyUI/src/js/util/ComponentSelector.js",
+		"/D/workspace/ZippyUI/comparison/ext/lib/resources/css/ext-standard-debug.css",
+		"/D/workspace/ZippyUI/report/assets/scripts/bundles/core-bundle.js",
+		"/D/workspace/ZippyUI/node_modules/formidable/tool/record.js",
+		"/D/workspace/ZippyUI/node_modules/arguably/released-config.json",
+		"/D/workspace/ZippyUI/README",
+		"/D/workspace/ZippyUI/src/js/util/ComponentSelectable.js",
+		"/D/workspace/ZippyUI/src/js/util/CssObservable.js",
+		"/D/workspace/ZippyUI/src/js/util/fn/Promise.js",
+		"/D/workspace/ZippyUI/test/Deferred/Promise.js",
+		"/D/workspace/ZippyUI/src/js/progressbar.js",
+		"/D/workspace/ZippyUI/node_modules/grunt/node_modules/glob/test/pause-resume.js",
+		"/D/workspace/ZippyUI/package.json",
+		"/D/workspace/ZippyUI/src/js/form/DateField.js",
+		"/D/workspace/ZippyUI/docs-template/resources/css/docs-ext.css",
+		"/D/workspace/ZippyUI/src/js/dd/DragHelper.js",
+		"/D/workspace/ZippyUI/node_modules/stylus/lib/nodes/function.js",
+		"/D/workspace/ZippyUI/src/lib/requirejs/tests/func.js",
+		"/D/workspace/ZippyUI/test/FunctionTests/FunctionCache.js",
+		"/D/workspace/ZippyUI/test/BasicTests/FunctionBind.js",
+		"/D/workspace/ZippyUI/app/js/main_simple.js",
+		"/D/workspace/ZippyUI/src/lib/requirejs/tests/exports/moduleAndExports.html",
+		"/D/workspace/ZippyUI/.idea/misc.xml",
+		"/D/workspace/ZippyUI/src/js/data/DataSourceable.js",
+		"/D/workspace/ZippyUI/src/js/ui/Container.js",
+		"/D/workspace/ZippyUI/src/js/ui/panel/Panel.js",
+		"/D/workspace/ZippyUI/src/js/ui/Label.js",
+		"/D/workspace/ZippyUI/src/js/ui/Labelable.js",
+		"/D/workspace/ZippyUI/src/js/core/Element.js",
+		"/D/workspace/ZippyUI/src/js/form/ComboFieldList.js",
+		"/D/workspace/ZippyUI/src/js/form/ComboField.js",
+		"/D/workspace/ZippyUI/src/js/form/ComboFieldBehavior.js",
+		"/D/workspace/ZippyUI/src/js/core/Application.js",
+		"/D/workspace/ZippyUI/src/js/core/lang/ObjectExtras.js",
+		"/D/workspace/ZippyUI/src/js/test/TestObservableDomEvents.js",
+		"/D/workspace/ZippyUI/src/js/util/Overlayable.js",
+		"/D/workspace/ZippyUI/src/js/ui/Labelable.html",
+		"/D/workspace/ZippyUI/documentation/layouts.md",
+		"/D/workspace/ZippyUI/src/js/util/ComponentTemplate.js",
+		"/D/workspace/ZippyUI/src/js/core/template/Template.js",
+		"/D/workspace/ZippyUI/app/js/test_forward_events.js",
+		"/D/workspace/ZippyUI/src/js/util/Templateable.js",
+		"/D/workspace/ZippyUI/node_modules/karma-requirejs/lib/require.js",
+		"/D/workspace/ZippyUI/node_modules/requirejs/require.js",
+		"/D/workspace/ZippyUI/src/lib/requirejs/tests/error/requireErrback.html",
+		"/D/workspace/ZippyUI/node_modules/stylus/node_modules/sax/test/buffer-overrun.js",
+		"/D/workspace/ZippyUI/src/js/model/Bindable.js",
+		"/D/workspace/ZippyUI/src/js/ui/grid/DataGrid-tpl.js",
+		"/D/workspace/ZippyUI/src/js/ui/datagrid/DataGridTpl.js",
+		"/D/workspace/ZippyUI/src/js/data/RemotableDataList.js",
+		"/D/workspace/ZippyUI/comparison/ext/lib/resources/themes/stylesheets/ext4/default/_variables.scss",
+		"/D/workspace/ZippyUI/node_modules/grunt-contrib-stylus/test/stylus_test.js",
+		"/D/workspace/ZippyUI/test/Storage/StatefulComponents.js",
+		"/D/workspace/ZippyUI/src/js/layout/AccordionLayout.js",
+		"/D/workspace/ZippyUI/app/js/accordion_simple.js",
+		"/D/workspace/ZippyUI/test/Components/AbstractComponentTest.js",
+		"/D/workspace/ZippyUI/docs-template/app/view/Viewport.js",
+		"/D/workspace/ZippyUI/src/js/ui/VisualComponent.js",
+		"/D/workspace/ZippyUI/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/WebSocketMainInsecure.as",
+		"/D/workspace/ZippyUI/src/js/validator/ValidationSummary.js",
+		"/D/workspace/ZippyUI/docs-template/app/view/cls/Overview.js",
+		"/D/workspace/ZippyUI/src/resources/stylus/form/slider/z-slider.styl",
+		"/D/workspace/ZippyUI/src/resources/stylus/layout/z-rowlayout.styl",
+		"/D/workspace/ZippyUI/src/resources/stylus/ui/z-label.styl",
+		"/D/workspace/ZippyUI/node_modules/karma/node_modules/log4js/examples/log-rolling.js",
+		"/D/workspace/ZippyUI/app/js/flexlayout_simple.js",
+		"/D/workspace/ZippyUI/node_modules/karma/lib/file-list.js",
+		"/D/workspace/ZippyUI/src/resources/stylus/ui/z-accordion.styl",
+		"/D/workspace/ZippyUI/src/resources/stylus/form/z-actiontool.styl",
+		"/D/workspace/ZippyUI/src/resources/stylus/z-base.styl",
+		"/D/workspace/ZippyUI/src/resources/stylus/form/z-field.styl",
+		"/D/workspace/ZippyUI/src/resources/stylus/themes/light/z-constants.styl",
+		"/D/workspace/ZippyUI/.idea/vcs.xml",
+		"/D/workspace/ZippyUI/src/js/layout/AbstractLayout.js",
+		"/D/workspace/ZippyUI/test/core/template/blocks/WithBlock.js",
+		"/D/workspace/ZippyUI/src/js/core/template/Template-helpers.js",
+		"/D/workspace/ZippyUI/examples/code/tabpanel/tabpanel-with-splitter-inside/index.js",
+		"/D/workspace/ZippyUI/test/core/template/blocks/EachBlockTests.js",
+		"/D/workspace/ZippyUI/test/util/ComponentSelector.js",
+		"/D/workspace/ZippyUI/src/js/form/TextArea.js",
+		"/D/workspace/ZippyUI/src/resources/stylus/z-rules.styl",
+		"/D/workspace/ZippyUI/src/js/util/ComponentTemplateStatics.js",
+		"/D/workspace/ZippyUI/src/js/layout/CompositeLayout.js",
+		"/D/workspace/ZippyUI/temp/template-run.js",
+		"/D/workspace/ZippyUI/temp/test-template.html",
+		"/D/workspace/ZippyUI/node_modules/grunt/node_modules/rimraf/test/test-sync.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"D:\\workspace\\ZippyClass\\src\\",
+			"D:\\workspace\\ZippyClass\\src\\js\\",
+			"D:\\workspace\\ZippyUI\\src\\js\\",
+			"D:\\workspace\\ZippyUI\\src\\js\\ui\\datagrid",
+			"D:\\workspace\\ZippyUI\\src\\js",
+			"D:\\workspace\\ZippyUI\\test",
+			"D:\\workspace\\ZippyUI\\src\\js",
+			"D:\\workspace\\ZippyUI\\src\\resources",
+			"D:\\workspace\\ZippyUI\\src\\js\\",
+			"D:\\workspace\\ZippyUI\\src\\js\\ui\\grid",
+			"D:\\workspace\\ZippyUI\\src\\js\\ui\\datagrid",
+			"D:\\workspace\\ZippyUI\\src\\js\\ui\\grid",
+			"D:\\workspace\\ZippyUI\\src\\js\\",
+			"D:\\workspace\\ZippyUI\\src\\js\\datagrid",
+			"D:\\workspace\\ZippyUI\\src\\js\\ui\\datagrid",
+			"D:\\workspace\\ZippyUI\\src\\js\\",
+			"D:\\workspace\\ZippyUI\\src\\js\\layout",
+			"D:\\workspace\\ZippyUI\\src",
+			"D:\\workspace\\ZippyUI\\examples\\code",
+			"D:\\workspace\\ZippyUI\\src",
+			"D:\\workspace\\ZippyUI\\src\\resources",
+			"D:\\workspace\\ZippyUI\\src\\js",
+			"D:\\workspace\\ZippyUI\\src\\resources",
+			"D:\\workspace\\ZippyUI\\src\\js",
+			"D:\\workspace\\ZippyUI\\src\\resources\\stylus",
+			"D:\\workspace\\ZippyUI\\src\\js",
+			"D:\\workspace\\ZippyUI\\src\\resources\\stylus",
+			"D:\\workspace\\ZippyUI\\src\\resources",
+			"D:\\workspace\\ZippyUI\\src\\resource",
+			"D:\\workspace\\ZippyUI\\src\\js\\",
+			"D:\\workspace\\ZippyUI\\src\\js\\form",
+			"D:\\workspace\\ZippyUI\\src\\js",
+			"D:\\workspace\\ZippyUI\\src\\resources",
+			"D:\\workspace\\ZippyUI\\src\\js",
+			"D:\\workspace\\ZippyUI\\src\\",
+			"D:\\workspace\\ZippyUI\\src\\resources",
+			"D:\\workspace\\ZippyUI\\src\\js",
+			"D:\\workspace\\ZippyUI\\src\\js\\layout",
+			"D:\\workspace\\ZippyUI\\src\\",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src\\",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src\\ui\\datagrid",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src\\ui\\grid",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\test",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\test",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src\\js",
+			"-*.html,*.styl,D:\\workspace\\ZippyUI\\src\\resources",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src\\js",
+			"-*.html,*.styl,D:\\workspace\\ZippyUI\\src\\resources",
+			"-*.html,*.styl,D:\\workspace\\ZippyUI\\src\\js",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src\\js",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\test",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src",
+			"-*.html,*.js,D:\\workspace\\ZippyUI\\src\\js",
+			"-*.html,*.js",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"./copy",
+			"root",
+			"Base.createClass",
+			"createclass",
+			"createClass",
+			"root",
+			"root.",
+			"roo.",
+			"REGISTRY",
+			"registry",
+			"getclass",
+			"MixinProcessor",
+			"getclass",
+			"root.",
+			"copyIf",
+			"root.",
+			"root.hasOwn",
+			"hasown",
+			"root.",
+			"emptyfn",
+			"root.",
+			"root.define",
+			"root.mixin",
+			"MixinClass",
+			"root.Function.",
+			"bindArgs",
+			"bindargs",
+			"copyclassconfig",
+			"copy",
+			"root.",
+			"root.co",
+			"initOn",
+			"destroyClass",
+			"preprocessClass",
+			"copyKeys",
+			"aliasMethods",
+			"BASE_CLASS",
+			"overrideClass",
+			"root.",
+			"defineMixin",
+			"define",
+			"processor",
+			"buildClassFunctions",
+			"root.",
+			"getInstantiatorFunction",
+			"define",
+			"root.base",
+			"Ba",
+			"root.BaseClass",
+			"root.",
+			"listAttributesTpl",
+			"getCurrentPosition",
+			"onblur",
+			"getcurryclosure",
+			"lockargs",
+			"showmask",
+			"preventdefault",
+			"preventde",
+			"scroll",
+			"scroll'",
+			"'scroll",
+			"scroll",
+			"contains",
+			"keydown",
+			"enterkey",
+			"onenter",
+			"this",
+			"toTop",
+			"this",
+			"titletpl",
+			"htmlEncode:",
+			"createtemp",
+			"htmlEncode",
+			"\"\"",
+			".i",
+			".ind",
+			".i",
+			"stateful",
+			"keepflex",
+			"maintainFlex",
+			"preparestate",
+			"statepro",
+			"getCollapseToolStyle",
+			"collapseDirections",
+			"isCollapsibleTo",
+			"collapseDirections",
+			"prepareCollapseDirections",
+			"prepareRenderOrientation",
+			"-1",
+			"state",
+			"getat",
+			"getAt:",
+			"position",
+			"root.isClassLike",
+			"prepareCollapsedState",
+			"collapsed",
+			"container",
+			"bodystyle",
+			"bodyTpl",
+			"body",
+			"overflow",
+			"Iteration",
+			"shouldPopContext",
+			"buildFnStringForDirectives",
+			"shouldpopcontext",
+			"withContextName",
+			"executehel",
+			"lastProperty",
+			"tokens[0]",
+			"tokens[2].property",
+			"protective",
+			"work for the with as form",
+			"instantiateitems",
+			"preparestate",
+			"== null",
+			"selector:",
+			"delegate:",
+			"forEach",
+			"prepareLayoutItems",
+			"onitemschange",
+			"this.cmp.",
+			"initevents",
+			"onitemschange",
+			"tplupdate",
+			"setLayoutItems",
+			"computeLayoutItems",
+			"prepareLayoutItems",
+			"onitemsc"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 10,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/extend.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 410,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								410,
+								410
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/getInstantiatorFunction.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								513,
+								513
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Base.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6987,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6798,
+								6903
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4073.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								94,
+								94
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/getClass.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								502,
+								502
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Class.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8170,
+								8170
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4791.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/Registry.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18,
+								18
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "test/testall.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "test/TestPrimitives.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2907,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1203,
+								1203
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/Mixin.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								418,
+								418
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3886,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										250,
+										258
+									],
+									[
+										337,
+										345
+									],
+									[
+										423,
+										431
+									],
+									[
+										510,
+										518
+									],
+									[
+										741,
+										749
+									],
+									[
+										828,
+										836
+									],
+									[
+										914,
+										922
+									],
+									[
+										1001,
+										1009
+									],
+									[
+										1229,
+										1237
+									],
+									[
+										1392,
+										1400
+									],
+									[
+										1428,
+										1436
+									],
+									[
+										1527,
+										1535
+									],
+									[
+										1537,
+										1545
+									],
+									[
+										1562,
+										1570
+									],
+									[
+										1577,
+										1585
+									],
+									[
+										1755,
+										1765
+									],
+									[
+										1901,
+										1911
+									],
+									[
+										2252,
+										2258
+									],
+									[
+										2492,
+										2498
+									],
+									[
+										2808,
+										2814
+									],
+									[
+										2916,
+										2922
+									],
+									[
+										3320,
+										3326
+									],
+									[
+										3522,
+										3528
+									],
+									[
+										3794,
+										3800
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								2816,
+								2816
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 4,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1224.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/processors/MixinProcessor.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8576,
+								8576
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4917.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/utils/function.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								291,
+								291
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/copy.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								313,
+								262
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/processors/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37,
+								37
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "src/buildClassFunctions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3649,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3649,
+								3649
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1032.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clipboard_manager":
+	{
+		"height": 304.0
+	},
+	"output.exec":
+	{
+		"height": 192.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git-commit":
+	{
+		"height": 118.0
+	},
+	"output.git-push":
+	{
+		"height": 118.0
+	},
+	"project": "zippy-class.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"base",
+				"src\\Base.js"
+			],
+			[
+				"class",
+				"src\\Class.js"
+			],
+			[
+				"karma",
+				"karma.conf.js"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"func",
+				"src\\utils\\function.js"
+			],
+			[
+				"funct",
+				"src\\utils\\function.js"
+			],
+			[
+				"mixin",
+				"src\\Mixin.js"
+			],
+			[
+				"zpy.",
+				"src\\js\\core\\Zpy.js"
+			],
+			[
+				"zp",
+				"src\\js\\core\\class\\ZpyClass.js"
+			],
+			[
+				"zippy.js",
+				"src\\js\\zippy.js"
+			],
+			[
+				"z-fie",
+				"src\\resources\\stylus\\form\\z-field.styl"
+			],
+			[
+				"z-act",
+				"src\\resources\\stylus\\form\\z-actiontool.styl"
+			],
+			[
+				"field.st",
+				"src\\resources\\stylus\\form\\z-field.styl"
+			],
+			[
+				"getf",
+				"src\\js\\form\\getFieldActionTools.js"
+			],
+			[
+				"number",
+				"src\\js\\form\\NumberField.js"
+			],
+			[
+				"spinn",
+				"src\\js\\form\\SpinnerField.js"
+			],
+			[
+				"avc",
+				"src\\js\\cmp\\AbstractVisualComponent.js"
+			],
+			[
+				"flex",
+				"src\\js\\layout\\FlexLayout.js"
+			],
+			[
+				"componentse",
+				"src\\js\\util\\ComponentSelector.js"
+			],
+			[
+				"comboli",
+				"src\\js\\form\\ComboFieldList.js"
+			],
+			[
+				"splitter",
+				"src\\js\\ui\\util\\Splitter-drag.js"
+			],
+			[
+				"flexl",
+				"src\\js\\layout\\FlexLayout.js"
+			],
+			[
+				"field",
+				"src\\js\\form\\Field.js"
+			],
+			[
+				"promi",
+				"src\\js\\util\\fn\\Promise.js"
+			],
+			[
+				"deferre",
+				"src\\js\\util\\fn\\Deferred.js"
+			],
+			[
+				"maska",
+				"src\\js\\util\\Maskable.js"
+			],
+			[
+				"over",
+				"src\\js\\util\\Overlayable.js"
+			],
+			[
+				"dragh",
+				"src\\js\\dd\\DragHelper.js"
+			],
+			[
+				"dgs",
+				"src\\js\\ui\\datagrid\\DataGridScroll.js"
+			],
+			[
+				"eleme",
+				"src\\js\\core\\Element.js"
+			],
+			[
+				"dgt",
+				"src\\js\\ui\\datagrid\\DataGridTpl.js"
+			],
+			[
+				"cf",
+				"src\\js\\form\\ComboField.js"
+			],
+			[
+				"cfb",
+				"src\\js\\form\\ComboFieldBehavior.js"
+			],
+			[
+				"combofl",
+				"src\\js\\form\\ComboFieldList.js"
+			],
+			[
+				"overla",
+				"src\\js\\util\\Overlayable.js"
+			],
+			[
+				"ele",
+				"src\\js\\core\\Element.js"
+			],
+			[
+				"labea",
+				"src\\js\\ui\\Labelable.js"
+			],
+			[
+				"label",
+				"src\\js\\ui\\Label.js"
+			],
+			[
+				"panel",
+				"src\\js\\ui\\panel\\Panel.js"
+			],
+			[
+				"conta",
+				"src\\js\\ui\\Container.js"
+			],
+			[
+				"templatea",
+				"src\\js\\util\\Templateable.js"
+			],
+			[
+				"requre",
+				"src\\js\\require.conf.js"
+			],
+			[
+				"bowerr",
+				".bowerrc"
+			],
+			[
+				"bower",
+				"bower.json"
+			],
+			[
+				"index.",
+				"index.html"
+			],
+			[
+				"template-he",
+				"src\\js\\core\\template\\Template-helpers.js"
+			],
+			[
+				"appl",
+				"src\\js\\core\\Application.js"
+			],
+			[
+				"statef",
+				"src\\js\\cache\\Stateful.js"
+			],
+			[
+				"statefu",
+				"test\\Storage\\StatefulComponents.js"
+			],
+			[
+				"accor",
+				"src\\js\\ui\\panel\\Accordion.js"
+			],
+			[
+				"visua",
+				"src\\js\\ui\\VisualComponent.js"
+			],
+			[
+				"z-spli",
+				"src\\resources\\stylus\\ui\\util\\splitter\\z-splitter.styl"
+			],
+			[
+				"vc",
+				"src\\js\\ui\\VisualComponent.js"
+			],
+			[
+				"z-lay",
+				"src\\resources\\stylus\\layout\\z-flexlayout.styl"
+			],
+			[
+				"lrc",
+				"src\\js\\util\\LayoutResizeCalculator.js"
+			],
+			[
+				"z-fl",
+				"src\\resources\\stylus\\layout\\z-flexlayout.styl"
+			],
+			[
+				"z-acco",
+				"src\\resources\\stylus\\layout\\z-accordionlayout.styl"
+			],
+			[
+				"z-panel",
+				"src\\resources\\stylus\\ui\\z-panel.styl"
+			],
+			[
+				"z-flex",
+				"src\\resources\\stylus\\layout\\z-flexlayout.styl"
+			],
+			[
+				"z-conta",
+				"src\\resources\\stylus\\ui\\z-container.styl"
+			],
+			[
+				"components",
+				"src\\js\\util\\ComponentSelectable.js"
+			],
+			[
+				"tabpa",
+				"src\\js\\ui\\panel\\TabPanel.js"
+			],
+			[
+				"container",
+				"src\\js\\ui\\Container.js"
+			],
+			[
+				"z-ba",
+				"src\\resources\\stylus\\z-base.styl"
+			],
+			[
+				"ebt",
+				"test\\core\\template\\blocks\\EachBlockTests.js"
+			],
+			[
+				"templateh",
+				"src\\js\\core\\template\\Template-helpers.js"
+			],
+			[
+				"template",
+				"src\\js\\core\\template\\Template.js"
+			],
+			[
+				"instant",
+				"src\\js\\util\\Instantiator.js"
+			],
+			[
+				"instanti",
+				"test\\util\\InstantiatorTest.js"
+			],
+			[
+				"abstractc",
+				"src\\js\\cmp\\AbstractComponent.js"
+			],
+			[
+				"acte",
+				"test\\Components\\AbstractComponentTest.js"
+			],
+			[
+				"spli",
+				"src\\js\\ui\\util\\Splitter.js"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"absr",
+				"src\\js\\layout\\AbstractLayout.js"
+			],
+			[
+				"itemi",
+				"src\\js\\util\\Itemizable.js"
+			],
+			[
+				"abstract",
+				"src\\js\\layout\\AbstractLayout.js"
+			],
+			[
+				"evente",
+				"src\\js\\core\\EventEmitter.js"
+			],
+			[
+				"draghe",
+				"src\\js\\dd\\DragHelper.js"
+			],
+			[
+				"dgb",
+				"src\\js\\ui\\datagrid\\DataGridBehavior.js"
+			],
+			[
+				"z-label",
+				"src\\resources\\stylus\\ui\\z-label.styl"
+			],
+			[
+				"z-button",
+				"src\\resources\\stylus\\ui\\z-button.styl"
+			],
+			[
+				"checkm",
+				"src\\js\\ui\\CheckMenu.js"
+			],
+			[
+				"aligna",
+				"src\\js\\util\\Alignable.js"
+			],
+			[
+				"element",
+				"src\\js\\core\\Element.js"
+			],
+			[
+				"componetnsele",
+				"src\\js\\util\\ComponentSelectable.js"
+			],
+			[
+				"labelea",
+				"src\\js\\ui\\Labelable.js"
+			],
+			[
+				"zpyc",
+				"src\\js\\core\\class\\ZpyClass.js"
+			],
+			[
+				"menu",
+				"src\\js\\ui\\Menu.js"
+			],
+			[
+				"z-constan",
+				"src\\resources\\stylus\\themes\\light\\z-constants.styl"
+			],
+			[
+				"z-data",
+				"src\\resources\\stylus\\ui\\z-datagrid-header.styl"
+			],
+			[
+				"window",
+				"src\\js\\ui\\panel\\Window.js"
+			],
+			[
+				"z-ru",
+				"src\\resources\\stylus\\z-rules.styl"
+			],
+			[
+				"button",
+				"src\\js\\ui\\button\\Button.js"
+			],
+			[
+				"labela",
+				"src\\js\\ui\\Labelable.js"
+			],
+			[
+				"ddb",
+				"src\\js\\ui\\button\\DropDownButton.js"
+			],
+			[
+				"applica",
+				"src\\js\\core\\Application.js"
+			],
+			[
+				"state",
+				"src\\js\\cache\\Stateful.js"
+			],
+			[
+				"persi",
+				"src\\js\\cache\\Persister.js"
+			],
+			[
+				"appli",
+				"src\\js\\core\\Application.js"
+			],
+			[
+				"tooltipm",
+				"src\\js\\util\\TooltipManager.js"
+			],
+			[
+				"acom",
+				"src\\js\\cmp\\AbstractComponent.js"
+			],
+			[
+				"cardl",
+				"src\\js\\layout\\CardLayout.js"
+			],
+			[
+				"sorta",
+				"src\\js\\data\\SortableDataList.js"
+			],
+			[
+				"datali",
+				"src\\js\\data\\DataList.js"
+			],
+			[
+				"remotedata",
+				"src\\js\\data\\RemotableDataList.js"
+			],
+			[
+				"datas",
+				"src\\js\\data\\DataSourceable.js"
+			],
+			[
+				"sor",
+				"src\\js\\data\\SortableDataList.js"
+			],
+			[
+				"datalis",
+				"src\\js\\util\\DataListable.js"
+			],
+			[
+				"connect",
+				"src\\js\\connect\\Connect.js"
+			],
+			[
+				"userc",
+				"src\\server\\controllers\\UserController.js"
+			],
+			[
+				"datalisa",
+				"src\\js\\util\\DataListable.js"
+			],
+			[
+				"usercon",
+				"src\\server\\controllers\\UserController.js"
+			],
+			[
+				"componentsele",
+				"src\\js\\util\\ComponentSelectable.js"
+			],
+			[
+				"instan",
+				"src\\js\\util\\Instantiator.js"
+			],
+			[
+				"column",
+				"src\\js\\ui\\datagrid\\Column.js"
+			],
+			[
+				"fie",
+				"src\\js\\form\\Field.js"
+			],
+			[
+				"tomom",
+				"src\\js\\util\\toMoment.js"
+			],
+			[
+				"datef",
+				"src\\js\\form\\DateField.js"
+			],
+			[
+				"numberfi",
+				"src\\js\\form\\NumberField.js"
+			],
+			[
+				"resi",
+				"src\\js\\util\\Resizable.js"
+			],
+			[
+				"datepi",
+				"src\\js\\ui\\DatePicker.js"
+			],
+			[
+				"cfl",
+				"src\\js\\form\\ComboFieldList.js"
+			],
+			[
+				"colorp",
+				"src\\js\\ui\\ColorPicker.js"
+			],
+			[
+				"paging",
+				"src\\js\\ui\\toolbar\\PagingToolbar.js"
+			],
+			[
+				"alert",
+				"src\\js\\ui\\panel\\Alert.js"
+			],
+			[
+				"instanto",
+				"src\\js\\util\\Instantiator.js"
+			],
+			[
+				"zippy.s",
+				"src\\resources\\stylus\\zippy.styl"
+			],
+			[
+				"z-rul",
+				"src\\resources\\stylus\\z-rules.styl"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\workspace\\dom-diff\\dom-diff.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 768.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 353.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

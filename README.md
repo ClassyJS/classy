@@ -1,4 +1,6 @@
 ZippyClass
 ==========
 
-JavaScript Classes
+Classes for JavaScript
+
+
