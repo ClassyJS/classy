@@ -171,7 +171,7 @@ Example
   //...
 ```
 
-## Static properties
+## Static properties and ```$ownClass```
 
 You can easily define static properties for classes.
 
