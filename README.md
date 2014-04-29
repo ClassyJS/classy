@@ -90,3 +90,80 @@ Example
     
     var lizzy = new Cat({ name: 'lizzy' })
 ```
+
+## ```callSuper``` and ```callOverriden```
+
+Use the ```callSuper``` and ```callOverriden``` methods to call the super and overriden methods. You don't have to worry about forwarding the arguments, since this is handled automagically for you.
+
+If there is no super or overriden method with the same name you don't have to worry either, since callSuper and callOverriden won't break. they will simply and silently do nothing
+
+Example
+```js
+    //create a shape class
+    ZippyClass.define({
+        alias: 'shape',
+        
+        getDescription: function(){
+           return this.name
+        }
+    })
+    
+    //create a rectangle class with a width and a height
+    ZippyClass.define({
+        extend: 'shape',
+        alias: 'rectangle',
+        
+        name: 'rectangle',
+        init: function(size){
+           this.width = size.width
+           this.height = size.height
+        },
+        
+        getArea: function(){
+           return this.width * this.height
+        },
+        
+        setHeight: function(h){ this.height = h },
+        setWidth: function(w){ this.width = w }
+    })
+    
+    ZippyClass.override('rectangle', {
+        getDescription: function(){
+           //reimplement the getDescription, but use the overriden implementation as well
+           return 'this is a ' + this.callOverriden()
+        }
+    })
+    
+    //create a square class
+    ZippyClass.define({
+        extend: 'rectangle',
+        alias: 'square',
+        
+        init: function(size){
+            if (size * 1 == size){
+                //the size is a number
+                size = { width: size, height: size}
+            } else {
+                size.width = size.height
+            }
+            
+            this.callSuper()
+        },
+        
+        setHeight: function(h){
+           //callSuper will automatically pass the arguments to Rectangle.setHeight, so h will be forwarded
+           this.callSuper()  //or you could use this.callSuperWith(10) if you want to manually pass parameters
+           this.setWidth(h)
+        }
+    })
+```
+You can also use ```callSuperWith``` and ```callOverridenWith``` to manually pass all parameters
+
+Example
+```js
+  //...
+  setHeight: function(h){
+     this.callSuperWith(h*2)
+  }
+  //...
+```
