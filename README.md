@@ -5,6 +5,8 @@ ZippyClass offers the ability to easily define classes, call super or overriden 
 
 Meant to be used in the browser and in node.js as well.
 
+Use ```dist/ZippyClass.js```
+
 
 ```js
     var Vehicle = ZippyClass.define({
