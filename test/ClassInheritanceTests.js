@@ -10,7 +10,7 @@
  */
 describe('classes should be created and extended by using "alias" and "extend" ', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should extend properly', function(){
 

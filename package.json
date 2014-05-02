@@ -10,8 +10,8 @@
         "karma-chrome-launcher": "^0.1.3"
     },
     "scripts": {
-        "build"  : "browserify src/index.js -s ZippyClass -o dist/ZippyClass.js",
-        "watch"  : "watchify src/index.js -s ZippyClass -o dist/ZippyClass.js",
+        "build"  : "browserify src/index.js -s classy -o dist/classy.js",
+        "watch"  : "watchify src/index.js -s classy -o dist/ZippyClass.js",
         "dev"    : "npm run build | npm run watch",
         "test"   : "karma start",
         "server" : "python -m SimpleHTTPServer"

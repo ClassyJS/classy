@@ -22,7 +22,11 @@ module.exports = function(){
 
     require('./Mixin')
 
+    var copyUtils = require('./utils/copy')
+
     return {
+
+        _: copyUtils.copy(copyUtils),
 
         //primitives
         BaseClass      : core.BaseClass,

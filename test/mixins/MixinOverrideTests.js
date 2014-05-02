@@ -11,7 +11,7 @@
 
 describe('mixins methods should be easily overriden', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should override mixin method properly', function(){
 

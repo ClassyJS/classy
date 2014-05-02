@@ -10,7 +10,7 @@
  */
 describe('Class.override should work properly', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should behave as expected on Class.override', function(){
 

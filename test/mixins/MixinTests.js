@@ -1,6 +1,6 @@
 describe('mixins should work properly', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should mixin correctly', function(){
         var arr = []

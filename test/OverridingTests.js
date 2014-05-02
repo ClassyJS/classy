@@ -1,6 +1,6 @@
 describe('callOverriden', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should call super if no overriden method declared', function(){
 
@@ -38,7 +38,7 @@ describe('callOverriden', function(){
 
 describe('test overriden function is called', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should call overriden function properly', function(){
         var firstN,
@@ -119,7 +119,7 @@ describe('test overriden function is called', function(){
 
 describe('call overriden should work just fine with call super', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should work fine when used together with callSuper', function(){
         var lastSetName = ''

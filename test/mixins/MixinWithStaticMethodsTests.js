@@ -11,7 +11,7 @@
 
 describe('mixin statics', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should be called correctly', function(){
 

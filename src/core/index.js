@@ -140,13 +140,12 @@ module.exports = function(){
 
             var target      = config.proto?
                                 Class.prototype:
-                                Class,
-
-                superTarget = config.proto?
-                                Class.$superClass.prototype:
-                                Class.$superClass,
-
-                own = config.own
+                                Class
+            var superClass  = Class.$superClass
+            var superTarget = config.proto?
+                                superClass.prototype:
+                                superClass
+            var own = config.own
 
 
             if (typeof propValue == 'function'){
@@ -155,7 +154,7 @@ module.exports = function(){
                     hasCallOverriden = callOverridenRe.test(propValue)
 
                 if ( hasCallSuper ){
-                    propValue = buildSuperFn(propName, propValue, superTarget)
+                    propValue = buildSuperFn(propName, propValue, superTarget, superClass)
                 }
 
                 if ( hasCallOverriden ){

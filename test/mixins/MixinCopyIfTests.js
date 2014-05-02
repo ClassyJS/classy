@@ -10,7 +10,7 @@
  */
 describe('mixin $copyIf should work', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should override mixin property with copyIf properly', function(){
 

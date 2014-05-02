@@ -11,7 +11,7 @@
 
 describe('Mixin with statics config should add properties to Class as well', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('Mixin statics from $override, $copyIf, $before and $after should be available on mixin class', function(){
 

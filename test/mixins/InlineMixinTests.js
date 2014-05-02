@@ -10,7 +10,7 @@
  */
 describe('a simple inline mixin should work correctly', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should be possible to define a simple object and use it as mixin', function(){
 

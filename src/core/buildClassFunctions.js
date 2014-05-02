@@ -4,7 +4,26 @@ module.exports = function(){
 
     var emptyFn = function(){}
 
-    function buildSuperFn(name, fn, host){
+    function buildSuperFn(name, fn, host, superClass){
+
+        function execute(args){
+            var fn   = host[name]
+            var isFn = typeof fn == 'function'
+
+            if (!isFn && name == 'init'){
+                //if the superClass is not from the ZippyClass registry,
+                //it means it is a simple function and we accept those as well
+                if (!superClass.$superClass){
+                    fn = superClass
+                    isFn = true
+                }
+            }
+
+            if (isFn){
+                return fn.apply(this, args)
+            }
+        }
+
         return function() {
             var tmpSuper     = this.callSuper,
                 tmpSuperWith = this.callSuperWith,
@@ -16,7 +35,7 @@ module.exports = function(){
              * @return {Mixed} the result of the super method
              */
             this.callSuperWith = function(){
-                return (host[name] || emptyFn).apply(this, arguments)
+                return execute.call(this, arguments)
             }
 
             /*
@@ -28,7 +47,7 @@ module.exports = function(){
              * @return {Mixed} the result of the super method
              */
             this.callSuper = function(){
-                return (host[name] || emptyFn).apply(this, args)
+                return execute.call(this, args)
             }
 
             var ret = fn.apply(this, args)

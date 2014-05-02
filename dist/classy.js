@@ -303,6 +303,8 @@ module.exports = function(){
                 this.$ownClass.INSTANCE = this
             }
 
+            // console.log(('here '))
+
             return this.init.apply(this, arguments)
         }
 

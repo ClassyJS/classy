@@ -10,7 +10,7 @@
  */
 describe('mixin inheritance should work as expected', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     root.defineMixin({
         alias: 'math',

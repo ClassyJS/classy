@@ -11,7 +11,7 @@
 
 describe('Zpy.create should create instances correctly', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should return a class instance', function(){
 

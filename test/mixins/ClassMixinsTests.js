@@ -10,7 +10,7 @@
  */
 describe('Classes should be able to have mixins (mixins as statics)', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should receive mixins on Class', function(){
 

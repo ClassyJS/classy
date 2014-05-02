@@ -10,7 +10,7 @@
  */
 describe('mixin init on should work when specified on mixin', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should call mixin init as specified ', function(){
 
@@ -95,7 +95,7 @@ describe('mixin init on should work when specified on mixin', function(){
 
 describe('mixin init on should work when specified on target', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should call mixin init as specified ', function(){
 

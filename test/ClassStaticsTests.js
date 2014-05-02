@@ -1,7 +1,7 @@
 
 describe('test static properties are copied on the classes', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should have static properties', function(){
         var result = true

@@ -27,8 +27,10 @@ module.exports = function(parentClass, classConfig){
         parentClass = null
     }
 
+    var parent = parentClass || classConfig.extend
     var alias  = classConfig.alias    || (classConfig.alias = generateAlias())
-    var parent = getClass(parentClass || classConfig.extend)
+
+    parent = getClass(parent) || parent
 
     //<debug>
     if (!parent){

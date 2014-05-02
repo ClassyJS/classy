@@ -11,7 +11,7 @@
 
 describe('Zpy.getClass should return correctly', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should return the base class when no param given', function(){
 

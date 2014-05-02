@@ -11,7 +11,7 @@
 
 describe('zippy.createClass', function(){
 
-    var root = ZippyClass
+    var root = classy
 
     it('should exist and create class', function(){
 
@@ -113,5 +113,35 @@ describe('zippy.createClass', function(){
         expect(Ferrari.maxSpeed).toBe(200)
         expect(Ferrari.maxSpeed).toBe(200)
         expect(Ferrari.getTurboSpeed()).toBe(220)
+    })
+
+    it('should work for extending an existing function', function(){
+
+        function Vehicle(name){
+            this.name = name
+        }
+
+        Vehicle.prototype = {
+            getName: function(){
+                return this.name
+            }
+        }
+
+        var v = new Vehicle('car')
+
+        expect(v.name).toBe('car')
+        expect(v.getName()).toBe('car')
+
+        var Car = root.createClass(Vehicle, {
+
+            init: function(name, age){
+                this.callSuper()
+                this.age = age
+            }
+        })
+
+        var renault = new Car('renault', 1980)
+
+        expect(renault.getName()).toEqual('renault')
     })
 })

@@ -1,7 +1,7 @@
 
 describe('inheritance should work properly', function(){
 
-    var Zpy = ZippyClass
+    var Zpy = classy
 
     var LivingCreature = Zpy.createClass({
 
