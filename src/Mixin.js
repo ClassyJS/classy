@@ -1,13 +1,13 @@
 /*
 
-    This file is part of the ZippyUI Framework
+ This file is part of the ZippyUI Framework
 
-    Copyright (c) 2011 ZippyUI.com
+ Copyright (c) 2014 Radu Brehar <contact@zippyui.com>
 
-    All rights reserved to zippyui.com
-    This software cannot be used/copied/distributed without the express permission from staff at zippyui.com
+ The source code is distributed under the terms of the MIT license.
+ See https://github.com/zippyui/ZippyUI/blob/master/LICENCE
 
-*/
+ */
 
 'use strict'
 

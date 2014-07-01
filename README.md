@@ -1,15 +1,15 @@
-ZippyClass - Classes for JavaScript
+Classy - Classes for JavaScript
 ============================
 
-ZippyClass offers the ability to easily define classes, call super or overriden methods, define static properties, and mixin objects in a very flexible way.
+Classy offers the ability to easily define classes, call super or overriden methods, define static properties, and mixin objects in a very flexible way.
 
 Meant to be used in the browser and in node.js as well.
 
-Use ```dist/ZippyClass.js```
+Use ```dist/classy.js```
 
 
 ```js
-    var Vehicle = ZippyClass.define({
+    var Vehicle = classy.define({
         alias: 'vehicle',
 
         init: function(year){
@@ -17,7 +17,7 @@ Use ```dist/ZippyClass.js```
         }
     })
 
-    var Car = ZippyClass.define({
+    var Car = classy.define({
         extend: 'vehicle'
         //or extend: Vechicle
         alias: 'car',
@@ -44,7 +44,7 @@ ford.getName() === 'Ford' //is true
 ```
 
 ```js
-    ZippyClass.override('car', {
+    classy.override('car', {
         getName: function(){
             return this.callOverriden() + ', made in ' + this.year
         }
@@ -55,8 +55,8 @@ ford.getName() === 'Ford' //is true
 
 You can use the class ```alias``` in order to easily reference which class you want to extend or override. This also helps you get a reference to your class by
 ```js
-    var Car = ZippyClass.getClass('car')
-    var Vehicle = ZippyClass.getClass('vehicle')
+    var Car = classy.getClass('car')
+    var Vehicle = classy.getClass('vehicle')
 ```
 
 ## ```init``` as constructor
@@ -66,7 +66,7 @@ Use the ```init``` method as the constructor
 Example
 
 ```js
-    var Animal = ZippyClass.define({
+    var Animal = classy.define({
 
         //when a new Animal is created, the init method is called
         init: function(config){
@@ -79,7 +79,7 @@ Example
         }
         })
 
-    var Cat = ZippyClass.define({
+    var Cat = classy.define({
         extend: Animal,
         alias: 'cat',
 
@@ -105,7 +105,7 @@ If there is no super or overriden method with the same name you don't have to wo
 Example
 ```js
     //create a shape class
-    ZippyClass.define({
+    classy.define({
         alias: 'shape',
 
         getDescription: function(){
@@ -114,7 +114,7 @@ Example
     })
 
     //create a rectangle class with a width and a height
-    ZippyClass.define({
+    classy.define({
         extend: 'shape',
         alias: 'rectangle',
 
@@ -132,7 +132,7 @@ Example
         setWidth: function(w){ this.width = w }
     })
 
-    ZippyClass.override('rectangle', {
+    classy.override('rectangle', {
         getDescription: function(){
             //reimplement the getDescription, but use the overriden implementation as well
             return 'this is a ' + this.callOverriden()
@@ -140,7 +140,7 @@ Example
     })
 
     //create a square class
-    ZippyClass.define({
+    classy.define({
         extend: 'rectangle',
         alias: 'square',
 
@@ -179,7 +179,7 @@ You can easily define static properties for classes.
 
 ```js
 
-    var Widget = ZippyClass.define({
+    var Widget = classy.define({
 
         statics: {
 

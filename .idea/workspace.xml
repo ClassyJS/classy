@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4d5ed0fa-71ad-48c2-93b5-37445ebbf59b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/classy.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ClassCreateTests.js" afterPath="$PROJECT_DIR$/test/ClassCreateTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ClassInheritanceTests.js" afterPath="$PROJECT_DIR$/test/ClassInheritanceTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mixins/ClassMixinsTests.js" afterPath="$PROJECT_DIR$/test/mixins/ClassMixinsTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ClassOverrideTests.js" afterPath="$PROJECT_DIR$/test/ClassOverrideTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/processors/ClassProcessor.js" afterPath="$PROJECT_DIR$/src/processors/ClassProcessor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/CoreTests.js" afterPath="$PROJECT_DIR$/test/CoreTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/GetClassTests.js" afterPath="$PROJECT_DIR$/test/GetClassTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mixins/InlineMixinTests.js" afterPath="$PROJECT_DIR$/test/mixins/InlineMixinTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mixin.js" afterPath="$PROJECT_DIR$/src/Mixin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mixins/MixinCopyIfTests.js" afterPath="$PROJECT_DIR$/test/mixins/MixinCopyIfTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mixins/MixinInheritanceTests.js" afterPath="$PROJECT_DIR$/test/mixins/MixinInheritanceTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mixins/MixinInitOnTests.js" afterPath="$PROJECT_DIR$/test/mixins/MixinInitOnTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mixins/MixinObjectTargetTests.js" afterPath="$PROJECT_DIR$/test/mixins/MixinObjectTargetTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mixins/MixinOverrideTests.js" afterPath="$PROJECT_DIR$/test/mixins/MixinOverrideTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/processors/MixinProcessor.js" afterPath="$PROJECT_DIR$/src/processors/MixinProcessor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mixins/MixinWithStaticMethodsTests.js" afterPath="$PROJECT_DIR$/test/mixins/MixinWithStaticMethodsTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mixins/MixinWithStaticsTests.js" afterPath="$PROJECT_DIR$/test/mixins/MixinWithStaticsTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ZippyClass.js" afterPath="$PROJECT_DIR$/dist/ZippyClass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/copy.js" afterPath="$PROJECT_DIR$/src/utils/copy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zippy-class.sublime-workspace" afterPath="$PROJECT_DIR$/zippy-class.sublime-workspace" />
+    </list>
+    <ignored path="ZippyClass.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ZippyClass" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="create.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/create.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="63" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZippyClass.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/ZippyClass.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="712" column="26" selection-start="21159" selection-end="21159" vertical-scroll-proportion="0.0" vertical-offset="11971" max-vertical-offset="29835">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mixin.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Mixin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="55" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1394">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="53" selection-start="402" selection-end="402" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="442">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classy.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dist/classy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="48" selection-start="0" selection-end="51582" vertical-scroll-proportion="0.3109756" vertical-offset="0" max-vertical-offset="29869">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/dist/ZippyClass.js" />
+        <option value="$PROJECT_DIR$/src/Mixin.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/dist/classy.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZippyClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZippyClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZippyClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZippyClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZippyClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZippyClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZippyClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+  </component>
+  <component name="RunManager">
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d5ed0fa-71ad-48c2-93b5-37445ebbf59b" name="Default" comment="" />
+      <created>1403853642210</created>
+      <updated>1403853642210</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56570154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.0" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2462039" sideWeight="0.99156564" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2725356" sideWeight="0.2765073" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19263607" sideWeight="0.7537961" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37941787" sideWeight="0.8782288" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19030048" sideWeight="0.18711019" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3518931" sideWeight="0.11808118" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35135135" sideWeight="0.99051136" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27130976" sideWeight="0.68950975" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39872068" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="63" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/ZippyClass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="712" column="26" selection-start="21159" selection-end="21159" vertical-scroll-proportion="0.0" vertical-offset="11971" max-vertical-offset="29835">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Mixin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="55" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1394">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="53" selection-start="402" selection-end="402" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/classy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="48" selection-start="0" selection-end="51582" vertical-scroll-proportion="0.3109756" vertical-offset="0" max-vertical-offset="29869">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

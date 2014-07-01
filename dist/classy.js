@@ -1,14 +1,14 @@
 !function(e){if("object"==typeof exports)module.exports=e();else if("function"==typeof define&&define.amd)define(e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.classy=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 /*
 
-    This file is part of the ZippyUI Framework
+ This file is part of the ZippyUI Framework
 
-    Copyright (c) 2011 ZippyUI.com
+ Copyright (c) 2014 Radu Brehar <contact@zippyui.com>
 
-    All rights reserved to zippyui.com
-    This software cannot be used/copied/distributed without the express permission from staff at zippyui.com
+ The source code is distributed under the terms of the MIT license.
+ See https://github.com/zippyui/ZippyUI/blob/master/LICENCE
 
-*/
+ */
 
 'use strict'
 
@@ -302,8 +302,6 @@ module.exports = function(){
 
                 this.$ownClass.INSTANCE = this
             }
-
-            // console.log(('here '))
 
             return this.init.apply(this, arguments)
         }
@@ -721,10 +719,10 @@ module.exports = function(alias){
 
  This file is part of the ZippyUI Framework
 
- Copyright (c) 2011 ZippyUI.com
+ Copyright (c) 2014 Radu Brehar <contact@zippyui.com>
 
- All rights reserved to zippyui.com
- This software cannot be used/copied/distributed without the express permission from staff at zippyui.com
+ The source code is distributed under the terms of the MIT license.
+ See https://github.com/zippyui/ZippyUI/blob/master/LICENCE
 
  */
 module.exports = function(){
@@ -758,6 +756,8 @@ module.exports = function(){
         override : _dereq_('./override'),
         getClass : _dereq_('./getClass'),
 
+        classRegistry: _dereq_('./Registry'),
+
         defineMixin: _dereq_('./defineMixin'),
         mixin      : _dereq_('./processors/MixinProcessor').mixin,
 
@@ -772,7 +772,7 @@ module.exports = function(){
         isClassLike        : isSameOrSubclassOf
     }
 }()
-},{"./Mixin":1,"./core":5,"./create":6,"./define":7,"./defineMixin":8,"./destroyClass":9,"./getClass":11,"./getInstance":12,"./getParentClass":13,"./isSubclassOf":15,"./override":16,"./processors/MixinProcessor":20,"./utils/copy":22}],15:[function(_dereq_,module,exports){
+},{"./Mixin":1,"./Registry":2,"./core":5,"./create":6,"./define":7,"./defineMixin":8,"./destroyClass":9,"./getClass":11,"./getInstance":12,"./getParentClass":13,"./isSubclassOf":15,"./override":16,"./processors/MixinProcessor":20,"./utils/copy":22}],15:[function(_dereq_,module,exports){
 var getClass = _dereq_('./getClass')
 
 module.exports = function(subClass, superClass, config){
@@ -881,10 +881,10 @@ module.exports = function(Class){
 
  This file is part of the ZippyUI Framework
 
- Copyright (c) 2011 ZippyUI.com
+ Copyright (c) 2014 Radu Brehar <contact@zippyui.com>
 
- All rights reserved to zippyui.com
- This software cannot be used/copied/distributed without the express permission from staff at zippyui.com
+ The source code is distributed under the terms of the MIT license.
+ See https://github.com/zippyui/ZippyUI/blob/master/LICENCE
 
  */
 module.exports = function(){
@@ -922,10 +922,10 @@ module.exports = function(){
 
  This file is part of the ZippyUI Framework
 
- Copyright (c) 2011 ZippyUI.com
+ Copyright (c) 2014 Radu Brehar <contact@zippyui.com>
 
- All rights reserved to zippyui.com
- This software cannot be used/copied/distributed without the express permission from staff at zippyui.com
+ The source code is distributed under the terms of the MIT license.
+ See https://github.com/zippyui/ZippyUI/blob/master/LICENCE
 
  */
 module.exports = function(){
@@ -1323,10 +1323,10 @@ module.exports = function unregisterClass(){
 
  This file is part of the ZippyUI Framework
 
- Copyright (c) 2011 ZippyUI.com
+ Copyright (c) 2014 Radu Brehar <contact@zippyui.com>
 
- All rights reserved to zippyui.com
- This software cannot be used/copied/distributed without the express permission from staff at zippyui.com
+ The source code is distributed under the terms of the MIT license.
+ See https://github.com/zippyui/ZippyUI/blob/master/LICENCE
 
  */
 module.exports = function(){
