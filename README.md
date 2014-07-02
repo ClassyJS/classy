@@ -227,7 +227,7 @@ var logger = {
     }
 }
 var person = {
-    green: function(msg){
+    greet: function(msg){
         alert('Hi ' + msg)
     }
 }
