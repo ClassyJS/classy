@@ -549,8 +549,24 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 664,
+				"buffer_size": 1152,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/create.js",
+			"settings":
+			{
+				"buffer_size": 995,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 5250,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -1002,6 +1018,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"classy",
+			"ZippyClass",
 			"require",
 			"registry",
 			"define(",
@@ -1127,9 +1145,7 @@
 			"initOn",
 			"destroyClass",
 			"preprocessClass",
-			"copyKeys",
-			"aliasMethods",
-			"BASE_CLASS"
+			"copyKeys"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1179,7 +1195,7 @@
 						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1209,7 +1225,7 @@
 						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -4664,7 +4680,7 @@
 						"translation.y": 245016.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -4673,15 +4689,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 664,
+						"buffer_size": 1152,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								422,
-								422
+								66,
+								66
 							]
 						],
 						"settings":
@@ -4700,6 +4716,64 @@
 				},
 				{
 					"buffer": 4,
+					"file": "src/create.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								254,
+								254
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5250,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								215,
+								215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "src/index.js",
 					"semi_transient": false,
 					"settings":
@@ -4723,14 +4797,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "src/core/extend.js",
 					"semi_transient": false,
 					"settings":
@@ -4756,7 +4830,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -4766,7 +4840,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "src/utils/copy.js",
 					"semi_transient": false,
 					"settings":
@@ -4793,11 +4867,11 @@
 						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "test/DefineTests.js",
 					"semi_transient": false,
 					"settings":
@@ -4823,11 +4897,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "src/core/buildClassFunctions.js",
 					"semi_transient": false,
 					"settings":
@@ -4853,11 +4927,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
 					"file": "src/index.js",
 					"semi_transient": false,
 					"settings":
@@ -4869,8 +4943,8 @@
 						"selection":
 						[
 							[
-								994,
-								994
+								500,
+								500
 							]
 						],
 						"settings":
@@ -4881,14 +4955,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 162.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 11,
 					"file": "src/Registry.js",
 					"semi_transient": true,
 					"settings":
@@ -4912,11 +4986,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 12,
 					"file": "src/getClass.js",
 					"semi_transient": false,
 					"settings":
@@ -4940,7 +5014,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -5016,16 +5090,20 @@
 		"selected_items":
 		[
 			[
+				"packa",
+				"package.json"
+			],
+			[
 				"pac",
 				"package.json"
 			],
 			[
-				"index",
-				"src\\index.js"
+				"read",
+				"README.md"
 			],
 			[
-				"packa",
-				"package.json"
+				"index",
+				"src\\index.js"
 			],
 			[
 				"mi",
@@ -5058,10 +5136,6 @@
 			[
 				"copy",
 				"src\\utils\\copy.js"
-			],
-			[
-				"read",
-				"README.md"
 			],
 			[
 				"cla",
@@ -5536,16 +5610,16 @@
 		"selected_items":
 		[
 			[
+				"",
+				"D:\\workspace\\ZippyUI\\ZippyUI.sublime-project"
+			],
+			[
 				"ww",
 				"D:\\workspace\\www\\www.sublime-workspace"
 			],
 			[
 				"www",
 				"D:\\workspace\\www\\www.sublime-workspace"
-			],
-			[
-				"",
-				"D:\\workspace\\ZippyUI\\ZippyUI.sublime-project"
 			]
 		],
 		"width": 380.0

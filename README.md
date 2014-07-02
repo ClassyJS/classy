@@ -1,5 +1,5 @@
-Classy - Classes for JavaScript
-============================
+Classy - Smart JavaScript classes
+=================================
 
 Classy offers the ability to easily define classes, call super or overriden methods, define static properties, and mixin objects in a very flexible way.
 
@@ -44,19 +44,38 @@ ford.getName() === 'Ford' //is true
 ```
 
 ```js
-    classy.override('car', {
-        getName: function(){
-            return this.callOverriden() + ', made in ' + this.year
-        }
-    })
-    //now
-    ford.getName() === 'Ford, made in 1980' //is true
+classy.override('car', {
+    getName: function(){
+        return this.callOverriden() + ', made in ' + this.year
+    }
+})
+//now
+ford.getName() === 'Ford, made in 1980' //is true
 ```
 
 You can use the class ```alias``` in order to easily reference which class you want to extend or override. This also helps you get a reference to your class by
 ```js
     var Car = classy.getClass('car')
     var Vehicle = classy.getClass('vehicle')
+```
+
+## Override and callOverriden
+
+Overriding is simple, just call classy.override
+```js
+classy.override(Car, {
+    getName: function(){
+        return this.callOverriden() + ', great car'
+    }
+})
+```
+or, if you don't have a reference to the class, but only have the alias
+```js
+classy.override('car', {
+    getName: function(){
+        return this.callOverriden() + ', great car'
+    }
+})
 ```
 
 ## ```init``` as constructor
@@ -66,34 +85,34 @@ Use the ```init``` method as the constructor
 Example
 
 ```js
-    var Animal = classy.define({
+var Animal = classy.define({
 
-        //when a new Animal is created, the init method is called
-        init: function(config){
-            config = config || {}
+    //when a new Animal is created, the init method is called
+    init: function(config){
+        config = config || {}
 
-            //we simply copy all the keys onto this
-            Object.keys(config).forEach(function(key){
-                this[key] = config[key]
-            }, this)
-        }
-        })
+        //we simply copy all the keys onto this
+        Object.keys(config).forEach(function(key){
+            this[key] = config[key]
+        }, this)
+    }
+})
 
-    var Cat = classy.define({
-        extend: Animal,
-        alias: 'cat',
+var Cat = classy.define({
+    extend: Animal,
+    alias: 'cat',
 
-        init: function(){
-            this.callSuper()
-            this.sound = 'meow'
-        },
+    init: function(){
+        this.callSuper()
+        this.sound = 'meow'
+    },
 
-        getName: function(){
-            return this.name
-        }
-    })
+    getName: function(){
+        return this.name
+    }
+})
 
-    var lizzy = new Cat({ name: 'lizzy' })
+var lizzy = new Cat({ name: 'lizzy' })
 ```
 
 ## ```callSuper``` and ```callOverriden```
@@ -166,11 +185,11 @@ You can also use ```callSuperWith``` and ```callOverridenWith``` to manually pas
 
 Example
 ```js
-    //...
-    setHeight: function(h){
-        this.callSuperWith(h*2)
-    }
-    //...
+//...
+setHeight: function(h){
+    this.callSuperWith(h*2)
+}
+//...
 ```
 
 ## Static properties and ```$ownClass```
@@ -178,34 +197,33 @@ Example
 You can easily define static properties for classes.
 
 ```js
+var Widget = classy.define({
 
-    var Widget = classy.define({
+    statics: {
 
-        statics: {
+        idSeed: 0,
 
-            idSeed: 0,
-
-            getDescription: function(){
-                return 'A Widget class'
-            },
-
-            getNextId: function(){
-                return this.idSeed++
-            }
+        getDescription: function(){
+            return 'A Widget class'
         },
 
-        init: function(){
-            this.id = this.$ownClass.getNextId()
+        getNextId: function(){
+            return this.idSeed++
         }
-    })
+    },
 
-    Widget.getDescription() == 'A Widget class' // === true
+    init: function(){
+        this.id = this.$ownClass.getNextId()
+    }
+})
 
-    var w = new Widget()
-    w.id === 0
+Widget.getDescription() == 'A Widget class' // === true
 
-    w = new Widget()
-    w.id === 1
+var w = new Widget()
+w.id === 0
+
+w = new Widget()
+w.id === 1
 ```
 
 On every instance, you can use the $ownClass property in order to get a reference to the class that created the instance.
