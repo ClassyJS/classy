@@ -5,40 +5,44 @@ Classy offers the ability to easily define classes, call super or overriden meth
 
 Meant to be used in the browser and in node.
 
+## Installation
+
 ```
 npm install classy
 ```
-
-For the browser, use ```dist/classy.js```
+For the browser use
+```
+dist/classy.js
+```
 
 
 ```js
-    var Vehicle = classy.define({
-        alias: 'vehicle',
+var Vehicle = classy.define({
+    alias: 'vehicle',
 
-        init: function(year){
-            this.year = year
-        }
-    })
+    init: function(year){
+        this.year = year
+    }
+})
 
-    var Car = classy.define({
-        extend: 'vehicle'
-        //or extend: Vechicle
-        alias: 'car',
+var Car = classy.define({
+    extend: 'vehicle'
+    //or extend: Vechicle
+    alias: 'car',
 
-        init: function(year, make){
-            this.callSuper()
-            this.make = make
-        },
+    init: function(year, make){
+        this.callSuper()
+        this.make = make
+    },
 
-        getName: function(){
-            return this.make
-        }
-    })
+    getName: function(){
+        return this.make
+    }
+})
 
-    var ford = new Car(1980, 'Ford')
-    console.log(ford.year)
-    console.log(ford.make)
+var ford = new Car(1980, 'Ford')
+console.log(ford.year)
+console.log(ford.make)
 ```
 
 Notice the ```callSuper()``` method call, which can be used in any class method, and will call the method with the same name found on the super class. It also automatically transmits all the arguments it has, so you don't have to manually do so.
