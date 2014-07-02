@@ -5,6 +5,10 @@ Classy offers the ability to easily define classes, call super or overriden meth
 
 Meant to be used in the browser and in node.
 
+```
+npm install classy
+```
+
 For the browser, use ```dist/classy.js```
 
 
