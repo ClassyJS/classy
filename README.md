@@ -3,9 +3,9 @@ Classy - Smart JavaScript classes
 
 Classy offers the ability to easily define classes, call super or overriden methods, define static properties, and mixin objects in a very flexible way.
 
-Meant to be used in the browser and in node.js as well.
+Meant to be used in the browser and in node.
 
-Use ```dist/classy.js```
+For the browser, use ```dist/classy.js```
 
 
 ```js
@@ -191,6 +191,55 @@ setHeight: function(h){
 }
 //...
 ```
+
+## Mixins
+
+Classy offers the ability to mix objects into other objects. At a base level, you can either use simple objects as mixins or you can define mixin classes.
+
+Example
+```js
+var logger = {
+    $after: {
+        log: function(msg){
+            console.log(msg)
+        }
+    }
+}
+
+var person = { firstName: 'Bob', lastName: 'Johnson' }
+
+classy.mixin(person /* target object */, logger /* mixin */)
+```
+in the example above, the person object receives a log function property. Note the usage of $after. Other valid mixin behaviors are ```$copyIf```, ```$before``` and ```$override```.
+
+These behaviors determine how mixin properties that are functions are mixed-in when the target object already has those properties.
+
+### $copyIf
+Any property in the mixin is copied onto the target object only if the target object does not already have a property with the same name
+
+Example
+```js
+var logger = {
+    $copyIf: {
+        isLogger: true,
+        log: function(msg){ console.log(msg) },
+        greet: function(msg){ console.log('hello ' + msg) }
+    }
+}
+var person = {
+    green: function(msg){
+        alert('Hi ' + msg)
+    }
+}
+
+classy.mixin(person, logger)
+person.greet('Bob') //will alert 'Hi Bob' - so logger.greet is not copied, since it already existed on person
+person.log('warning') //will log 'warning' since logger.log was copied to person, since person.log was undefined
+person.isLogger === true
+```
+
+### $before
+
 
 ## Static properties and ```$ownClass```
 
