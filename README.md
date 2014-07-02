@@ -15,7 +15,7 @@ For the browser use
 dist/classy.js
 ```
 
-
+## Example
 ```js
 var Vehicle = classy.define({
     alias: 'vehicle',
