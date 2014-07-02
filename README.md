@@ -234,12 +234,73 @@ var person = {
 
 classy.mixin(person, logger)
 person.greet('Bob') //will alert 'Hi Bob' - so logger.greet is not copied, since it already existed on person
-person.log('warning') //will log 'warning' since logger.log was copied to person, since person.log was undefined
+person.log('warning') //will console.log 'warning' - logger.log was copied to person, since person.log was undefined
 person.isLogger === true
 ```
 
-### $before
+### $before & $after
+```js
+classy.defineMixin({
+    alias: 'logger',
+    $before: {
+        log: function(msg){
+            console.log(msg)
+        },
+        warn: function(warning){
+            console.warn(warning)
+            return '!'
+        }
+    }
+})
 
+var person = {
+    log: function(msg){ alert(msg); return 1}
+}
+
+classy.mixin(person, 'logger')
+
+person.log('hi') === 1 // will first console.log('hi') and then will alert('hi')
+//and will return the return value of the initial person.log implementation
+person.warn('hi') === '!' //will console.warn('hi')
+```
+In the above example, since log and warn ar copied with a before behavior, first of all classy checks to see if person already has those properties. Since person.log exists, person.log is assigned another function, which calls ```logger.log``` before ```person.log```, and returns the result of the initial ```person.log```.
+For logger.warn, no such property exists on person, so it is simply assigned to the person.
+
+The behavior of after is similar, with the difference that the mixin function is called after the initial implementation. The result is that of the initial implementation, if one exists.
+
+### $override
+```
+classy.defineMixin({
+    alias: 'logger',
+
+    $override: {
+        log: function(msg){ console.log(msg) },
+        warn: function(msg){
+            console.log(msg)
+            return this.callTarget() //call the target object warn implementation, if one exists
+        }
+    }
+})
+
+var Person = classy.define({
+    alias: 'person',
+    mixins: [
+        'logger'
+    ],
+
+    name: 'bob',
+    warn: function(msg){
+        alert(msg)
+        return this
+    }
+})
+
+var p = new Person()
+p.log(p.name) //simply calls logger.log
+p.warn(p.name) // logs p.name and then alerts p.name
+```
+
+Notice that ```logger.warn``` calls ```this.callTarget()``` which means the mixin tries to call the method from the target object that this function has overriden. Since person.warn had an implementation, the logger calls that.
 
 ## Static properties and ```$ownClass```
 
