@@ -1,6 +1,6 @@
 {
   "name": "classy",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "scripts": {
     "build": "browserify src/index.js -s classy -o dist/classy.js",
     "watch": "watchify src/index.js -s classy -o dist/classy.js",
@@ -28,7 +28,11 @@
     "class",
     "super",
     "method",
-    "classes"
+    "classes",
+    "inheritance",
+    "hierarchy",
+    "mixins",
+    "override"
   ],
   "author": "Radu Brehar",
   "license": "MIT",
