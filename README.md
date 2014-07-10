@@ -161,7 +161,6 @@ function Animal(sound){
 Animal.prototype.makeSound = function(){
     return 'I sound like this: ' + this.sound
 }
-```
 
 var Dog = classy.define({
     extend: Animal,
@@ -173,7 +172,7 @@ var Dog = classy.define({
 
 var dog = new Dog()
 dog.makeSound() == 'I sound like this: bark' // is true
-
+```
 
 ## ```callSuper``` and ```callOverriden```
 
