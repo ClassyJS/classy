@@ -27,7 +27,7 @@ var Vehicle = classy.define({
 
 var Car = classy.define({
     extend: 'vehicle'
-    //or extend: Vechicle
+    //or extend: Vehicle
     alias: 'car',
 
     init: function(year, make){
@@ -85,6 +85,32 @@ classy.override('car', {
     }
 })
 ```
+
+## Aliases
+
+When defining a class, you can specify a string property named alias. `classy` keeps a reference to each class based on the specified alias. If no alias is given, one is generated anyway.
+
+Using the alias allows you to reference, extend or override a class by the alias, without the need for an explicit reference to the class.
+
+Example
+```js
+classy.define({
+  alias: 'shape'
+})
+
+classy.define({
+  alias: 'rectangle',
+  extend: 'shape'
+})
+
+classy.override('rectangle', {
+  getArea: function(){ /*... */}
+})
+```
+
+Notice that when defining the rectangle class, instead of saying we extend the Shape class, by a direct reference, we can use the alias of the Shape class, which is a string.
+
+Whenever an alias is expected, you can use either the alias, or the class itself (in classy.define, classy.override, classy.getClass, etc)
 
 ## ```init``` as constructor
 
