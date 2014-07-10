@@ -44,7 +44,7 @@ console.log(ford.year)
 console.log(ford.make)
 ```
 
-Notice the ```callSuper()``` method call, which can be used in any class method, and will call the method with the same name found on the super class. It also automatically transmits all the arguments it has, so you don't have to manually do so.
+Notice the ```callSuper()``` method call, which can be used in any class method, and will call the method with the same name found on the super class. It also automatically sends all the arguments, so you don't have to manually do so.
 
 ```js
 ford.getName() === 'Ford' //is true
