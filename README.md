@@ -26,9 +26,8 @@ var Vehicle = classy.define({
 })
 
 var Car = classy.define({
-    extend: 'vehicle'
-    //or extend: Vehicle
-    alias: 'car',
+    extend: 'vehicle' //or extend: Vehicle
+    alias : 'car',
 
     init: function(year, make){
         this.callSuper()
