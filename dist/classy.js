@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.classy=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -12,11 +12,11 @@
 
 'use strict'
 
-var core = require('./core')
-var copy = require('./utils/copy').copy
+var core = _dereq_('./core')
+var copy = _dereq_('./utils/copy').copy
 var when = [ '$before', '$after', '$override', '$copyIf' ]
 
-module.exports = require('./define')({
+module.exports = _dereq_('./define')({
 
     alias: 'z.mixin',
 
@@ -76,9 +76,9 @@ module.exports = require('./define')({
         }
     }
 })
-},{"./core":5,"./define":7,"./utils/copy":22}],2:[function(require,module,exports){
+},{"./core":5,"./define":7,"./utils/copy":22}],2:[function(_dereq_,module,exports){
 module.exports = {}
-},{}],3:[function(require,module,exports){
+},{}],3:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict'
@@ -197,7 +197,7 @@ module.exports = function(){
         buildOverridenFn : buildOverridenFn
     }
 }()
-},{}],4:[function(require,module,exports){
+},{}],4:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict'
@@ -218,17 +218,17 @@ module.exports = function(){
 
     }
 }()
-},{}],5:[function(require,module,exports){
+},{}],5:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict'
 
     //requirements
-    var ClassFunctionBuilder    = require('./buildClassFunctions')
-    var extend                  = require('./extend')
+    var ClassFunctionBuilder    = _dereq_('./buildClassFunctions')
+    var extend                  = _dereq_('./extend')
 
-    var getInstantiatorFunction = require('../utils/getInstantiatorFunction')
-    var copy                    = require('../utils/copy').copy
+    var getInstantiatorFunction = _dereq_('../utils/getInstantiatorFunction')
+    var copy                    = _dereq_('../utils/copy').copy
 
     //other declarations
     var hasOwnProperty = Object.prototype.hasOwnProperty
@@ -479,11 +479,11 @@ module.exports = function(){
         BaseClass       : Base
     }
 }()
-},{"../utils/copy":22,"../utils/getInstantiatorFunction":24,"./buildClassFunctions":3,"./extend":4}],6:[function(require,module,exports){
+},{"../utils/copy":22,"../utils/getInstantiatorFunction":24,"./buildClassFunctions":3,"./extend":4}],6:[function(_dereq_,module,exports){
 var SLICE = Array.prototype.slice
 
-var getClass = require('./getClass')
-var getInstantiatorFunction = require('./utils/getInstantiatorFunction')
+var getClass = _dereq_('./getClass')
+var getInstantiatorFunction = _dereq_('./utils/getInstantiatorFunction')
 
 /**
  * @method create
@@ -512,14 +512,14 @@ module.exports = function(alias /* args... */){
 
     return getInstantiatorFunction(args.length)(Class, args)
 }
-},{"./getClass":11,"./utils/getInstantiatorFunction":24}],7:[function(require,module,exports){
-var getClass     = require('./getClass')
-var processClass = require('./processClass')
+},{"./getClass":11,"./utils/getInstantiatorFunction":24}],7:[function(_dereq_,module,exports){
+var getClass     = _dereq_('./getClass')
+var processClass = _dereq_('./processClass')
 
-var Registry = require('./Registry')
-var core     = require('./core')
+var Registry = _dereq_('./Registry')
+var core     = _dereq_('./core')
 
-var ClassProcessor = require('./processors/ClassProcessor')
+var ClassProcessor = _dereq_('./processors/ClassProcessor')
 
 function preprocessClass(classConfig, parent){
     ClassProcessor.preprocess(classConfig)
@@ -568,9 +568,9 @@ module.exports = function(parentClass, classConfig){
         processClass(Class)
     })
 }
-},{"./Registry":2,"./core":5,"./getClass":11,"./processClass":18,"./processors/ClassProcessor":19}],8:[function(require,module,exports){
-var define = require('./define')
-var copyIf = require('./utils/copy').copyIf
+},{"./Registry":2,"./core":5,"./getClass":11,"./processClass":18,"./processors/ClassProcessor":19}],8:[function(_dereq_,module,exports){
+var define = _dereq_('./define')
+var copyIf = _dereq_('./utils/copy').copyIf
 
 module.exports = function(members){
 
@@ -578,7 +578,7 @@ module.exports = function(members){
 
     return define(copyIf({ extend: 'z.mixin'}, members))
 }
-},{"./define":7,"./utils/copy":22}],9:[function(require,module,exports){
+},{"./define":7,"./utils/copy":22}],9:[function(_dereq_,module,exports){
 /**
  * @method destroyClass
  *
@@ -588,8 +588,8 @@ module.exports = function(members){
  *
  */
 
-var getClass   = require('./getClass')
-var core       = require('./core')
+var getClass   = _dereq_('./getClass')
+var core       = _dereq_('./core')
 var BaseClass  = core.BaseClass
 
 module.exports = function(Class){
@@ -602,8 +602,8 @@ module.exports = function(Class){
         Class.destroy()
     }
 }
-},{"./core":5,"./getClass":11}],10:[function(require,module,exports){
-var define = require('./define')
+},{"./core":5,"./getClass":11}],10:[function(_dereq_,module,exports){
+var define = _dereq_('./define')
 
 module.exports = function(config){
 
@@ -616,7 +616,7 @@ module.exports = function(config){
 
     return define(config)
 }
-},{"./define":7}],11:[function(require,module,exports){
+},{"./define":7}],11:[function(_dereq_,module,exports){
 /**
  * @method getClass
  *
@@ -628,8 +628,8 @@ module.exports = function(config){
  * @return {Class}       The class or undefined if no class is found
  */
 
-var REGISTRY   = require('./Registry')
-var BASE_CLASS = require('./core').BaseClass
+var REGISTRY   = _dereq_('./Registry')
+var BASE_CLASS = _dereq_('./core').BaseClass
 
 module.exports = function getClass(alias){
     if (!alias){
@@ -644,9 +644,9 @@ module.exports = function getClass(alias){
     return REGISTRY[alias]
 
 }
-},{"./Registry":2,"./core":5}],12:[function(require,module,exports){
-var BaseClass = require('./core').BaseClass
-var getClass  = require('./getClass')
+},{"./Registry":2,"./core":5}],12:[function(_dereq_,module,exports){
+var BaseClass = _dereq_('./core').BaseClass
+var getClass  = _dereq_('./getClass')
 
 /**
  * @method getInstance
@@ -688,9 +688,9 @@ module.exports = function(config){
 
     return new klass(config)
 }
-},{"./core":5,"./getClass":11}],13:[function(require,module,exports){
-var BaseClass = require('./core').BaseClass
-var getClass  = require('./getClass')
+},{"./core":5,"./getClass":11}],13:[function(_dereq_,module,exports){
+var BaseClass = _dereq_('./core').BaseClass
+var getClass  = _dereq_('./getClass')
 
 /**
  * @method getParentClass
@@ -714,7 +714,7 @@ module.exports = function(alias){
         return Class
     }
 }
-},{"./core":5,"./getClass":11}],14:[function(require,module,exports){
+},{"./core":5,"./getClass":11}],14:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -729,17 +729,17 @@ module.exports = function(){
 
     'use strict'
 
-    var core = require('./core')
+    var core = _dereq_('./core')
 
-    var isSubclassOf = require('./isSubclassOf')
+    var isSubclassOf = _dereq_('./isSubclassOf')
 
     function isSameOrSubclassOf(subClass, superClass){
         return isSubclassOf(subClass, superClass, { allowSame: true })
     }
 
-    require('./Mixin')
+    _dereq_('./Mixin')
 
-    var copyUtils = require('./utils/copy')
+    var copyUtils = _dereq_('./utils/copy')
 
     return {
 
@@ -752,28 +752,28 @@ module.exports = function(){
         overrideClass  : core.overrideClass,
 
         //enhanced
-        define   : require('./define'),
-        override : require('./override'),
-        getClass : require('./getClass'),
+        define   : _dereq_('./define'),
+        override : _dereq_('./override'),
+        getClass : _dereq_('./getClass'),
 
-        classRegistry: require('./Registry'),
+        classRegistry: _dereq_('./Registry'),
 
-        defineMixin: require('./defineMixin'),
-        mixin      : require('./processors/MixinProcessor').mixin,
+        defineMixin: _dereq_('./defineMixin'),
+        mixin      : _dereq_('./processors/MixinProcessor').mixin,
 
-        create      : require('./create'),
-        getInstance : require('./getInstance'),
+        create      : _dereq_('./create'),
+        getInstance : _dereq_('./getInstance'),
 
-        destroyClass   : require('./destroyClass'),
-        getParentClass : require('./getParentClass'),
+        destroyClass   : _dereq_('./destroyClass'),
+        getParentClass : _dereq_('./getParentClass'),
 
         isSubclassOf       : isSubclassOf,
         isSameOrSubclassOf : isSameOrSubclassOf,
         isClassLike        : isSameOrSubclassOf
     }
 }()
-},{"./Mixin":1,"./Registry":2,"./core":5,"./create":6,"./define":7,"./defineMixin":8,"./destroyClass":9,"./getClass":11,"./getInstance":12,"./getParentClass":13,"./isSubclassOf":15,"./override":16,"./processors/MixinProcessor":20,"./utils/copy":22}],15:[function(require,module,exports){
-var getClass = require('./getClass')
+},{"./Mixin":1,"./Registry":2,"./core":5,"./create":6,"./define":7,"./defineMixin":8,"./destroyClass":9,"./getClass":11,"./getInstance":12,"./getParentClass":13,"./isSubclassOf":15,"./override":16,"./processors/MixinProcessor":20,"./utils/copy":22}],15:[function(_dereq_,module,exports){
+var getClass = _dereq_('./getClass')
 
 module.exports = function(subClass, superClass, config){
 
@@ -796,8 +796,8 @@ module.exports = function(subClass, superClass, config){
 
     return !!subClass
 }
-},{"./getClass":11}],16:[function(require,module,exports){
-var getClass = require('./getClass')
+},{"./getClass":11}],16:[function(_dereq_,module,exports){
+var getClass = _dereq_('./getClass')
 
 /**
  * @method override
@@ -827,16 +827,16 @@ module.exports = function(Class, classConfig){
 
     return TheClass
 }
-},{"./getClass":11}],17:[function(require,module,exports){
+},{"./getClass":11}],17:[function(_dereq_,module,exports){
 module.exports = function(config){
 
     'use strict'
 
     //this refers to a Class
-    return require('./core').overrideClass(this, config)
+    return _dereq_('./core').overrideClass(this, config)
 }
-},{"./core":5}],18:[function(require,module,exports){
-var copyKeys = require('./utils/copy').copyKeys
+},{"./core":5}],18:[function(_dereq_,module,exports){
+var copyKeys = _dereq_('./utils/copy').copyKeys
 
 function aliasMethods(config){
     //this refers to a class
@@ -845,11 +845,11 @@ function aliasMethods(config){
     return this
 }
 
-var extendClass     = require('./extendClass')
-var overrideClass   = require('./overrideClass')
-var unregisterClass = require('./unregisterClass')
+var extendClass     = _dereq_('./extendClass')
+var overrideClass   = _dereq_('./overrideClass')
+var unregisterClass = _dereq_('./unregisterClass')
 
-var ClassProcessor = require('./processors/ClassProcessor')
+var ClassProcessor = _dereq_('./processors/ClassProcessor')
 
 module.exports = function(Class){
 
@@ -876,7 +876,7 @@ module.exports = function(Class){
         Class.init()
     }
 }
-},{"./extendClass":10,"./overrideClass":17,"./processors/ClassProcessor":19,"./unregisterClass":21,"./utils/copy":22}],19:[function(require,module,exports){
+},{"./extendClass":10,"./overrideClass":17,"./processors/ClassProcessor":19,"./unregisterClass":21,"./utils/copy":22}],19:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -913,11 +913,11 @@ module.exports = function(){
         }
     }
 
-    result.attach(require('./MixinProcessor'))
+    result.attach(_dereq_('./MixinProcessor'))
 
     return result
 }()
-},{"./MixinProcessor":20}],20:[function(require,module,exports){
+},{"./MixinProcessor":20}],20:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -932,12 +932,12 @@ module.exports = function(){
 
     'use strict'
 
-    var core = require('../core')
+    var core = _dereq_('../core')
 
-    var FN = require('../utils/function')
+    var FN = _dereq_('../utils/function')
     var bindArgs = FN.bindArgs
-    var copyIf   = require('../utils/copy').copyIf
-    var getClass = require('../getClass')
+    var copyIf   = _dereq_('../utils/copy').copyIf
+    var getClass = _dereq_('../getClass')
 
     var HAS_OWN   = Object.prototype.hasOwnProperty
     var hasOwn    = function(obj, name){ return HAS_OWN.call(obj, name) }
@@ -1304,8 +1304,8 @@ module.exports = function(){
 
     }
 }()
-},{"../core":5,"../getClass":11,"../utils/copy":22,"../utils/function":23}],21:[function(require,module,exports){
-var REGISTRY = require('./Registry')
+},{"../core":5,"../getClass":11,"../utils/copy":22,"../utils/function":23}],21:[function(_dereq_,module,exports){
+var REGISTRY = _dereq_('./Registry')
 
 module.exports = function unregisterClass(){
 
@@ -1318,7 +1318,7 @@ module.exports = function unregisterClass(){
 
     delete REGISTRY[alias]
 }
-},{"./Registry":2}],22:[function(require,module,exports){
+},{"./Registry":2}],22:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -1661,7 +1661,7 @@ module.exports = function(){
     }
 
 }()
-},{}],23:[function(require,module,exports){
+},{}],23:[function(_dereq_,module,exports){
 module.exports = function(){
 
     var SLICE = Array.prototype.slice
@@ -1718,7 +1718,7 @@ module.exports = function(){
         bindArgsArray: bindArgsArray
     }
 }()
-},{}],24:[function(require,module,exports){
+},{}],24:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict';
@@ -1748,3 +1748,5 @@ module.exports = function(){
 
 }()
 },{}]},{},[14])
+(14)
+});

@@ -66,28 +66,12 @@ You can use the class ```alias``` in order to easily reference which class you w
     var Vehicle = classy.getClass('vehicle')
 ```
 
-## Override and callOverriden
-
-Overriding is simple, just call classy.override
-```js
-classy.override(Car, {
-    getName: function(){
-        return this.callOverriden() + ', great car'
-    }
-})
-```
-or, if you don't have a reference to the class, but only have the alias
-```js
-classy.override('car', {
-    getName: function(){
-        return this.callOverriden() + ', great car'
-    }
-})
-```
 
 ## Aliases
 
-When defining a class, you can specify a string property named alias. `classy` keeps a reference to each class based on the specified alias. If no alias is given, one is generated anyway.
+When defining a class, you can specify a string property named `alias`.
+
+`classy` keeps a reference to each class based on the specified alias. If no alias is given, one is generated anyway.
 
 Using the alias allows you to reference, extend or override a class by the alias, without the need for an explicit reference to the class.
 
@@ -110,6 +94,25 @@ classy.override('rectangle', {
 Notice that when defining the rectangle class, instead of saying we extend the Shape class, by a direct reference, we can use the alias of the Shape class, which is a string.
 
 Whenever an alias is expected, you can use either the alias, or the class itself (in classy.define, classy.override, classy.getClass, etc)
+
+## Override and callOverriden
+
+Overriding is simple, just call `classy.override` with the class alias or the class reference as the first param, and an object with properties to override as a second param.
+```js
+classy.override(Car, {
+    getName: function(){
+        return this.callOverriden() + ', great car'
+    }
+})
+```
+or, if you don't have a reference to the class, but only have the alias
+```js
+classy.override('car', {
+    getName: function(){
+        return this.callOverriden() + ', great car'
+    }
+})
+```
 
 ## ```init``` as constructor
 
@@ -147,6 +150,30 @@ var Cat = classy.define({
 
 var lizzy = new Cat({ name: 'lizzy' })
 ```
+
+You can even extend functions/classes not defined with `classy`
+
+```js
+function Animal(sound){
+    this.sound = sound
+}
+
+Animal.prototype.makeSound = function(){
+    return 'I sound like this: ' + this.sound
+}
+```
+
+var Dog = classy.define({
+    extend: Animal,
+    alias: 'dog',
+    init: function(){
+        this.callSuperWith('bark') //this calls Animal fn
+    }
+})
+
+var dog = new Dog()
+dog.makeSound() == 'I sound like this: bark' // is true
+
 
 ## ```callSuper``` and ```callOverriden```
 

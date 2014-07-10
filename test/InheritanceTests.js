@@ -200,4 +200,25 @@ describe('inheritance should work properly', function(){
         expect(Zpy.getParentClass(A)).toBe(undefined)
 
     })
+
+    it('should extend function/class created without classy', function(){
+        function Animal(sound){
+            this.sound = sound
+        }
+
+        Animal.prototype.makeSound = function(){
+            return 'I sound like this: ' + this.sound
+        }
+
+        var Dog = classy.define({
+            extend: Animal,
+            alias: 'dog',
+            init: function(){
+                this.callSuperWith('bark')
+            }
+        })
+
+        var dog = new Dog()
+        expect(dog.makeSound()).toBe('I sound like this: bark')
+    })
 })
