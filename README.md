@@ -3,7 +3,7 @@ Classy - Smart JavaScript classes
 
 Classy offers the ability to easily define classes, call super or overriden methods, define static properties, and mixin objects in a very flexible way.
 
-Meant to be used in the browser and in node.
+Meant to be used in the browser and in node. Well tested, with 50+ tests.
 
 ## Installation
 
@@ -396,3 +396,9 @@ w.id === 1
 ```
 
 On every instance, you can use the $ownClass property in order to get a reference to the class that created the instance.
+
+## Testing
+
+After cloning the repo, make sure you ```npm install```.
+
+Then just run ```npm run test```
