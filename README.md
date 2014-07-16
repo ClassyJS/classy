@@ -28,9 +28,10 @@ var Vehicle = classy.define({
 var Car = classy.define({
     extend: 'vehicle' //or extend: Vehicle
     alias : 'car',
+    forceInstance: true, // <- in order to force instantiation, even without 'new'
 
     init: function(year, make){
-        this.callSuper()
+        this.callSuper() // <- notice how easy it can be!
         this.make = make
     },
 
@@ -42,6 +43,7 @@ var Car = classy.define({
 var ford = new Car(1980, 'Ford')
 console.log(ford.year)
 console.log(ford.make)
+var bmw = Car(1990, 'Bmw') // <- since forceInstance is true, the constructor will be called with new under the hood
 ```
 
 Notice the ```callSuper()``` method call, which can be used in any class method, and will call the method with the same name found on the super class. It also automatically sends all the arguments, so you don't have to manually do so.
@@ -251,6 +253,22 @@ setHeight: function(h){
 //...
 ```
 
+## forceInstance
+
+You may want your classes to be usable without the `new` operator. Just specify `forceInstance: true` on the class prototype, and the constructor will be called with `new` if it hasn't been
+
+Example
+
+```js
+var Vehicle = class.define({
+    forceInstance: true,
+    init: function(name){
+        this.name = name
+    }
+})
+var v = Vehicle('car')  // since 'forceInstance' is true, 
+                        //the Vehicle will be called as a constructor under the hood, so new Vehicle('car')
+```
 ## Mixins
 
 Classy offers the ability to mix objects into other objects. At a base level, you can either use simple objects as mixins or you can define mixin classes.
