@@ -74,6 +74,10 @@ module.exports = function(){
         }
 
         function Class(){
+            if (!(this instanceof Class) && Class.prototype.forceInstance){
+                return new getInstantiatorFunction(arguments.length)(Class, arguments)
+            }
+
             if (this.singleton){
                 if (this.$ownClass.INSTANCE){
                     throw 'Cannot re-instantiate singleton for class ' + Class

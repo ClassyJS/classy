@@ -3,7 +3,7 @@ var copyKeys = require('./utils/copy').copyKeys
 function aliasMethods(config){
     //this refers to a class
     copyKeys(this.prototype, this.prototype, config)
-
+    
     return this
 }
 

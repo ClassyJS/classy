@@ -208,14 +208,19 @@ module.exports = function(){
 
         Class.prototype = parent.prototype
 
+        //set the prototype
         child.prototype = new Class()
+
+        //restore the constructor
         child.prototype.constructor = child
+
+        //set-up $ownClass and $superClass both on proto and on the returned fn
         child.prototype.$ownClass   = child
         child.prototype.$superClass = parent
-
         child.$ownClass   = child
         child.$superClass = parent
 
+        return child
     }
 }()
 },{}],5:[function(_dereq_,module,exports){
@@ -295,6 +300,10 @@ module.exports = function(){
         }
 
         function Class(){
+            if (!(this instanceof Class) && Class.prototype.forceInstance){
+                return new getInstantiatorFunction(arguments.length)(Class, arguments)
+            }
+
             if (this.singleton){
                 if (this.$ownClass.INSTANCE){
                     throw 'Cannot re-instantiate singleton for class ' + Class
@@ -841,7 +850,7 @@ var copyKeys = _dereq_('./utils/copy').copyKeys
 function aliasMethods(config){
     //this refers to a class
     copyKeys(this.prototype, this.prototype, config)
-
+    
     return this
 }
 
