@@ -1,4 +1,39 @@
 !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.classy=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+module.exports = function(){
+
+    'use strict';
+
+    var fns = {}
+
+    return function(len){
+
+        if ( ! fns [len ] ) {
+
+            var args = []
+            var i    = 0
+
+            for (; i < len; i++ ) {
+                args.push( 'a[' + i + ']')
+            }
+
+            fns[len] = new Function(
+                            'c',
+                            'a',
+                            'return new c(' + args.join(',') + ')'
+                        )
+        }
+
+        return fns[len]
+    }
+
+}()
+},{}],2:[function(_dereq_,module,exports){
+var getInstantiatorFunction = _dereq_('./getInstantiatorFunction')
+
+module.exports = function(fn, args){
+	return getInstantiatorFunction(args.length)(fn, args)
+}
+},{"./getInstantiatorFunction":1}],3:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -76,26 +111,107 @@ module.exports = _dereq_('./define')({
         }
     }
 })
-},{"./core":5,"./define":7,"./utils/copy":22}],2:[function(_dereq_,module,exports){
+},{"./core":10,"./define":13,"./utils/copy":28}],4:[function(_dereq_,module,exports){
 module.exports = {}
-},{}],3:[function(_dereq_,module,exports){
+},{}],5:[function(_dereq_,module,exports){
+'use strict'
+
+var copy = _dereq_('../utils/copy').copy
+var modifyFn = _dereq_('./modifyFn')
+
+var canDefineProperty    = _dereq_('./canDefineProperty')
+
+var assignClassProperty = function(Class, propName, propDescriptor, config){
+
+    var target      = config.proto?
+                        Class.prototype:
+                        Class
+
+    var superClass  = Class.$superClass
+    var superTarget = config.proto?
+                        superClass.prototype:
+                        superClass
+    var own = config.own
+
+    var getterOrSetter = propDescriptor.get || propDescriptor.set
+    var newPropDescriptor
+    var propValue
+
+    if (getterOrSetter){
+        newPropDescriptor = copy(propDescriptor)
+
+        if (propDescriptor.get !== undefined){
+            newPropDescriptor.get = modifyFn(propName, propDescriptor.get, superTarget, superClass, target, { getter: true })
+        }
+        if (propDescriptor.set !== undefined){
+            newPropDescriptor.set = modifyFn(propName, propDescriptor.get, superTarget, superClass, target, { setter: true })
+        }
+        propDescriptor = newPropDescriptor
+    } else {
+        propValue = propDescriptor.value
+
+        if (typeof propValue == 'function'){
+
+            propValue = modifyFn(propName, propValue, superTarget, superClass, target)
+        }
+    }
+
+    if (own){
+        if (canDefineProperty){
+            Object.defineProperty(target, propName, {
+                value      : propValue,
+                enumerable : false
+            })
+        } else {
+            target[propName] = propValue
+        }
+    } else {
+
+        if (getterOrSetter){
+            Object.defineProperty(target, propName, propDescriptor)
+        } else {
+            target[propName] = propValue
+        }
+    }
+
+    return propValue
+}
+
+module.exports = assignClassProperty
+},{"../utils/copy":28,"./canDefineProperty":7,"./modifyFn":11}],6:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict'
 
     var emptyFn = function(){}
+    var getDescriptor = Object.getOwnPropertyDescriptor
 
-    function buildSuperFn(name, fn, host, superClass){
+    function buildSuperFn(name, fn, superHost, superClass, getterSetterConfig){
 
         function execute(args){
-            var fn   = host[name]
+
+            var accessor = getterSetterConfig.getter?
+                                'get':
+                                getterSetterConfig.setter?
+                                    'set':
+                                    null
+            var descriptor = accessor?
+                                getDescriptor(superHost, name):
+                                null
+
+            var fn   = accessor?
+                            descriptor? descriptor[accessor]: null
+                            :
+                            superHost[name]
+
+
             var isFn = typeof fn == 'function'
 
             if (!isFn && name == 'init'){
-                //if the superClass is not from the ZippyClass registry,
+                //if the superClass is not from the classy registry,
                 //it means it is a simple function and we accept those as well
                 if (!superClass.$superClass){
-                    fn = superClass
+                    fn   = superClass
                     isFn = true
                 }
             }
@@ -106,9 +222,9 @@ module.exports = function(){
         }
 
         return function() {
-            var tmpSuper     = this.callSuper,
-                tmpSuperWith = this.callSuperWith,
-                args         = arguments
+            var tmpSuper     = this.callSuper
+            var tmpSuperWith = this.callSuperWith
+            var args         = arguments
 
             /*
              * Use callSuperWith method in order to pass in different parameter values from those that have been used
@@ -140,9 +256,22 @@ module.exports = function(){
         }
     }
 
-    function buildOverridenFn(name, currentFn, host){
+    function buildOverridenFn(name, currentFn, host, getterSetterConfig){
 
-        var overridenFn = host[name]
+        var accessor = getterSetterConfig.getter?
+                            'get':
+                            getterSetterConfig.setter?
+                                'set':
+                                null
+
+        var descriptor = accessor?
+                            getDescriptor(host, name):
+                            null
+
+        var overridenFn = accessor?
+                            descriptor? descriptor[accessor]: null
+                            :
+                            host[name]
 
         if (typeof overridenFn == 'undefined') {
             //this check is needed for the following scenario - if a method is overriden, and it also calls
@@ -197,7 +326,30 @@ module.exports = function(){
         buildOverridenFn : buildOverridenFn
     }
 }()
-},{}],4:[function(_dereq_,module,exports){
+},{}],7:[function(_dereq_,module,exports){
+'use strict'
+
+module.exports = (function(){
+    var o = {}
+
+    try {
+        Object.defineProperty(o, 'name', {
+            value: 'x'
+        })
+
+        return true
+    } catch (ex) { }
+
+    return false
+
+})()
+},{}],8:[function(_dereq_,module,exports){
+'use strict'
+
+module.exports = (function(){
+    return 'getOwnPropertyDescriptor' in Object && typeof Object.getOwnPropertyDescriptor == 'function'
+})()
+},{}],9:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict'
@@ -223,50 +375,30 @@ module.exports = function(){
         return child
     }
 }()
-},{}],5:[function(_dereq_,module,exports){
+},{}],10:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict'
 
-    //requirements
-    var ClassFunctionBuilder    = _dereq_('./buildClassFunctions')
-    var extend                  = _dereq_('./extend')
+    var newify = _dereq_('newify')
 
-    var getInstantiatorFunction = _dereq_('../utils/getInstantiatorFunction')
-    var copy                    = _dereq_('../utils/copy').copy
+    var extend = _dereq_('./extend')
+    var copy   = _dereq_('../utils/copy').copy
 
-    //other declarations
     var hasOwnProperty = Object.prototype.hasOwnProperty
+    var canDefineProperty = _dereq_('./canDefineProperty')
+    var canGetOwnPropertyDescriptor = _dereq_('./canGetOwnPropertyDescriptor')
 
-    var buildSuperFn      = ClassFunctionBuilder.buildSuperFn
-    var buildOverridenFn  = ClassFunctionBuilder.buildOverridenFn
-
-    var canDefineProperty = (function(){
-            var o = {}
-
-            try {
-                Object.defineProperty(o, 'name', {
-                    value: 'x'
-                })
-
-                return true
-            } catch (ex) { }
-
-            return false
-
-        })()
+    var getOwnPropertyDescriptor = canGetOwnPropertyDescriptor? Object.getOwnPropertyDescriptor: null
 
     var Base = function(){}
 
-    Base.prototype = {
+    Base.prototype.init = function(){
+        return this
+    }
 
-        init: function(){
-            return this
-        },
-
-        self: function(){
-            return this
-        }
+    Base.prototype.self = function(){
+        return this
     }
 
     function prepareSingletonStatics(statics){
@@ -275,7 +407,7 @@ module.exports = function(){
         statics.getInstance = function(){
 
             if (!this.INSTANCE){
-                this.INSTANCE = getInstantiatorFunction(arguments.length)(this, arguments)
+                this.INSTANCE = newify(this, arguments)
             }
 
             return this.INSTANCE
@@ -301,7 +433,11 @@ module.exports = function(){
 
         function Class(){
             if (!(this instanceof Class) && Class.prototype.forceInstance){
-                return new getInstantiatorFunction(arguments.length)(Class, arguments)
+                return newify(Class, arguments)
+            }
+
+            if (!this){
+                throw 'Cannot call class constructor with undefined context.'
             }
 
             if (this.singleton){
@@ -318,13 +454,13 @@ module.exports = function(){
         extend(Parent, Class)
 
         //remove statics from config
-        var statics = config.statics || {},
-            $own    = statics.$own
+        var statics = config.statics || {}
+        var $own    = statics.$own
 
         statics.$own   = null
         config.statics = null
 
-        Class.$initialConfig = copyClassConfig( Class, config)
+        Class.$initialConfig = copyClassConfig(Class, config)
 
         if (config.singleton){
             prepareSingletonStatics(statics)
@@ -361,55 +497,7 @@ module.exports = function(){
         return Class
     }
 
-    var assignClassProperty = (function(){
-
-        var callSuperRe     = /\bcallSuper|callSuperWith\b/,
-            callOverridenRe = /\bcallOverriden|callOverridenWith\b/
-
-        return function(Class, propName, propValue, config){
-
-            var target      = config.proto?
-                                Class.prototype:
-                                Class
-            var superClass  = Class.$superClass
-            var superTarget = config.proto?
-                                superClass.prototype:
-                                superClass
-            var own = config.own
-
-
-            if (typeof propValue == 'function'){
-
-                var hasCallSuper     = callSuperRe.test    (propValue),
-                    hasCallOverriden = callOverridenRe.test(propValue)
-
-                if ( hasCallSuper ){
-                    propValue = buildSuperFn(propName, propValue, superTarget, superClass)
-                }
-
-                if ( hasCallOverriden ){
-                    propValue = buildOverridenFn(propName, propValue, target)
-                }
-            }
-
-            if (own){
-                if (canDefineProperty){
-                    Object.defineProperty(target, propName, {
-                        value      : propValue,
-                        enumerable : false
-                    })
-                } else {
-                    target[propName] = propValue
-                }
-
-            } else {
-                target[propName] = propValue
-            }
-
-            return propValue
-        }
-
-    })()
+    var assignClassProperty = _dereq_('./assignClassProperty')
 
     function copyClassConfig(Class, config, targetConfig, resultConfig){
         targetConfig = targetConfig || { proto: true }
@@ -419,9 +507,11 @@ module.exports = function(){
             own          = !canDefineProperty && targetConfig.own,
             configOwn    = config.$own,
             skipOwn      = !canDefineProperty && targetConfig.skipOwn && configOwn,
-            skipProps    = targetConfig.skipProps,
+            skipProps    = targetConfig.skipProps
 
-            key, value, keyResult
+        var key
+        var valueDescriptor
+        var keyResult
 
         for (key in config) if (hasOwnProperty.call(config, key)) {
 
@@ -434,9 +524,11 @@ module.exports = function(){
                 continue
             }
 
-            value = config[key]
+            valueDescriptor = canGetOwnPropertyDescriptor?
+                                    getOwnPropertyDescriptor(config, key):
+                                    config[key]
 
-            keyResult = assignClassProperty(Class, key, value, targetConfig)
+            keyResult = assignClassProperty(Class, key, valueDescriptor, targetConfig)
 
             if (own){
                 result[key] = 1
@@ -479,20 +571,48 @@ module.exports = function(){
     }
 
     return {
-        canDefineProperty : canDefineProperty,
-        extend          : extend,
-        createClass     : createClass,
-        overrideClass   : overrideClass,
+        canDefineProperty: canDefineProperty,
+        extend           : extend,
+        createClass      : createClass,
+        overrideClass    : overrideClass,
 
-        copyClassConfig : copyClassConfig,
-        BaseClass       : Base
+        copyClassConfig  : copyClassConfig,
+        BaseClass        : Base
     }
 }()
-},{"../utils/copy":22,"../utils/getInstantiatorFunction":24,"./buildClassFunctions":3,"./extend":4}],6:[function(_dereq_,module,exports){
+},{"../utils/copy":28,"./assignClassProperty":5,"./canDefineProperty":7,"./canGetOwnPropertyDescriptor":8,"./extend":9,"newify":2}],11:[function(_dereq_,module,exports){
+var callSuperRe     = /\bcallSuper|callSuperWith\b/
+var callOverridenRe = /\bcallOverriden|callOverridenWith\b/
+
+var ClassFunctionBuilder = _dereq_('./buildClassFunctions')
+var buildSuperFn         = ClassFunctionBuilder.buildSuperFn
+var buildOverridenFn     = ClassFunctionBuilder.buildOverridenFn
+
+var emptyObject = {}
+
+function modify(name, fn, superTarget, superClass, target, getterSetterConfig){
+    var hasCallSuper     = callSuperRe.test    (fn)
+    var hasCallOverriden = callOverridenRe.test(fn)
+
+    getterSetterConfig = getterSetterConfig || {}
+
+    if ( hasCallSuper ){
+        fn = buildSuperFn(name, fn, superTarget, superClass, getterSetterConfig)
+    }
+
+    if ( hasCallOverriden ){
+        fn = buildOverridenFn(name, fn, target, getterSetterConfig)
+    }
+
+    return fn
+}
+
+module.exports = modify
+},{"./buildClassFunctions":6}],12:[function(_dereq_,module,exports){
 var SLICE = Array.prototype.slice
 
 var getClass = _dereq_('./getClass')
-var getInstantiatorFunction = _dereq_('./utils/getInstantiatorFunction')
+var newify   = _dereq_('newify')
 
 /**
  * @method create
@@ -519,9 +639,9 @@ module.exports = function(alias /* args... */){
     var Class = getClass(alias)
     var args  = SLICE.call(arguments, 1)
 
-    return getInstantiatorFunction(args.length)(Class, args)
+    return newify(Class, args)
 }
-},{"./getClass":11,"./utils/getInstantiatorFunction":24}],7:[function(_dereq_,module,exports){
+},{"./getClass":17,"newify":2}],13:[function(_dereq_,module,exports){
 var getClass     = _dereq_('./getClass')
 var processClass = _dereq_('./processClass')
 
@@ -577,7 +697,7 @@ module.exports = function(parentClass, classConfig){
         processClass(Class)
     })
 }
-},{"./Registry":2,"./core":5,"./getClass":11,"./processClass":18,"./processors/ClassProcessor":19}],8:[function(_dereq_,module,exports){
+},{"./Registry":4,"./core":10,"./getClass":17,"./processClass":24,"./processors/ClassProcessor":25}],14:[function(_dereq_,module,exports){
 var define = _dereq_('./define')
 var copyIf = _dereq_('./utils/copy').copyIf
 
@@ -587,7 +707,7 @@ module.exports = function(members){
 
     return define(copyIf({ extend: 'z.mixin'}, members))
 }
-},{"./define":7,"./utils/copy":22}],9:[function(_dereq_,module,exports){
+},{"./define":13,"./utils/copy":28}],15:[function(_dereq_,module,exports){
 /**
  * @method destroyClass
  *
@@ -611,7 +731,7 @@ module.exports = function(Class){
         Class.destroy()
     }
 }
-},{"./core":5,"./getClass":11}],10:[function(_dereq_,module,exports){
+},{"./core":10,"./getClass":17}],16:[function(_dereq_,module,exports){
 var define = _dereq_('./define')
 
 module.exports = function(config){
@@ -625,7 +745,7 @@ module.exports = function(config){
 
     return define(config)
 }
-},{"./define":7}],11:[function(_dereq_,module,exports){
+},{"./define":13}],17:[function(_dereq_,module,exports){
 /**
  * @method getClass
  *
@@ -653,7 +773,7 @@ module.exports = function getClass(alias){
     return REGISTRY[alias]
 
 }
-},{"./Registry":2,"./core":5}],12:[function(_dereq_,module,exports){
+},{"./Registry":4,"./core":10}],18:[function(_dereq_,module,exports){
 var BaseClass = _dereq_('./core').BaseClass
 var getClass  = _dereq_('./getClass')
 
@@ -697,7 +817,7 @@ module.exports = function(config){
 
     return new klass(config)
 }
-},{"./core":5,"./getClass":11}],13:[function(_dereq_,module,exports){
+},{"./core":10,"./getClass":17}],19:[function(_dereq_,module,exports){
 var BaseClass = _dereq_('./core').BaseClass
 var getClass  = _dereq_('./getClass')
 
@@ -723,7 +843,7 @@ module.exports = function(alias){
         return Class
     }
 }
-},{"./core":5,"./getClass":11}],14:[function(_dereq_,module,exports){
+},{"./core":10,"./getClass":17}],20:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -781,7 +901,7 @@ module.exports = function(){
         isClassLike        : isSameOrSubclassOf
     }
 }()
-},{"./Mixin":1,"./Registry":2,"./core":5,"./create":6,"./define":7,"./defineMixin":8,"./destroyClass":9,"./getClass":11,"./getInstance":12,"./getParentClass":13,"./isSubclassOf":15,"./override":16,"./processors/MixinProcessor":20,"./utils/copy":22}],15:[function(_dereq_,module,exports){
+},{"./Mixin":3,"./Registry":4,"./core":10,"./create":12,"./define":13,"./defineMixin":14,"./destroyClass":15,"./getClass":17,"./getInstance":18,"./getParentClass":19,"./isSubclassOf":21,"./override":22,"./processors/MixinProcessor":26,"./utils/copy":28}],21:[function(_dereq_,module,exports){
 var getClass = _dereq_('./getClass')
 
 module.exports = function(subClass, superClass, config){
@@ -805,7 +925,7 @@ module.exports = function(subClass, superClass, config){
 
     return !!subClass
 }
-},{"./getClass":11}],16:[function(_dereq_,module,exports){
+},{"./getClass":17}],22:[function(_dereq_,module,exports){
 var getClass = _dereq_('./getClass')
 
 /**
@@ -836,7 +956,7 @@ module.exports = function(Class, classConfig){
 
     return TheClass
 }
-},{"./getClass":11}],17:[function(_dereq_,module,exports){
+},{"./getClass":17}],23:[function(_dereq_,module,exports){
 module.exports = function(config){
 
     'use strict'
@@ -844,7 +964,7 @@ module.exports = function(config){
     //this refers to a Class
     return _dereq_('./core').overrideClass(this, config)
 }
-},{"./core":5}],18:[function(_dereq_,module,exports){
+},{"./core":10}],24:[function(_dereq_,module,exports){
 var copyKeys = _dereq_('./utils/copy').copyKeys
 
 function aliasMethods(config){
@@ -885,7 +1005,7 @@ module.exports = function(Class){
         Class.init()
     }
 }
-},{"./extendClass":10,"./overrideClass":17,"./processors/ClassProcessor":19,"./unregisterClass":21,"./utils/copy":22}],19:[function(_dereq_,module,exports){
+},{"./extendClass":16,"./overrideClass":23,"./processors/ClassProcessor":25,"./unregisterClass":27,"./utils/copy":28}],25:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -926,7 +1046,7 @@ module.exports = function(){
 
     return result
 }()
-},{"./MixinProcessor":20}],20:[function(_dereq_,module,exports){
+},{"./MixinProcessor":26}],26:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -1313,7 +1433,7 @@ module.exports = function(){
 
     }
 }()
-},{"../core":5,"../getClass":11,"../utils/copy":22,"../utils/function":23}],21:[function(_dereq_,module,exports){
+},{"../core":10,"../getClass":17,"../utils/copy":28,"../utils/function":29}],27:[function(_dereq_,module,exports){
 var REGISTRY = _dereq_('./Registry')
 
 module.exports = function unregisterClass(){
@@ -1327,7 +1447,7 @@ module.exports = function unregisterClass(){
 
     delete REGISTRY[alias]
 }
-},{"./Registry":2}],22:[function(_dereq_,module,exports){
+},{"./Registry":4}],28:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -1670,7 +1790,7 @@ module.exports = function(){
     }
 
 }()
-},{}],23:[function(_dereq_,module,exports){
+},{}],29:[function(_dereq_,module,exports){
 module.exports = function(){
 
     var SLICE = Array.prototype.slice
@@ -1727,35 +1847,6 @@ module.exports = function(){
         bindArgsArray: bindArgsArray
     }
 }()
-},{}],24:[function(_dereq_,module,exports){
-module.exports = function(){
-
-    'use strict';
-
-    var fns = {}
-
-    return function(len){
-
-        if ( ! fns [len ] ) {
-
-            var args = [],
-                i    = 0
-
-            for (; i < len; i++ ) {
-                args.push( 'a[' + i + ']')
-            }
-
-            fns[len] = new Function(
-                            'c',
-                            'a',
-                            'return new c(' + args.join(',') + ')'
-                        )
-        }
-
-        return fns[len]
-    }
-
-}()
-},{}]},{},[14])
-(14)
+},{}]},{},[20])
+(20)
 });

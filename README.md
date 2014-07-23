@@ -253,6 +253,34 @@ setHeight: function(h){
 //...
 ```
 
+## Getters and setters
+
+You can use getters and setters on ```classy``` defined classes. They even work well with ```callSuper``` and ```callOverriden```
+
+```js
+var Randomer = classy.define({
+    min: 0,
+    max: 10,
+
+    //returns a random float
+    get random(){
+        return Math.random() * (this.max - this.min) + this.min
+    }
+})
+
+Randomer.override({
+    //returns a random int
+    get random(){
+        return Math.floor(
+                    this.callOverriden() //call overriden method
+                )
+    }
+})
+
+var r = new Randomer()
+r.random // generates a random int between 0 and 10
+```
+
 ## forceInstance
 
 You may want your classes to be usable without the `new` operator. Just specify `forceInstance: true` on the class prototype, and the constructor will be called with `new` if it hasn't been
@@ -266,7 +294,7 @@ var Vehicle = class.define({
         this.name = name
     }
 })
-var v = Vehicle('car')  // since 'forceInstance' is true, 
+var v = Vehicle('car')  // since 'forceInstance' is true,
                         //the Vehicle will be called as a constructor under the hood, so new Vehicle('car')
 ```
 ## Mixins
@@ -415,8 +443,17 @@ w.id === 1
 
 On every instance, you can use the $ownClass property in order to get a reference to the class that created the instance.
 
+## Building
+
+In order to build a browser version, run ```npm run build```.
+
+This will use browserify to make a one-file browser build, which you can find in ```dist/classy.js```
+
 ## Testing
 
 After cloning the repo, make sure you ```npm install```.
 
-Then just run ```npm run test```
+Then just run ```npm run test``` or ```make```.
+Make sure you build before you test, since testing is done on a browser build, with karma test runner. To build, ```npm run build```
+
+

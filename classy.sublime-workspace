@@ -1,0 +1,685 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"prop",
+				"propDescriptor"
+			],
+			[
+				"super",
+				"superClass"
+			],
+			[
+				"mo",
+				"modifyFn"
+			],
+			[
+				"get",
+				"getterOrSetter"
+			],
+			[
+				"can",
+				"canGetOwnPropertyDescriptor"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "test/ClassGetterTests.js",
+			"settings":
+			{
+				"buffer_size": 1047,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/define.js",
+			"settings":
+			{
+				"buffer_size": 1278,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Makefile",
+			"settings":
+			{
+				"buffer_size": 277,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/core/modifyFn.js",
+			"settings":
+			{
+				"buffer_size": 683,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/create.js",
+			"settings":
+			{
+				"buffer_size": 925,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/core/canGetOwnPropertyDescriptor.js",
+			"settings":
+			{
+				"buffer_size": 152,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/core/assignClassProperty.js",
+			"settings":
+			{
+				"buffer_size": 1789,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/core/buildClassFunctions.js",
+			"settings":
+			{
+				"buffer_size": 4171,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "node_modules/newify/index.js",
+			"settings":
+			{
+				"buffer_size": 161,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 172.0,
+		"selected_items":
+		[
+			[
+				"dup",
+				"File: Duplicate"
+			],
+			[
+				"ss jvascr",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ren",
+				"File: Rename"
+			],
+			[
+				"delete",
+				"File: Delete"
+			],
+			[
+				"re",
+				"File: Rename"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/radu/code/classy/dist/classy.js",
+		"/home/radu/code/classy/zippy-class.sublime-project",
+		"/home/radu/code/classy/src/processors/ClassProcessor.js",
+		"/home/radu/code/classy/test/ClassCreateTests.js",
+		"/home/radu/code/classy/src/core/index.js",
+		"/home/radu/code/classy/exportClassy.js",
+		"/home/radu/code/classy/test/mixins/MixinWithStaticMethodsTests.js",
+		"/home/radu/code/classy/src/index.js",
+		"/home/radu/code/classy/src/create.js",
+		"/home/radu/code/classy/test/mixins/MixinWithStaticsTests.js",
+		"/home/radu/code/classy/src/utils/getInstantiatorFunction.js",
+		"/home/radu/code/classy/src/core/canDefineProperty.js",
+		"/home/radu/code/classy/test/ClassInheritanceTests.js",
+		"/home/radu/code/classy/classy.sublime-project",
+		"/home/radu/code/classy/node_modules/browserify/node_modules/derequire/test/cjs-lazy.js",
+		"/home/radu/code/classy/package.json",
+		"/home/radu/code/classy/node_modules/karma/credentials",
+		"/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/convert-source-map/test/comment-regex.js",
+		"/home/radu/code/classy/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/ClassicReduction.as",
+		"/home/radu/code/classy/node_modules/newify/getInstantiatorFunction",
+		"/home/radu/code/classy/src/getInstance.js",
+		"/home/radu/code/classy/node_modules/browserify/node_modules/insert-module-globals/example/files/foo/index.js",
+		"/home/radu/code/classy/node_modules/newify/index.js",
+		"/home/radu/code/classy/node_modules/browserify/example/source_maps/index.html",
+		"/home/radu/code/classy/node_modules/browserify/index.js",
+		"/home/radu/code/classy/node_modules/karma/node_modules/minimatch/test/extglob-ending-with-state-char.js",
+		"/home/radu/code/classy/node_modules/karma/lib/emitter_wrapper.js",
+		"/home/radu/code/classy/node_modules/browserify/node_modules/buffer/perf/comparison/new.js",
+		"/home/radu/code/classy/node_modules/browserify/test/no_builtins.js",
+		"/home/radu/code/classy/src/getClass.js",
+		"/home/radu/code/classy/node_modules/should/gulpfile.js",
+		"/home/radu/code/classy/node_modules/karma/integration-tests/coverage-mocha-requirejs/dependency.js",
+		"/home/radu/code/classy/node_modules/browserify/test/dep.js",
+		"/home/radu/code/classy/src/core/buildClassFunctions.js",
+		"/home/radu/code/classy/node_modules/browserify/example/api/build.js",
+		"/home/radu/code/classy/node_modules/browserify/lib/builtins.js",
+		"/home/radu/code/classy/node_modules/browserify/test/multi_bundle_unique.js",
+		"/home/radu/code/classy/node_modules/.bin/browserify",
+		"/home/radu/code/classy/src/core/extend.js",
+		"/home/radu/code/classy/src/extendClass.js",
+		"/home/radu/code/classy/node_modules/karma/node_modules/connect/lib/utils.js",
+		"/home/radu/code/classy/node_modules/browserify/test/util.js",
+		"/home/radu/code/classy/node_modules/karma/node_modules/http-proxy/node_modules/utile/test/utile-test.js",
+		"/home/radu/code/classy/src/unregisterClass.js",
+		"/home/radu/code/classy/node_modules/watchify/index.js",
+		"/home/radu/code/classy/node_modules/karma-chrome-launcher/index.js",
+		"/home/radu/code/classy/index.html",
+		"/home/radu/.bashrc",
+		"/home/radu/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/radu/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/home/radu/code/classy"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"propName",
+			"supertarget",
+			"propValue",
+			"Base",
+			"ClassFunctionBuilder",
+			"buildOverridenFn",
+			"buildSuperFn",
+			"canDefineProperty",
+			"assignClassProperty",
+			"getOwnPropertyDescriptor",
+			"assignClassProperty",
+			"<debug",
+			"getInstantiatorFunction",
+			"copyClassConfig",
+			"getInstantiatorFunction",
+			"extend",
+			"toupperfirst",
+			"font"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "test/ClassGetterTests.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								597,
+								597
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/define.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1278,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								130,
+								130
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/core/modifyFn.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 683,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								544,
+								544
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/create.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 925,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								740,
+								740
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "src/core/canGetOwnPropertyDescriptor.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								152,
+								152
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/core/assignClassProperty.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								906,
+								906
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/core/buildClassFunctions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4171,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								120,
+								120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "node_modules/newify/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 161,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": -0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.445729570936,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 413.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "classy.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"class",
+				"dist/classy.js"
+			],
+			[
+				"classfunction",
+				"src/core/buildClassFunctions.js"
+			],
+			[
+				"classcreate",
+				"test/ClassCreateTests.js"
+			],
+			[
+				"pa",
+				"package.json"
+			],
+			[
+				"create",
+				"src/create.js"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"getinsta",
+				"node_modules/newify/getInstantiatorFunction"
+			],
+			[
+				"newifyindex",
+				"node_modules/newify/index.js"
+			],
+			[
+				"getin",
+				"src/utils/getInstantiatorFunction.js"
+			],
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"buildcl",
+				"src/core/buildClassFunctions.js"
+			],
+			[
+				"exte",
+				"src/core/extend.js"
+			],
+			[
+				"make",
+				"Makefile"
+			],
+			[
+				"index",
+				"src/index.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/code/alchemy/alchemy.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 675.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 374.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

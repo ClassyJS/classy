@@ -3,18 +3,34 @@ module.exports = function(){
     'use strict'
 
     var emptyFn = function(){}
+    var getDescriptor = Object.getOwnPropertyDescriptor
 
-    function buildSuperFn(name, fn, host, superClass){
+    function buildSuperFn(name, fn, superHost, superClass, getterSetterConfig){
 
         function execute(args){
-            var fn   = host[name]
+
+            var accessor = getterSetterConfig.getter?
+                                'get':
+                                getterSetterConfig.setter?
+                                    'set':
+                                    null
+            var descriptor = accessor?
+                                getDescriptor(superHost, name):
+                                null
+
+            var fn   = accessor?
+                            descriptor? descriptor[accessor]: null
+                            :
+                            superHost[name]
+
+
             var isFn = typeof fn == 'function'
 
             if (!isFn && name == 'init'){
-                //if the superClass is not from the ZippyClass registry,
+                //if the superClass is not from the classy registry,
                 //it means it is a simple function and we accept those as well
                 if (!superClass.$superClass){
-                    fn = superClass
+                    fn   = superClass
                     isFn = true
                 }
             }
@@ -25,9 +41,9 @@ module.exports = function(){
         }
 
         return function() {
-            var tmpSuper     = this.callSuper,
-                tmpSuperWith = this.callSuperWith,
-                args         = arguments
+            var tmpSuper     = this.callSuper
+            var tmpSuperWith = this.callSuperWith
+            var args         = arguments
 
             /*
              * Use callSuperWith method in order to pass in different parameter values from those that have been used
@@ -59,9 +75,22 @@ module.exports = function(){
         }
     }
 
-    function buildOverridenFn(name, currentFn, host){
+    function buildOverridenFn(name, currentFn, host, getterSetterConfig){
 
-        var overridenFn = host[name]
+        var accessor = getterSetterConfig.getter?
+                            'get':
+                            getterSetterConfig.setter?
+                                'set':
+                                null
+
+        var descriptor = accessor?
+                            getDescriptor(host, name):
+                            null
+
+        var overridenFn = accessor?
+                            descriptor? descriptor[accessor]: null
+                            :
+                            host[name]
 
         if (typeof overridenFn == 'undefined') {
             //this check is needed for the following scenario - if a method is overriden, and it also calls

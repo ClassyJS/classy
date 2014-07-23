@@ -39,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/zippyui/classy/issues"
   },
-  "homepage": "https://github.com/zippyui/classy"
+  "homepage": "https://github.com/zippyui/classy",
+  "dependencies": {
+    "newify": "~1.1.3"
+  }
 }

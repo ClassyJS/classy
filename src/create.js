@@ -1,7 +1,7 @@
 var SLICE = Array.prototype.slice
 
 var getClass = require('./getClass')
-var getInstantiatorFunction = require('./utils/getInstantiatorFunction')
+var newify   = require('newify')
 
 /**
  * @method create
@@ -28,5 +28,5 @@ module.exports = function(alias /* args... */){
     var Class = getClass(alias)
     var args  = SLICE.call(arguments, 1)
 
-    return getInstantiatorFunction(args.length)(Class, args)
+    return newify(Class, args)
 }

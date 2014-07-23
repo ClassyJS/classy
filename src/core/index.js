@@ -2,45 +2,25 @@ module.exports = function(){
 
     'use strict'
 
-    //requirements
-    var ClassFunctionBuilder    = require('./buildClassFunctions')
-    var extend                  = require('./extend')
+    var newify = require('newify')
 
-    var getInstantiatorFunction = require('../utils/getInstantiatorFunction')
-    var copy                    = require('../utils/copy').copy
+    var extend = require('./extend')
+    var copy   = require('../utils/copy').copy
 
-    //other declarations
     var hasOwnProperty = Object.prototype.hasOwnProperty
+    var canDefineProperty = require('./canDefineProperty')
+    var canGetOwnPropertyDescriptor = require('./canGetOwnPropertyDescriptor')
 
-    var buildSuperFn      = ClassFunctionBuilder.buildSuperFn
-    var buildOverridenFn  = ClassFunctionBuilder.buildOverridenFn
-
-    var canDefineProperty = (function(){
-            var o = {}
-
-            try {
-                Object.defineProperty(o, 'name', {
-                    value: 'x'
-                })
-
-                return true
-            } catch (ex) { }
-
-            return false
-
-        })()
+    var getOwnPropertyDescriptor = canGetOwnPropertyDescriptor? Object.getOwnPropertyDescriptor: null
 
     var Base = function(){}
 
-    Base.prototype = {
+    Base.prototype.init = function(){
+        return this
+    }
 
-        init: function(){
-            return this
-        },
-
-        self: function(){
-            return this
-        }
+    Base.prototype.self = function(){
+        return this
     }
 
     function prepareSingletonStatics(statics){
@@ -49,7 +29,7 @@ module.exports = function(){
         statics.getInstance = function(){
 
             if (!this.INSTANCE){
-                this.INSTANCE = getInstantiatorFunction(arguments.length)(this, arguments)
+                this.INSTANCE = newify(this, arguments)
             }
 
             return this.INSTANCE
@@ -75,7 +55,11 @@ module.exports = function(){
 
         function Class(){
             if (!(this instanceof Class) && Class.prototype.forceInstance){
-                return new getInstantiatorFunction(arguments.length)(Class, arguments)
+                return newify(Class, arguments)
+            }
+
+            if (!this){
+                throw 'Cannot call class constructor with undefined context.'
             }
 
             if (this.singleton){
@@ -92,13 +76,13 @@ module.exports = function(){
         extend(Parent, Class)
 
         //remove statics from config
-        var statics = config.statics || {},
-            $own    = statics.$own
+        var statics = config.statics || {}
+        var $own    = statics.$own
 
         statics.$own   = null
         config.statics = null
 
-        Class.$initialConfig = copyClassConfig( Class, config)
+        Class.$initialConfig = copyClassConfig(Class, config)
 
         if (config.singleton){
             prepareSingletonStatics(statics)
@@ -135,55 +119,7 @@ module.exports = function(){
         return Class
     }
 
-    var assignClassProperty = (function(){
-
-        var callSuperRe     = /\bcallSuper|callSuperWith\b/,
-            callOverridenRe = /\bcallOverriden|callOverridenWith\b/
-
-        return function(Class, propName, propValue, config){
-
-            var target      = config.proto?
-                                Class.prototype:
-                                Class
-            var superClass  = Class.$superClass
-            var superTarget = config.proto?
-                                superClass.prototype:
-                                superClass
-            var own = config.own
-
-
-            if (typeof propValue == 'function'){
-
-                var hasCallSuper     = callSuperRe.test    (propValue),
-                    hasCallOverriden = callOverridenRe.test(propValue)
-
-                if ( hasCallSuper ){
-                    propValue = buildSuperFn(propName, propValue, superTarget, superClass)
-                }
-
-                if ( hasCallOverriden ){
-                    propValue = buildOverridenFn(propName, propValue, target)
-                }
-            }
-
-            if (own){
-                if (canDefineProperty){
-                    Object.defineProperty(target, propName, {
-                        value      : propValue,
-                        enumerable : false
-                    })
-                } else {
-                    target[propName] = propValue
-                }
-
-            } else {
-                target[propName] = propValue
-            }
-
-            return propValue
-        }
-
-    })()
+    var assignClassProperty = require('./assignClassProperty')
 
     function copyClassConfig(Class, config, targetConfig, resultConfig){
         targetConfig = targetConfig || { proto: true }
@@ -193,9 +129,11 @@ module.exports = function(){
             own          = !canDefineProperty && targetConfig.own,
             configOwn    = config.$own,
             skipOwn      = !canDefineProperty && targetConfig.skipOwn && configOwn,
-            skipProps    = targetConfig.skipProps,
+            skipProps    = targetConfig.skipProps
 
-            key, value, keyResult
+        var key
+        var valueDescriptor
+        var keyResult
 
         for (key in config) if (hasOwnProperty.call(config, key)) {
 
@@ -208,9 +146,11 @@ module.exports = function(){
                 continue
             }
 
-            value = config[key]
+            valueDescriptor = canGetOwnPropertyDescriptor?
+                                    getOwnPropertyDescriptor(config, key):
+                                    config[key]
 
-            keyResult = assignClassProperty(Class, key, value, targetConfig)
+            keyResult = assignClassProperty(Class, key, valueDescriptor, targetConfig)
 
             if (own){
                 result[key] = 1
@@ -253,12 +193,12 @@ module.exports = function(){
     }
 
     return {
-        canDefineProperty : canDefineProperty,
-        extend          : extend,
-        createClass     : createClass,
-        overrideClass   : overrideClass,
+        canDefineProperty: canDefineProperty,
+        extend           : extend,
+        createClass      : createClass,
+        overrideClass    : overrideClass,
 
-        copyClassConfig : copyClassConfig,
-        BaseClass       : Base
+        copyClassConfig  : copyClassConfig,
+        BaseClass        : Base
     }
 }()
