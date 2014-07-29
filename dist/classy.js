@@ -732,16 +732,17 @@ module.exports = function(Class){
     }
 }
 },{"./core":10,"./getClass":17}],16:[function(_dereq_,module,exports){
-var define = _dereq_('./define')
 
 module.exports = function(config){
 
     'use strict'
 
+    var define = _dereq_('./define')
+
     //this refers to a Class
 
     config = config || {}
-    config.extend = config.extend || this.alias
+    config.extend = config.extend || this.prototype.alias
 
     return define(config)
 }

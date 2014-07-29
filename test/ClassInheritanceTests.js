@@ -124,5 +124,19 @@ describe('classes should be created and extended by using "alias" and "extend" '
         expect(c instanceof Car).toBe(true)
         expect(c instanceof Vehicle).toBe(true)
     })
+
+    it('should work with extend being called on superclass', function(){
+        var Vehicle = root.define({
+            speed: 10
+        })
+
+        var Car = Vehicle.extend({
+            name: 'car'
+        })
+
+        var c = new Car()
+
+        expect(c instanceof Vehicle).toBe(true)
+    })
 })
 
