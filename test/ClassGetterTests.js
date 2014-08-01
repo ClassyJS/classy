@@ -46,6 +46,143 @@ describe('classes should allow property getters/setters ', function(){
         expect(c.speed).toBe(22)
     })
 
+    it('should work properly for setter', function(){
+
+        var Vehicle = root.define({
+
+            _speed: 10,
+
+            get speed(){
+                return this._speed
+            },
+
+            set speed(s){
+                this._speed = s
+            }
+        })
+
+        var v = new Vehicle()
+        expect(v.speed).toBe(10)
+        expect(v._speed).toBe(10)
+        v.speed = 1
+        expect(v._speed).toBe(1)
+
+        var Car = root.define({
+            extend: Vehicle,
+            _speed: 100,
+
+            get speed(){
+                return this.callSuper() * 2
+            }
+        })
+
+        var c = new Car()
+        c.speed = 2
+
+        expect(c._speed).toBe(2)
+        expect(c.speed).toBe(4)
+    })
+
+    it('should work properly for setters defined in classes 2 levels above', function(){
+
+        var Vehicle = root.define({
+
+            _speed: 10,
+
+            get speed(){
+                return this._speed + 'km'
+            },
+
+            set speed(s){
+                this._speed = s
+            }
+        })
+
+        var Car = root.define({
+            extend: Vehicle
+        })
+
+        var SpeedCar = root.define({
+            extend: Car
+        })
+
+        var lotus = new SpeedCar()
+        lotus.speed = 250
+
+        expect(lotus.speed).toBe('250km')
+        expect(lotus._speed).toBe(250)
+
+        var TopSpeedCar = root.define({
+            extend: SpeedCar,
+            set speed(s){
+                this.callSuperWith(2*s)
+            }
+        })
+
+        var ferrari = new TopSpeedCar()
+
+        expect(ferrari._speed).toBe(10)
+        expect(ferrari.speed).toBe('10km')
+        ferrari.speed = 200
+        expect(ferrari._speed).toBe(400)
+        expect(ferrari.speed).toBe('400km')
+
+    })
+
+    it('should work properly for setters defined - case 2', function(){
+
+        var Vehicle = root.define({
+
+            _speed: 10,
+
+            get speed(){
+                return this._speed + 'km'
+            },
+
+            set speed(s){
+                this._speed = s
+            }
+        })
+
+        var Car = root.define({
+            extend: Vehicle,
+            get speed(){
+                return this._speed + 'miles'
+            }
+        })
+
+        var c = new Car()
+
+        c.speed = 1
+        expect(c.speed).toBe('1miles')
+
+        var SpeedCar = root.define({
+            extend: Car
+        })
+
+        var lotus = new SpeedCar()
+        lotus.speed = 250
+
+        expect(lotus.speed).toBe('250miles')
+        expect(lotus._speed).toBe(250)
+
+        var TopSpeedCar = root.define({
+            extend: SpeedCar,
+            set speed(s){
+                this.callSuperWith(2*s)
+            }
+        })
+
+        var ferrari = new TopSpeedCar()
+
+        expect(ferrari._speed).toBe(10)
+        expect(ferrari.speed).toBe('10miles')
+        ferrari.speed = 200
+        expect(ferrari._speed).toBe(400)
+        expect(ferrari.speed).toBe('400miles')
+
+    })
+
     it('should use getter with call overriden', function(){
         var Vehicle = root.define({
 
@@ -116,6 +253,16 @@ describe('classes should allow property getters/setters ', function(){
         })
 
         expect(BrowserSession.duration).toBe(30)
+    })
+
+    it('should not call getters on define', function(){
+        root.define({
+            alias: 'adsdsaf3',
+            get test(){
+                expect(1).toBe(2)
+                this.x()
+            }
+        })
     })
 
 })

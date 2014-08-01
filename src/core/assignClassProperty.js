@@ -3,7 +3,8 @@
 var copy = require('../utils/copy').copy
 var modifyFn = require('./modifyFn')
 
-var canDefineProperty    = require('./canDefineProperty')
+var canDefineProperty           = require('./canDefineProperty')
+var canGetOwnPropertyDescriptor = require('./canGetOwnPropertyDescriptor')
 
 var assignClassProperty = function(Class, propName, propDescriptor, config){
 
@@ -15,7 +16,20 @@ var assignClassProperty = function(Class, propName, propDescriptor, config){
     var superTarget = config.proto?
                         superClass.prototype:
                         superClass
+
     var own = config.own
+    var targetPropDescriptor
+
+    if (canGetOwnPropertyDescriptor && (propDescriptor.get === undefined || propDescriptor.set == undefined)){
+        targetPropDescriptor = Object.getOwnPropertyDescriptor(target, propName)
+
+        if (targetPropDescriptor && propDescriptor.get === undefined && targetPropDescriptor.get !== undefined){
+            propDescriptor.get = targetPropDescriptor.get
+        }
+        if (targetPropDescriptor && propDescriptor.set === undefined && targetPropDescriptor.set !== undefined){
+            propDescriptor.set = targetPropDescriptor.set
+        }
+    }
 
     var getterOrSetter = propDescriptor.get || propDescriptor.set
     var newPropDescriptor
@@ -28,7 +42,7 @@ var assignClassProperty = function(Class, propName, propDescriptor, config){
             newPropDescriptor.get = modifyFn(propName, propDescriptor.get, superTarget, superClass, target, { getter: true })
         }
         if (propDescriptor.set !== undefined){
-            newPropDescriptor.set = modifyFn(propName, propDescriptor.get, superTarget, superClass, target, { setter: true })
+            newPropDescriptor.set = modifyFn(propName, propDescriptor.set, superTarget, superClass, target, { setter: true })
         }
         propDescriptor = newPropDescriptor
     } else {

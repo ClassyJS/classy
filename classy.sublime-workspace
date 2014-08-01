@@ -36,10 +36,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/define.js",
+			"file": "test/ClassInheritanceTests.js",
 			"settings":
 			{
-				"buffer_size": 1278,
+				"buffer_size": 3340,
 				"line_ending": "Unix"
 			}
 		},
@@ -68,6 +68,14 @@
 			}
 		},
 		{
+			"file": "bower.json",
+			"settings":
+			{
+				"buffer_size": 560,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/core/modifyFn.js",
 			"settings":
 			{
@@ -84,42 +92,36 @@
 			}
 		},
 		{
+			"contents": "Searching 4012 files for \"this refers to a class\"\n\n/home/radu/code/classy/dist/classy.js:\n  739      'use strict'\n  740  \n  741:     //this refers to a Class\n  742  \n  743      config = config || {}\n  ...\n  962      'use strict'\n  963  \n  964:     //this refers to a Class\n  965      return _dereq_('./core').overrideClass(this, config)\n  966  }\n  ...\n  969  \n  970  function aliasMethods(config){\n  971:     //this refers to a class\n  972      copyKeys(this.prototype, this.prototype, config)\n  973      \n  ...\n 1441      'use strict'\n 1442  \n 1443:     //this refers to a Class\n 1444  \n 1445      var alias = this.prototype.alias\n\n/home/radu/code/classy/src/extendClass.js:\n    5      'use strict'\n    6  \n    7:     //this refers to a Class\n    8  \n    9      config = config || {}\n\n/home/radu/code/classy/src/overrideClass.js:\n    3      'use strict'\n    4  \n    5:     //this refers to a Class\n    6      return require('./core').overrideClass(this, config)\n    7  }\n\n/home/radu/code/classy/src/processClass.js:\n    2  \n    3  function aliasMethods(config){\n    4:     //this refers to a class\n    5      copyKeys(this.prototype, this.prototype, config)\n    6      \n\n/home/radu/code/classy/src/unregisterClass.js:\n    5      'use strict'\n    6  \n    7:     //this refers to a Class\n    8  \n    9      var alias = this.prototype.alias\n\n8 matches across 5 files\n\n\nSearching 4012 files for \"define'\"\n\n/home/radu/code/classy/dist/classy.js:\n   52  var when = [ '$before', '$after', '$override', '$copyIf' ]\n   53  \n   54: module.exports = _dereq_('./define')({\n   55  \n   56      alias: 'z.mixin',\n   ..\n  699  }\n  700  },{\"./Registry\":4,\"./core\":10,\"./getClass\":17,\"./processClass\":24,\"./processors/ClassProcessor\":25}],14:[function(_dereq_,module,exports){\n  701: var define = _dereq_('./define')\n  702  var copyIf = _dereq_('./utils/copy').copyIf\n  703  \n  ...\n  733  }\n  734  },{\"./core\":10,\"./getClass\":17}],16:[function(_dereq_,module,exports){\n  735: var def = _dereq_('./define')\n  736  \n  737  module.exports = function(config){\n  ...\n  882  \n  883          //enhanced\n  884:         define   : _dereq_('./define'),\n  885          override : _dereq_('./override'),\n  886          getClass : _dereq_('./getClass'),\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/Makefile.dryice.js:\n   11  function removeAmdefine(src) {\n   12    src = String(src).replace(\n   13:     /if\\s*\\(typeof\\s*define\\s*!==\\s*'function'\\)\\s*{\\s*var\\s*define\\s*=\\s*require\\('amdefine'\\)\\(module,\\s*require\\);\\s*}\\s*/g,\n   14      '');\n   15    src = src.replace(\n   16:     /\\b(define\\(.*)('amdefine',?)/gm,\n   17      '$1');\n   18    return src;\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/lib/source-map/array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/lib/source-map/base64-vlq.js:\n   36   */\n   37  if (typeof define !== 'function') {\n   38:     var define = require('amdefine')(module, require);\n   39  }\n   40  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/lib/source-map/base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/lib/source-map/binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/lib/source-map/source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/lib/source-map/source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/lib/source-map/source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/lib/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/node_modules/amdefine/README.md:\n   20  \n   21  ```javascript\n   22: if (typeof define !== 'function') { var define = require('amdefine')(module) }\n   23  ```\n   24  \n   ..\n  123  ```javascript\n  124  //Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\n  125: if (typeof define !== 'function') { var define = require('amdefine')(module, require) }\n  126  ```\n  127  \n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/node_modules/amdefine/intercept.js:\n    6      amdefineRegExp = /amdefine\\.js/;\n    7  \n    8: inserted  = \"if (typeof define !== 'function') {var define = require('amdefine')(module)}\";\n    9  \n   10  //From the node/lib/module.js source:\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/node_modules/amdefine/package.json:\n   27      \"node\": \">=0.4.2\"\n   28    },\n   29:   \"readme\": \"# amdefine\\n\\nA module that can be used to implement AMD's define() in Node. This allows you\\nto code to the AMD API and have the module work in node programs without\\nrequiring those other programs to use AMD.\\n\\n## Usage\\n\\n**1)** Update your package.json to indicate amdefine as a dependency:\\n\\n```javascript\\n    \\\"dependencies\\\": {\\n        \\\"amdefine\\\": \\\">=0.1.0\\\"\\n    }\\n```\\n\\nThen run `npm install` to get amdefine into your project.\\n\\n**2)** At the top of each module that uses define(), place this code:\\n\\n```javascript\\nif (typeof define !== 'function') { var define = require('amdefine')(module) }\\n```\\n\\n**Only use these snippets** when loading amdefine. If you preserve the basic structure,\\nwith the braces, it will be stripped out when using the [RequireJS optimizer](#optimizer).\\n\\nYou can add spaces, line breaks and even require amdefine with a local path, but\\nkeep the rest of the structure to get the stripping behavior.\\n\\nAs you may know, because `if` statements in JavaScript don't have their own scope, the var\\ndeclaration in the above snippet is made whether the `if` expression is truthy or not. If\\nRequireJS is loaded then the declaration is superfluous because `define` is already already\\ndeclared in the same scope in RequireJS. Fortunately JavaScript handles multiple `var`\\ndeclarations of the same variable in the same scope gracefully.\\n\\nIf you want to deliver amdefine.js with your code rather than specifying it as a dependency\\nwith npm, then just download the latest release and refer to it using a relative path:\\n\\n[Latest Version](https://github.com/jrburke/amdefine/raw/latest/amdefine.js)\\n\\n### amdefine/intercept\\n\\nConsider this very experimental.\\n\\nInstead of pasting the piece of text for the amdefine setup of a `define`\\nvariable in each module you create or consume, you can use `amdefine/intercept`\\ninstead. It will automatically insert the above snippet in each .js file loaded\\nby Node.\\n\\n**Warning**: you should only use this if you are creating an application that\\nis consuming AMD style defined()'d modules that are distributed via npm and want\\nto run that code in Node.\\n\\nFor library code where you are not sure if it will be used by others in Node or\\nin the browser, then explicitly depending on amdefine and placing the code\\nsnippet above is suggested path, instead of using `amdefine/intercept`. The\\nintercept module affects all .js files loaded in the Node app, and it is\\ninconsiderate to modify global state like that unless you are also controlling\\nthe top level app.\\n\\n#### Why distribute AMD-style nodes via npm?\\n\\nnpm has a lot of weaknesses for front-end use (installed layout is not great,\\nshould have better support for the `baseUrl + moduleID + '.js' style of loading,\\nsingle file JS installs), but some people want a JS package manager and are\\nwilling to live with those constraints. If that is you, but still want to author\\nin AMD style modules to get dynamic require([]), better direct source usage and\\npowerful loader plugin support in the browser, then this tool can help.\\n\\n#### amdefine/intercept usage\\n\\nJust require it in your top level app module (for example index.js, server.js):\\n\\n```javascript\\nrequire('amdefine/intercept');\\n```\\n\\nThe module does not return a value, so no need to assign the result to a local\\nvariable.\\n\\nThen just require() code as you normally would with Node's require(). Any .js\\nloaded after the intercept require will have the amdefine check injected in\\nthe .js source as it is loaded. It does not modify the source on disk, just\\nprepends some content to the text of the module as it is loaded by Node.\\n\\n#### How amdefine/intercept works\\n\\nIt overrides the `Module._extensions['.js']` in Node to automatically prepend\\nthe amdefine snippet above. So, it will affect any .js file loaded by your\\napp.\\n\\n## define() usage\\n\\nIt is best if you use the anonymous forms of define() in your module:\\n\\n```javascript\\ndefine(function (require) {\\n    var dependency = require('dependency');\\n});\\n```\\n\\nor\\n\\n```javascript\\ndefine(['dependency'], function (dependency) {\\n\\n});\\n```\\n\\n## RequireJS optimizer integration. <a name=\\\"optimizer\\\"></name>\\n\\nVersion 1.0.3 of the [RequireJS optimizer](http://requirejs.org/docs/optimization.html)\\nwill have support for stripping the `if (typeof define !== 'function')` check\\nmentioned above, so you can include this snippet for code that runs in the\\nbrowser, but avoid taking the cost of the if() statement once the code is\\noptimized for deployment.\\n\\n## Node 0.4 Support\\n\\nIf you want to support Node 0.4, then add `require` as the second parameter to amdefine:\\n\\n```javascript\\n//Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\\nif (typeof define !== 'function') { var define = require('amdefine')(module, require) }\\n```\\n\\n## Limitations\\n\\n### Synchronous vs Asynchronous\\n\\namdefine creates a define() function that is callable by your code. It will\\nexecute and trace dependencies and call the factory function *synchronously*,\\nto keep the behavior in line with Node's synchronous dependency tracing.\\n\\nThe exception: calling AMD's callback-style require() from inside a factory\\nfunction. The require callback is called on process.nextTick():\\n\\n```javascript\\ndefine(function (require) {\\n    require(['a'], function(a) {\\n        //'a' is loaded synchronously, but\\n        //this callback is called on process.nextTick().\\n    });\\n});\\n```\\n\\n### Loader Plugins\\n\\nLoader plugins are supported as long as they call their load() callbacks\\nsynchronously. So ones that do network requests will not work. However plugins\\nlike [text](http://requirejs.org/docs/api.html#text) can load text files locally.\\n\\nThe plugin API's `load.fromText()` is **not supported** in amdefine, so this means\\ntranspiler plugins like the [CoffeeScript loader plugin](https://github.com/jrburke/require-cs)\\nwill not work. This may be fixable, but it is a bit complex, and I do not have\\nenough node-fu to figure it out yet. See the source for amdefine.js if you want\\nto get an idea of the issues involved.\\n\\n## Tests\\n\\nTo run the tests, cd to **tests** and run:\\n\\n```\\nnode all.js\\nnode all-intercept.js\\n```\\n\\n## License\\n\\nNew BSD and MIT. Check the LICENSE file for all the details.\\n\",\n   30    \"readmeFilename\": \"README.md\",\n   31    \"bugs\": {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-api.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-base64-vlq.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-dog-fooding.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/test-util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/browser-pack/node_modules/combine-source-map/node_modules/source-map/test/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/Makefile.dryice.js:\n   11  function removeAmdefine(src) {\n   12    src = String(src).replace(\n   13:     /if\\s*\\(typeof\\s*define\\s*!==\\s*'function'\\)\\s*{\\s*var\\s*define\\s*=\\s*require\\('amdefine'\\)\\(module,\\s*require\\);\\s*}\\s*/g,\n   14      '');\n   15    src = src.replace(\n   16:     /\\b(define\\(.*)('amdefine',?)/gm,\n   17      '$1');\n   18    return src;\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/lib/source-map/array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/lib/source-map/base64-vlq.js:\n   36   */\n   37  if (typeof define !== 'function') {\n   38:     var define = require('amdefine')(module, require);\n   39  }\n   40  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/lib/source-map/base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/lib/source-map/binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/lib/source-map/source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/lib/source-map/source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/lib/source-map/source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/lib/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/node_modules/amdefine/README.md:\n   20  \n   21  ```javascript\n   22: if (typeof define !== 'function') { var define = require('amdefine')(module) }\n   23  ```\n   24  \n   ..\n  123  ```javascript\n  124  //Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\n  125: if (typeof define !== 'function') { var define = require('amdefine')(module, require) }\n  126  ```\n  127  \n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/node_modules/amdefine/intercept.js:\n    6      amdefineRegExp = /amdefine\\.js/;\n    7  \n    8: inserted  = \"if (typeof define !== 'function') {var define = require('amdefine')(module)}\";\n    9  \n   10  //From the node/lib/module.js source:\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/node_modules/amdefine/package.json:\n   27      \"node\": \">=0.4.2\"\n   28    },\n   29:   \"readme\": \"# amdefine\\n\\nA module that can be used to implement AMD's define() in Node. This allows you\\nto code to the AMD API and have the module work in node programs without\\nrequiring those other programs to use AMD.\\n\\n## Usage\\n\\n**1)** Update your package.json to indicate amdefine as a dependency:\\n\\n```javascript\\n    \\\"dependencies\\\": {\\n        \\\"amdefine\\\": \\\">=0.1.0\\\"\\n    }\\n```\\n\\nThen run `npm install` to get amdefine into your project.\\n\\n**2)** At the top of each module that uses define(), place this code:\\n\\n```javascript\\nif (typeof define !== 'function') { var define = require('amdefine')(module) }\\n```\\n\\n**Only use these snippets** when loading amdefine. If you preserve the basic structure,\\nwith the braces, it will be stripped out when using the [RequireJS optimizer](#optimizer).\\n\\nYou can add spaces, line breaks and even require amdefine with a local path, but\\nkeep the rest of the structure to get the stripping behavior.\\n\\nAs you may know, because `if` statements in JavaScript don't have their own scope, the var\\ndeclaration in the above snippet is made whether the `if` expression is truthy or not. If\\nRequireJS is loaded then the declaration is superfluous because `define` is already already\\ndeclared in the same scope in RequireJS. Fortunately JavaScript handles multiple `var`\\ndeclarations of the same variable in the same scope gracefully.\\n\\nIf you want to deliver amdefine.js with your code rather than specifying it as a dependency\\nwith npm, then just download the latest release and refer to it using a relative path:\\n\\n[Latest Version](https://github.com/jrburke/amdefine/raw/latest/amdefine.js)\\n\\n### amdefine/intercept\\n\\nConsider this very experimental.\\n\\nInstead of pasting the piece of text for the amdefine setup of a `define`\\nvariable in each module you create or consume, you can use `amdefine/intercept`\\ninstead. It will automatically insert the above snippet in each .js file loaded\\nby Node.\\n\\n**Warning**: you should only use this if you are creating an application that\\nis consuming AMD style defined()'d modules that are distributed via npm and want\\nto run that code in Node.\\n\\nFor library code where you are not sure if it will be used by others in Node or\\nin the browser, then explicitly depending on amdefine and placing the code\\nsnippet above is suggested path, instead of using `amdefine/intercept`. The\\nintercept module affects all .js files loaded in the Node app, and it is\\ninconsiderate to modify global state like that unless you are also controlling\\nthe top level app.\\n\\n#### Why distribute AMD-style nodes via npm?\\n\\nnpm has a lot of weaknesses for front-end use (installed layout is not great,\\nshould have better support for the `baseUrl + moduleID + '.js' style of loading,\\nsingle file JS installs), but some people want a JS package manager and are\\nwilling to live with those constraints. If that is you, but still want to author\\nin AMD style modules to get dynamic require([]), better direct source usage and\\npowerful loader plugin support in the browser, then this tool can help.\\n\\n#### amdefine/intercept usage\\n\\nJust require it in your top level app module (for example index.js, server.js):\\n\\n```javascript\\nrequire('amdefine/intercept');\\n```\\n\\nThe module does not return a value, so no need to assign the result to a local\\nvariable.\\n\\nThen just require() code as you normally would with Node's require(). Any .js\\nloaded after the intercept require will have the amdefine check injected in\\nthe .js source as it is loaded. It does not modify the source on disk, just\\nprepends some content to the text of the module as it is loaded by Node.\\n\\n#### How amdefine/intercept works\\n\\nIt overrides the `Module._extensions['.js']` in Node to automatically prepend\\nthe amdefine snippet above. So, it will affect any .js file loaded by your\\napp.\\n\\n## define() usage\\n\\nIt is best if you use the anonymous forms of define() in your module:\\n\\n```javascript\\ndefine(function (require) {\\n    var dependency = require('dependency');\\n});\\n```\\n\\nor\\n\\n```javascript\\ndefine(['dependency'], function (dependency) {\\n\\n});\\n```\\n\\n## RequireJS optimizer integration. <a name=\\\"optimizer\\\"></name>\\n\\nVersion 1.0.3 of the [RequireJS optimizer](http://requirejs.org/docs/optimization.html)\\nwill have support for stripping the `if (typeof define !== 'function')` check\\nmentioned above, so you can include this snippet for code that runs in the\\nbrowser, but avoid taking the cost of the if() statement once the code is\\noptimized for deployment.\\n\\n## Node 0.4 Support\\n\\nIf you want to support Node 0.4, then add `require` as the second parameter to amdefine:\\n\\n```javascript\\n//Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\\nif (typeof define !== 'function') { var define = require('amdefine')(module, require) }\\n```\\n\\n## Limitations\\n\\n### Synchronous vs Asynchronous\\n\\namdefine creates a define() function that is callable by your code. It will\\nexecute and trace dependencies and call the factory function *synchronously*,\\nto keep the behavior in line with Node's synchronous dependency tracing.\\n\\nThe exception: calling AMD's callback-style require() from inside a factory\\nfunction. The require callback is called on process.nextTick():\\n\\n```javascript\\ndefine(function (require) {\\n    require(['a'], function(a) {\\n        //'a' is loaded synchronously, but\\n        //this callback is called on process.nextTick().\\n    });\\n});\\n```\\n\\n### Loader Plugins\\n\\nLoader plugins are supported as long as they call their load() callbacks\\nsynchronously. So ones that do network requests will not work. However plugins\\nlike [text](http://requirejs.org/docs/api.html#text) can load text files locally.\\n\\nThe plugin API's `load.fromText()` is **not supported** in amdefine, so this means\\ntranspiler plugins like the [CoffeeScript loader plugin](https://github.com/jrburke/require-cs)\\nwill not work. This may be fixable, but it is a bit complex, and I do not have\\nenough node-fu to figure it out yet. See the source for amdefine.js if you want\\nto get an idea of the issues involved.\\n\\n## Tests\\n\\nTo run the tests, cd to **tests** and run:\\n\\n```\\nnode all.js\\nnode all-intercept.js\\n```\\n\\n## License\\n\\nNew BSD and MIT. Check the LICENSE file for all the details.\\n\",\n   30    \"readmeFilename\": \"README.md\",\n   31    \"bugs\": {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-api.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-base64-vlq.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-dog-fooding.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/test-util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/source-map/test/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/Makefile.dryice.js:\n   11  function removeAmdefine(src) {\n   12    src = String(src).replace(\n   13:     /if\\s*\\(typeof\\s*define\\s*!==\\s*'function'\\)\\s*{\\s*var\\s*define\\s*=\\s*require\\('amdefine'\\)\\(module,\\s*require\\);\\s*}\\s*/g,\n   14      '');\n   15    src = src.replace(\n   16:     /\\b(define\\(.*)('amdefine',?)/gm,\n   17      '$1');\n   18    return src;\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/lib/source-map/array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/lib/source-map/base64-vlq.js:\n   36   */\n   37  if (typeof define !== 'function') {\n   38:     var define = require('amdefine')(module, require);\n   39  }\n   40  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/lib/source-map/base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/lib/source-map/binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/lib/source-map/source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/lib/source-map/source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/lib/source-map/source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/lib/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/README.md:\n   20  \n   21  ```javascript\n   22: if (typeof define !== 'function') { var define = require('amdefine')(module) }\n   23  ```\n   24  \n   ..\n  123  ```javascript\n  124  //Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\n  125: if (typeof define !== 'function') { var define = require('amdefine')(module, require) }\n  126  ```\n  127  \n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/intercept.js:\n    6      amdefineRegExp = /amdefine\\.js/;\n    7  \n    8: inserted  = \"if (typeof define !== 'function') {var define = require('amdefine')(module)}\";\n    9  \n   10  //From the node/lib/module.js source:\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/package.json:\n   27      \"node\": \">=0.4.2\"\n   28    },\n   29:   \"readme\": \"# amdefine\\n\\nA module that can be used to implement AMD's define() in Node. This allows you\\nto code to the AMD API and have the module work in node programs without\\nrequiring those other programs to use AMD.\\n\\n## Usage\\n\\n**1)** Update your package.json to indicate amdefine as a dependency:\\n\\n```javascript\\n    \\\"dependencies\\\": {\\n        \\\"amdefine\\\": \\\">=0.1.0\\\"\\n    }\\n```\\n\\nThen run `npm install` to get amdefine into your project.\\n\\n**2)** At the top of each module that uses define(), place this code:\\n\\n```javascript\\nif (typeof define !== 'function') { var define = require('amdefine')(module) }\\n```\\n\\n**Only use these snippets** when loading amdefine. If you preserve the basic structure,\\nwith the braces, it will be stripped out when using the [RequireJS optimizer](#optimizer).\\n\\nYou can add spaces, line breaks and even require amdefine with a local path, but\\nkeep the rest of the structure to get the stripping behavior.\\n\\nAs you may know, because `if` statements in JavaScript don't have their own scope, the var\\ndeclaration in the above snippet is made whether the `if` expression is truthy or not. If\\nRequireJS is loaded then the declaration is superfluous because `define` is already already\\ndeclared in the same scope in RequireJS. Fortunately JavaScript handles multiple `var`\\ndeclarations of the same variable in the same scope gracefully.\\n\\nIf you want to deliver amdefine.js with your code rather than specifying it as a dependency\\nwith npm, then just download the latest release and refer to it using a relative path:\\n\\n[Latest Version](https://github.com/jrburke/amdefine/raw/latest/amdefine.js)\\n\\n### amdefine/intercept\\n\\nConsider this very experimental.\\n\\nInstead of pasting the piece of text for the amdefine setup of a `define`\\nvariable in each module you create or consume, you can use `amdefine/intercept`\\ninstead. It will automatically insert the above snippet in each .js file loaded\\nby Node.\\n\\n**Warning**: you should only use this if you are creating an application that\\nis consuming AMD style defined()'d modules that are distributed via npm and want\\nto run that code in Node.\\n\\nFor library code where you are not sure if it will be used by others in Node or\\nin the browser, then explicitly depending on amdefine and placing the code\\nsnippet above is suggested path, instead of using `amdefine/intercept`. The\\nintercept module affects all .js files loaded in the Node app, and it is\\ninconsiderate to modify global state like that unless you are also controlling\\nthe top level app.\\n\\n#### Why distribute AMD-style nodes via npm?\\n\\nnpm has a lot of weaknesses for front-end use (installed layout is not great,\\nshould have better support for the `baseUrl + moduleID + '.js' style of loading,\\nsingle file JS installs), but some people want a JS package manager and are\\nwilling to live with those constraints. If that is you, but still want to author\\nin AMD style modules to get dynamic require([]), better direct source usage and\\npowerful loader plugin support in the browser, then this tool can help.\\n\\n#### amdefine/intercept usage\\n\\nJust require it in your top level app module (for example index.js, server.js):\\n\\n```javascript\\nrequire('amdefine/intercept');\\n```\\n\\nThe module does not return a value, so no need to assign the result to a local\\nvariable.\\n\\nThen just require() code as you normally would with Node's require(). Any .js\\nloaded after the intercept require will have the amdefine check injected in\\nthe .js source as it is loaded. It does not modify the source on disk, just\\nprepends some content to the text of the module as it is loaded by Node.\\n\\n#### How amdefine/intercept works\\n\\nIt overrides the `Module._extensions['.js']` in Node to automatically prepend\\nthe amdefine snippet above. So, it will affect any .js file loaded by your\\napp.\\n\\n## define() usage\\n\\nIt is best if you use the anonymous forms of define() in your module:\\n\\n```javascript\\ndefine(function (require) {\\n    var dependency = require('dependency');\\n});\\n```\\n\\nor\\n\\n```javascript\\ndefine(['dependency'], function (dependency) {\\n\\n});\\n```\\n\\n## RequireJS optimizer integration. <a name=\\\"optimizer\\\"></name>\\n\\nVersion 1.0.3 of the [RequireJS optimizer](http://requirejs.org/docs/optimization.html)\\nwill have support for stripping the `if (typeof define !== 'function')` check\\nmentioned above, so you can include this snippet for code that runs in the\\nbrowser, but avoid taking the cost of the if() statement once the code is\\noptimized for deployment.\\n\\n## Node 0.4 Support\\n\\nIf you want to support Node 0.4, then add `require` as the second parameter to amdefine:\\n\\n```javascript\\n//Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\\nif (typeof define !== 'function') { var define = require('amdefine')(module, require) }\\n```\\n\\n## Limitations\\n\\n### Synchronous vs Asynchronous\\n\\namdefine creates a define() function that is callable by your code. It will\\nexecute and trace dependencies and call the factory function *synchronously*,\\nto keep the behavior in line with Node's synchronous dependency tracing.\\n\\nThe exception: calling AMD's callback-style require() from inside a factory\\nfunction. The require callback is called on process.nextTick():\\n\\n```javascript\\ndefine(function (require) {\\n    require(['a'], function(a) {\\n        //'a' is loaded synchronously, but\\n        //this callback is called on process.nextTick().\\n    });\\n});\\n```\\n\\n### Loader Plugins\\n\\nLoader plugins are supported as long as they call their load() callbacks\\nsynchronously. So ones that do network requests will not work. However plugins\\nlike [text](http://requirejs.org/docs/api.html#text) can load text files locally.\\n\\nThe plugin API's `load.fromText()` is **not supported** in amdefine, so this means\\ntranspiler plugins like the [CoffeeScript loader plugin](https://github.com/jrburke/require-cs)\\nwill not work. This may be fixable, but it is a bit complex, and I do not have\\nenough node-fu to figure it out yet. See the source for amdefine.js if you want\\nto get an idea of the issues involved.\\n\\n## Tests\\n\\nTo run the tests, cd to **tests** and run:\\n\\n```\\nnode all.js\\nnode all-intercept.js\\n```\\n\\n## License\\n\\nNew BSD and MIT. Check the LICENSE file for all the details.\\n\",\n   30    \"readmeFilename\": \"README.md\",\n   31    \"bugs\": {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-api.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-base64-vlq.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-dog-fooding.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/test-util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/ruglify/node_modules/uglify-js/node_modules/source-map/test/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/Makefile.dryice.js:\n   11  function removeAmdefine(src) {\n   12    src = String(src).replace(\n   13:     /if\\s*\\(typeof\\s*define\\s*!==\\s*'function'\\)\\s*{\\s*var\\s*define\\s*=\\s*require\\('amdefine'\\)\\(module,\\s*require\\);\\s*}\\s*/g,\n   14      '');\n   15    src = src.replace(\n   16:     /\\b(define\\(.*)('amdefine',?)/gm,\n   17      '$1');\n   18    return src;\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/lib/source-map/array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/lib/source-map/base64-vlq.js:\n   36   */\n   37  if (typeof define !== 'function') {\n   38:     var define = require('amdefine')(module, require);\n   39  }\n   40  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/lib/source-map/base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/lib/source-map/binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/lib/source-map/source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/lib/source-map/source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/lib/source-map/source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/lib/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/README.md:\n   20  \n   21  ```javascript\n   22: if (typeof define !== 'function') { var define = require('amdefine')(module) }\n   23  ```\n   24  \n   ..\n  123  ```javascript\n  124  //Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\n  125: if (typeof define !== 'function') { var define = require('amdefine')(module, require) }\n  126  ```\n  127  \n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/intercept.js:\n    6      amdefineRegExp = /amdefine\\.js/;\n    7  \n    8: inserted  = \"if (typeof define !== 'function') {var define = require('amdefine')(module)}\";\n    9  \n   10  //From the node/lib/module.js source:\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/package.json:\n   27      \"node\": \">=0.4.2\"\n   28    },\n   29:   \"readme\": \"# amdefine\\n\\nA module that can be used to implement AMD's define() in Node. This allows you\\nto code to the AMD API and have the module work in node programs without\\nrequiring those other programs to use AMD.\\n\\n## Usage\\n\\n**1)** Update your package.json to indicate amdefine as a dependency:\\n\\n```javascript\\n    \\\"dependencies\\\": {\\n        \\\"amdefine\\\": \\\">=0.1.0\\\"\\n    }\\n```\\n\\nThen run `npm install` to get amdefine into your project.\\n\\n**2)** At the top of each module that uses define(), place this code:\\n\\n```javascript\\nif (typeof define !== 'function') { var define = require('amdefine')(module) }\\n```\\n\\n**Only use these snippets** when loading amdefine. If you preserve the basic structure,\\nwith the braces, it will be stripped out when using the [RequireJS optimizer](#optimizer).\\n\\nYou can add spaces, line breaks and even require amdefine with a local path, but\\nkeep the rest of the structure to get the stripping behavior.\\n\\nAs you may know, because `if` statements in JavaScript don't have their own scope, the var\\ndeclaration in the above snippet is made whether the `if` expression is truthy or not. If\\nRequireJS is loaded then the declaration is superfluous because `define` is already already\\ndeclared in the same scope in RequireJS. Fortunately JavaScript handles multiple `var`\\ndeclarations of the same variable in the same scope gracefully.\\n\\nIf you want to deliver amdefine.js with your code rather than specifying it as a dependency\\nwith npm, then just download the latest release and refer to it using a relative path:\\n\\n[Latest Version](https://github.com/jrburke/amdefine/raw/latest/amdefine.js)\\n\\n### amdefine/intercept\\n\\nConsider this very experimental.\\n\\nInstead of pasting the piece of text for the amdefine setup of a `define`\\nvariable in each module you create or consume, you can use `amdefine/intercept`\\ninstead. It will automatically insert the above snippet in each .js file loaded\\nby Node.\\n\\n**Warning**: you should only use this if you are creating an application that\\nis consuming AMD style defined()'d modules that are distributed via npm and want\\nto run that code in Node.\\n\\nFor library code where you are not sure if it will be used by others in Node or\\nin the browser, then explicitly depending on amdefine and placing the code\\nsnippet above is suggested path, instead of using `amdefine/intercept`. The\\nintercept module affects all .js files loaded in the Node app, and it is\\ninconsiderate to modify global state like that unless you are also controlling\\nthe top level app.\\n\\n#### Why distribute AMD-style nodes via npm?\\n\\nnpm has a lot of weaknesses for front-end use (installed layout is not great,\\nshould have better support for the `baseUrl + moduleID + '.js' style of loading,\\nsingle file JS installs), but some people want a JS package manager and are\\nwilling to live with those constraints. If that is you, but still want to author\\nin AMD style modules to get dynamic require([]), better direct source usage and\\npowerful loader plugin support in the browser, then this tool can help.\\n\\n#### amdefine/intercept usage\\n\\nJust require it in your top level app module (for example index.js, server.js):\\n\\n```javascript\\nrequire('amdefine/intercept');\\n```\\n\\nThe module does not return a value, so no need to assign the result to a local\\nvariable.\\n\\nThen just require() code as you normally would with Node's require(). Any .js\\nloaded after the intercept require will have the amdefine check injected in\\nthe .js source as it is loaded. It does not modify the source on disk, just\\nprepends some content to the text of the module as it is loaded by Node.\\n\\n#### How amdefine/intercept works\\n\\nIt overrides the `Module._extensions['.js']` in Node to automatically prepend\\nthe amdefine snippet above. So, it will affect any .js file loaded by your\\napp.\\n\\n## define() usage\\n\\nIt is best if you use the anonymous forms of define() in your module:\\n\\n```javascript\\ndefine(function (require) {\\n    var dependency = require('dependency');\\n});\\n```\\n\\nor\\n\\n```javascript\\ndefine(['dependency'], function (dependency) {\\n\\n});\\n```\\n\\n## RequireJS optimizer integration. <a name=\\\"optimizer\\\"></name>\\n\\nVersion 1.0.3 of the [RequireJS optimizer](http://requirejs.org/docs/optimization.html)\\nwill have support for stripping the `if (typeof define !== 'function')` check\\nmentioned above, so you can include this snippet for code that runs in the\\nbrowser, but avoid taking the cost of the if() statement once the code is\\noptimized for deployment.\\n\\n## Node 0.4 Support\\n\\nIf you want to support Node 0.4, then add `require` as the second parameter to amdefine:\\n\\n```javascript\\n//Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\\nif (typeof define !== 'function') { var define = require('amdefine')(module, require) }\\n```\\n\\n## Limitations\\n\\n### Synchronous vs Asynchronous\\n\\namdefine creates a define() function that is callable by your code. It will\\nexecute and trace dependencies and call the factory function *synchronously*,\\nto keep the behavior in line with Node's synchronous dependency tracing.\\n\\nThe exception: calling AMD's callback-style require() from inside a factory\\nfunction. The require callback is called on process.nextTick():\\n\\n```javascript\\ndefine(function (require) {\\n    require(['a'], function(a) {\\n        //'a' is loaded synchronously, but\\n        //this callback is called on process.nextTick().\\n    });\\n});\\n```\\n\\n### Loader Plugins\\n\\nLoader plugins are supported as long as they call their load() callbacks\\nsynchronously. So ones that do network requests will not work. However plugins\\nlike [text](http://requirejs.org/docs/api.html#text) can load text files locally.\\n\\nThe plugin API's `load.fromText()` is **not supported** in amdefine, so this means\\ntranspiler plugins like the [CoffeeScript loader plugin](https://github.com/jrburke/require-cs)\\nwill not work. This may be fixable, but it is a bit complex, and I do not have\\nenough node-fu to figure it out yet. See the source for amdefine.js if you want\\nto get an idea of the issues involved.\\n\\n## Tests\\n\\nTo run the tests, cd to **tests** and run:\\n\\n```\\nnode all.js\\nnode all-intercept.js\\n```\\n\\n## License\\n\\nNew BSD and MIT. Check the LICENSE file for all the details.\\n\",\n   30    \"readmeFilename\": \"README.md\",\n   31    \"bugs\": {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-api.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-base64-vlq.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-dog-fooding.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/test-util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/node_modules/uglify-js/node_modules/source-map/test/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/browserify/node_modules/umd/test/index.js:\n   13  })\n   14  describe('with amd', function () {\n   15:   it('uses define', function () {\n   16      var defed\n   17      function define(fn) {\n   ..\n   19      }\n   20      define.amd = true\n   21:     Function('define', src)(define)\n   22      assert(defed === 'sentinel')\n   23    })\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/Makefile.dryice.js:\n   11  function removeAmdefine(src) {\n   12    src = String(src).replace(\n   13:     /if\\s*\\(typeof\\s*define\\s*!==\\s*'function'\\)\\s*{\\s*var\\s*define\\s*=\\s*require\\('amdefine'\\)\\(module,\\s*require\\);\\s*}\\s*/g,\n   14      '');\n   15    src = src.replace(\n   16:     /\\b(define\\(.*)('amdefine',?)/gm,\n   17      '$1');\n   18    return src;\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/lib/source-map/array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/lib/source-map/base64-vlq.js:\n   36   */\n   37  if (typeof define !== 'function') {\n   38:     var define = require('amdefine')(module, require);\n   39  }\n   40  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/lib/source-map/base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/lib/source-map/binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/lib/source-map/source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/lib/source-map/source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/lib/source-map/source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/lib/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/node_modules/amdefine/README.md:\n   20  \n   21  ```javascript\n   22: if (typeof define !== 'function') { var define = require('amdefine')(module) }\n   23  ```\n   24  \n   ..\n  123  ```javascript\n  124  //Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\n  125: if (typeof define !== 'function') { var define = require('amdefine')(module, require) }\n  126  ```\n  127  \n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/node_modules/amdefine/intercept.js:\n    6      amdefineRegExp = /amdefine\\.js/;\n    7  \n    8: inserted  = \"if (typeof define !== 'function') {var define = require('amdefine')(module)}\";\n    9  \n   10  //From the node/lib/module.js source:\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/node_modules/amdefine/package.json:\n   27      \"node\": \">=0.4.2\"\n   28    },\n   29:   \"readme\": \"# amdefine\\n\\nA module that can be used to implement AMD's define() in Node. This allows you\\nto code to the AMD API and have the module work in node programs without\\nrequiring those other programs to use AMD.\\n\\n## Usage\\n\\n**1)** Update your package.json to indicate amdefine as a dependency:\\n\\n```javascript\\n    \\\"dependencies\\\": {\\n        \\\"amdefine\\\": \\\">=0.1.0\\\"\\n    }\\n```\\n\\nThen run `npm install` to get amdefine into your project.\\n\\n**2)** At the top of each module that uses define(), place this code:\\n\\n```javascript\\nif (typeof define !== 'function') { var define = require('amdefine')(module) }\\n```\\n\\n**Only use these snippets** when loading amdefine. If you preserve the basic structure,\\nwith the braces, it will be stripped out when using the [RequireJS optimizer](#optimizer).\\n\\nYou can add spaces, line breaks and even require amdefine with a local path, but\\nkeep the rest of the structure to get the stripping behavior.\\n\\nAs you may know, because `if` statements in JavaScript don't have their own scope, the var\\ndeclaration in the above snippet is made whether the `if` expression is truthy or not. If\\nRequireJS is loaded then the declaration is superfluous because `define` is already already\\ndeclared in the same scope in RequireJS. Fortunately JavaScript handles multiple `var`\\ndeclarations of the same variable in the same scope gracefully.\\n\\nIf you want to deliver amdefine.js with your code rather than specifying it as a dependency\\nwith npm, then just download the latest release and refer to it using a relative path:\\n\\n[Latest Version](https://github.com/jrburke/amdefine/raw/latest/amdefine.js)\\n\\n### amdefine/intercept\\n\\nConsider this very experimental.\\n\\nInstead of pasting the piece of text for the amdefine setup of a `define`\\nvariable in each module you create or consume, you can use `amdefine/intercept`\\ninstead. It will automatically insert the above snippet in each .js file loaded\\nby Node.\\n\\n**Warning**: you should only use this if you are creating an application that\\nis consuming AMD style defined()'d modules that are distributed via npm and want\\nto run that code in Node.\\n\\nFor library code where you are not sure if it will be used by others in Node or\\nin the browser, then explicitly depending on amdefine and placing the code\\nsnippet above is suggested path, instead of using `amdefine/intercept`. The\\nintercept module affects all .js files loaded in the Node app, and it is\\ninconsiderate to modify global state like that unless you are also controlling\\nthe top level app.\\n\\n#### Why distribute AMD-style nodes via npm?\\n\\nnpm has a lot of weaknesses for front-end use (installed layout is not great,\\nshould have better support for the `baseUrl + moduleID + '.js' style of loading,\\nsingle file JS installs), but some people want a JS package manager and are\\nwilling to live with those constraints. If that is you, but still want to author\\nin AMD style modules to get dynamic require([]), better direct source usage and\\npowerful loader plugin support in the browser, then this tool can help.\\n\\n#### amdefine/intercept usage\\n\\nJust require it in your top level app module (for example index.js, server.js):\\n\\n```javascript\\nrequire('amdefine/intercept');\\n```\\n\\nThe module does not return a value, so no need to assign the result to a local\\nvariable.\\n\\nThen just require() code as you normally would with Node's require(). Any .js\\nloaded after the intercept require will have the amdefine check injected in\\nthe .js source as it is loaded. It does not modify the source on disk, just\\nprepends some content to the text of the module as it is loaded by Node.\\n\\n#### How amdefine/intercept works\\n\\nIt overrides the `Module._extensions['.js']` in Node to automatically prepend\\nthe amdefine snippet above. So, it will affect any .js file loaded by your\\napp.\\n\\n## define() usage\\n\\nIt is best if you use the anonymous forms of define() in your module:\\n\\n```javascript\\ndefine(function (require) {\\n    var dependency = require('dependency');\\n});\\n```\\n\\nor\\n\\n```javascript\\ndefine(['dependency'], function (dependency) {\\n\\n});\\n```\\n\\n## RequireJS optimizer integration. <a name=\\\"optimizer\\\"></name>\\n\\nVersion 1.0.3 of the [RequireJS optimizer](http://requirejs.org/docs/optimization.html)\\nwill have support for stripping the `if (typeof define !== 'function')` check\\nmentioned above, so you can include this snippet for code that runs in the\\nbrowser, but avoid taking the cost of the if() statement once the code is\\noptimized for deployment.\\n\\n## Node 0.4 Support\\n\\nIf you want to support Node 0.4, then add `require` as the second parameter to amdefine:\\n\\n```javascript\\n//Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\\nif (typeof define !== 'function') { var define = require('amdefine')(module, require) }\\n```\\n\\n## Limitations\\n\\n### Synchronous vs Asynchronous\\n\\namdefine creates a define() function that is callable by your code. It will\\nexecute and trace dependencies and call the factory function *synchronously*,\\nto keep the behavior in line with Node's synchronous dependency tracing.\\n\\nThe exception: calling AMD's callback-style require() from inside a factory\\nfunction. The require callback is called on process.nextTick():\\n\\n```javascript\\ndefine(function (require) {\\n    require(['a'], function(a) {\\n        //'a' is loaded synchronously, but\\n        //this callback is called on process.nextTick().\\n    });\\n});\\n```\\n\\n### Loader Plugins\\n\\nLoader plugins are supported as long as they call their load() callbacks\\nsynchronously. So ones that do network requests will not work. However plugins\\nlike [text](http://requirejs.org/docs/api.html#text) can load text files locally.\\n\\nThe plugin API's `load.fromText()` is **not supported** in amdefine, so this means\\ntranspiler plugins like the [CoffeeScript loader plugin](https://github.com/jrburke/require-cs)\\nwill not work. This may be fixable, but it is a bit complex, and I do not have\\nenough node-fu to figure it out yet. See the source for amdefine.js if you want\\nto get an idea of the issues involved.\\n\\n## Tests\\n\\nTo run the tests, cd to **tests** and run:\\n\\n```\\nnode all.js\\nnode all-intercept.js\\n```\\n\\n## License\\n\\nNew BSD and MIT. Check the LICENSE file for all the details.\\n\",\n   30    \"readmeFilename\": \"README.md\",\n   31    \"bugs\": {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-api.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-array-set.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-base64-vlq.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-base64.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-binary-search.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-dog-fooding.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-source-map-consumer.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-source-map-generator.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-source-node.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/test-util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/node_modules/karma/node_modules/source-map/test/source-map/util.js:\n    6   */\n    7  if (typeof define !== 'function') {\n    8:     var define = require('amdefine')(module, require);\n    9  }\n   10  define(function (require, exports, module) {\n\n/home/radu/code/classy/src/Mixin.js:\n   16  var when = [ '$before', '$after', '$override', '$copyIf' ]\n   17  \n   18: module.exports = require('./define')({\n   19  \n   20      alias: 'z.mixin',\n\n/home/radu/code/classy/src/defineMixin.js:\n    1: var define = require('./define')\n    2  var copyIf = require('./utils/copy').copyIf\n    3  \n\n/home/radu/code/classy/src/extendClass.js:\n    1: var def = require('./define')\n    2  \n    3  module.exports = function(config){\n\n/home/radu/code/classy/src/index.js:\n   36  \n   37          //enhanced\n   38:         define   : require('./define'),\n   39          override : require('./override'),\n   40          getClass : require('./getClass'),\n\n/home/radu/code/classy/test/DefineTests.js:\n    1: describe('define', function(){\n    2  \n    3      var root = classy\n\n141 matches across 122 files\n\n\nSearching 27 files for \"define'\"\n\n/home/radu/code/classy/src/Mixin.js:\n   16  var when = [ '$before', '$after', '$override', '$copyIf' ]\n   17  \n   18: module.exports = require('./define')({\n   19  \n   20      alias: 'z.mixin',\n\n/home/radu/code/classy/src/defineMixin.js:\n    1: var define = require('./define')\n    2  var copyIf = require('./utils/copy').copyIf\n    3  \n\n/home/radu/code/classy/src/extendClass.js:\n    1: var def = require('./define')\n    2  \n    3  module.exports = function(config){\n\n/home/radu/code/classy/src/index.js:\n   36  \n   37          //enhanced\n   38:         define   : require('./define'),\n   39          override : require('./override'),\n   40          getClass : require('./getClass'),\n\n4 matches across 4 files\n\n\nSearching 27 files for \"define'\"\n\n/home/radu/code/classy/src/Mixin.js:\n   16  var when = [ '$before', '$after', '$override', '$copyIf' ]\n   17  \n   18: module.exports = require('./define')({\n   19  \n   20      alias: 'z.mixin',\n\n/home/radu/code/classy/src/defineMixin.js:\n    1: var define = require('./define')\n    2  var copyIf = require('./utils/copy').copyIf\n    3  \n\n/home/radu/code/classy/src/extendClass.js:\n    1: var def = require('./define')\n    2  \n    3  module.exports = function(config){\n\n/home/radu/code/classy/src/index.js:\n   36  \n   37          //enhanced\n   38:         define   : require('./define'),\n   39          override : require('./override'),\n   40          getClass : require('./getClass'),\n\n4 matches across 4 files\n",
+			"settings":
+			{
+				"buffer_size": 75684,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/extendClass.js",
+			"settings":
+			{
+				"buffer_size": 235,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "test/ClassGetterTests.js",
 			"settings":
 			{
-				"buffer_size": 2683,
+				"buffer_size": 2908,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/core/canGetOwnPropertyDescriptor.js",
+			"file": "dist/classy.js",
 			"settings":
 			{
-				"buffer_size": 152,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/core/assignClassProperty.js",
-			"settings":
-			{
-				"buffer_size": 1825,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/core/buildClassFunctions.js",
-			"settings":
-			{
-				"buffer_size": 5268,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "node_modules/newify/index.js",
-			"settings":
-			{
-				"buffer_size": 161,
+				"buffer_size": 54891,
 				"line_ending": "Unix"
 			}
 		}
@@ -127,9 +129,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 172.0,
+		"height": 72.0,
 		"selected_items":
 		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
 			[
 				"markdo",
 				"Markdown Preview: Preview in Browser"
@@ -163,7 +169,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 593.0
+		"width": 542.0
 	},
 	"console":
 	{
@@ -184,15 +190,33 @@
 	},
 	"file_history":
 	[
-		"/home/radu/code/classy/dist/classy.js",
+		"/home/radu/code/classy/node_modules/browserify/node_modules/browserify-zlib/node_modules/pako/bower.json",
+		"/home/radu/code/classy/node_modules/browserify/test/bom.js",
+		"/home/radu/code/classy/node_modules/.bin/browserify",
+		"/home/radu/code/classy/node_modules/browserify/test/file_event.js",
+		"/home/radu/code/classy/node_modules/karma/node_modules/connect/node_modules/multiparty/test/fixture/file/binaryfile.tar.gz",
+		"/home/radu/code/classy/node_modules/karma/node_modules/http-proxy/test/core/simple/test-http-extra-response.js",
+		"/home/radu/code/classy/node_modules/karma/node_modules/http-proxy/test/examples-test.js",
+		"/home/radu/code/classy/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/ws/test/fixtures/textfile",
+		"/home/radu/code/classy/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/xmlhttprequest/tests/test-exceptions.js",
+		"/home/radu/code/classy/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/xmlhttprequest/tests/test-events.js",
+		"/home/radu/code/classy/node_modules/newify/test.html",
+		"/home/radu/code/classy/src/define.js",
+		"/home/radu/code/classy/src/index.js",
+		"/home/radu/code/classy/src/Mixin.js",
+		"/home/radu/code/classy/node_modules/newify/index.js",
 		"/home/radu/code/classy/package.json",
+		"/home/radu/code/classy/src/core/buildClassFunctions.js",
+		"/home/radu/code/classy/src/core/assignClassProperty.js",
+		"/home/radu/code/classy/src/core/canGetOwnPropertyDescriptor.js",
+		"/home/radu/code/classy/test/ClassGetterTests.js",
+		"/home/radu/code/classy/dist/classy.js",
 		"/home/radu/code/classy/zippy-class.sublime-project",
 		"/home/radu/code/classy/src/processors/ClassProcessor.js",
 		"/home/radu/code/classy/test/ClassCreateTests.js",
 		"/home/radu/code/classy/src/core/index.js",
 		"/home/radu/code/classy/exportClassy.js",
 		"/home/radu/code/classy/test/mixins/MixinWithStaticMethodsTests.js",
-		"/home/radu/code/classy/src/index.js",
 		"/home/radu/code/classy/src/create.js",
 		"/home/radu/code/classy/test/mixins/MixinWithStaticsTests.js",
 		"/home/radu/code/classy/src/utils/getInstantiatorFunction.js",
@@ -206,7 +230,6 @@
 		"/home/radu/code/classy/node_modules/newify/getInstantiatorFunction",
 		"/home/radu/code/classy/src/getInstance.js",
 		"/home/radu/code/classy/node_modules/browserify/node_modules/insert-module-globals/example/files/foo/index.js",
-		"/home/radu/code/classy/node_modules/newify/index.js",
 		"/home/radu/code/classy/node_modules/browserify/example/source_maps/index.html",
 		"/home/radu/code/classy/node_modules/browserify/index.js",
 		"/home/radu/code/classy/node_modules/karma/node_modules/minimatch/test/extglob-ending-with-state-char.js",
@@ -217,11 +240,9 @@
 		"/home/radu/code/classy/node_modules/should/gulpfile.js",
 		"/home/radu/code/classy/node_modules/karma/integration-tests/coverage-mocha-requirejs/dependency.js",
 		"/home/radu/code/classy/node_modules/browserify/test/dep.js",
-		"/home/radu/code/classy/src/core/buildClassFunctions.js",
 		"/home/radu/code/classy/node_modules/browserify/example/api/build.js",
 		"/home/radu/code/classy/node_modules/browserify/lib/builtins.js",
 		"/home/radu/code/classy/node_modules/browserify/test/multi_bundle_unique.js",
-		"/home/radu/code/classy/node_modules/.bin/browserify",
 		"/home/radu/code/classy/src/core/extend.js",
 		"/home/radu/code/classy/src/extendClass.js",
 		"/home/radu/code/classy/node_modules/karma/node_modules/connect/lib/utils.js",
@@ -244,6 +265,7 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"/home/radu/code/classy/src",
 			"/home/radu/code/classy"
 		]
 	},
@@ -252,6 +274,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"def",
+			"define'",
+			"define",
+			"this refers to a class",
 			"classy",
 			"forceinstance",
 			"forceinstan",
@@ -293,24 +319,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/define.js",
-					"semi_transient": true,
+					"file": "test/ClassInheritanceTests.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1278,
+						"buffer_size": 3340,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								480,
-								480
+								2143,
+								2143
 							]
 						],
 						"settings":
@@ -320,7 +346,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1533.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
@@ -351,7 +377,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -383,7 +409,7 @@
 						"translation.y": 4541.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -399,8 +425,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								591,
+								591
 							]
 						],
 						"settings":
@@ -414,11 +440,41 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "bower.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "src/core/modifyFn.js",
 					"semi_transient": false,
 					"settings":
@@ -436,17 +492,19 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "src/create.js",
 					"semi_transient": false,
 					"settings":
@@ -477,91 +535,700 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
-					"buffer": 6,
-					"file": "test/ClassGetterTests.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2683,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2677,
-								2677
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1157.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
 					"buffer": 7,
-					"file": "src/core/canGetOwnPropertyDescriptor.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 152,
+						"buffer_size": 75684,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										135,
+										157
+									],
+									[
+										250,
+										272
+									],
+									[
+										411,
+										433
+									],
+									[
+										557,
+										579
+									],
+									[
+										721,
+										743
+									],
+									[
+										876,
+										898
+									],
+									[
+										1076,
+										1098
+									],
+									[
+										1264,
+										1286
+									],
+									[
+										1551,
+										1558
+									],
+									[
+										1791,
+										1798
+									],
+									[
+										1980,
+										1987
+									],
+									[
+										2116,
+										2123
+									],
+									[
+										2541,
+										2548
+									],
+									[
+										2657,
+										2664
+									],
+									[
+										2959,
+										2966
+									],
+									[
+										3296,
+										3303
+									],
+									[
+										3629,
+										3636
+									],
+									[
+										3969,
+										3976
+									],
+									[
+										4315,
+										4322
+									],
+									[
+										4662,
+										4669
+									],
+									[
+										5000,
+										5007
+									],
+									[
+										5331,
+										5338
+									],
+									[
+										5678,
+										5685
+									],
+									[
+										5892,
+										5899
+									],
+									[
+										6236,
+										6243
+									],
+									[
+										7133,
+										7140
+									],
+									[
+										11352,
+										11359
+									],
+									[
+										13155,
+										13162
+									],
+									[
+										13497,
+										13504
+									],
+									[
+										13840,
+										13847
+									],
+									[
+										14179,
+										14186
+									],
+									[
+										14525,
+										14532
+									],
+									[
+										14869,
+										14876
+									],
+									[
+										15221,
+										15228
+									],
+									[
+										15574,
+										15581
+									],
+									[
+										15918,
+										15925
+									],
+									[
+										16255,
+										16262
+									],
+									[
+										16587,
+										16594
+									],
+									[
+										17005,
+										17012
+									],
+									[
+										17121,
+										17128
+									],
+									[
+										17436,
+										17443
+									],
+									[
+										17786,
+										17793
+									],
+									[
+										18132,
+										18139
+									],
+									[
+										18485,
+										18492
+									],
+									[
+										18844,
+										18851
+									],
+									[
+										19204,
+										19211
+									],
+									[
+										19555,
+										19562
+									],
+									[
+										19899,
+										19906
+									],
+									[
+										20259,
+										20266
+									],
+									[
+										20473,
+										20480
+									],
+									[
+										20830,
+										20837
+									],
+									[
+										21740,
+										21747
+									],
+									[
+										25959,
+										25966
+									],
+									[
+										27775,
+										27782
+									],
+									[
+										28130,
+										28137
+									],
+									[
+										28486,
+										28493
+									],
+									[
+										28838,
+										28845
+									],
+									[
+										29197,
+										29204
+									],
+									[
+										29554,
+										29561
+									],
+									[
+										29919,
+										29926
+									],
+									[
+										30285,
+										30292
+									],
+									[
+										30642,
+										30649
+									],
+									[
+										30992,
+										30999
+									],
+									[
+										31337,
+										31344
+									],
+									[
+										31745,
+										31752
+									],
+									[
+										31861,
+										31868
+									],
+									[
+										32166,
+										32173
+									],
+									[
+										32506,
+										32513
+									],
+									[
+										32842,
+										32849
+									],
+									[
+										33185,
+										33192
+									],
+									[
+										33534,
+										33541
+									],
+									[
+										33884,
+										33891
+									],
+									[
+										34225,
+										34232
+									],
+									[
+										34559,
+										34566
+									],
+									[
+										34909,
+										34916
+									],
+									[
+										35123,
+										35130
+									],
+									[
+										35470,
+										35477
+									],
+									[
+										36370,
+										36377
+									],
+									[
+										40589,
+										40596
+									],
+									[
+										42395,
+										42402
+									],
+									[
+										42740,
+										42747
+									],
+									[
+										43086,
+										43093
+									],
+									[
+										43428,
+										43435
+									],
+									[
+										43777,
+										43784
+									],
+									[
+										44124,
+										44131
+									],
+									[
+										44479,
+										44486
+									],
+									[
+										44835,
+										44842
+									],
+									[
+										45182,
+										45189
+									],
+									[
+										45522,
+										45529
+									],
+									[
+										45857,
+										45864
+									],
+									[
+										46244,
+										46251
+									],
+									[
+										46360,
+										46367
+									],
+									[
+										46644,
+										46651
+									],
+									[
+										46963,
+										46970
+									],
+									[
+										47278,
+										47285
+									],
+									[
+										47600,
+										47607
+									],
+									[
+										47928,
+										47935
+									],
+									[
+										48257,
+										48264
+									],
+									[
+										48577,
+										48584
+									],
+									[
+										48890,
+										48897
+									],
+									[
+										49219,
+										49226
+									],
+									[
+										49433,
+										49440
+									],
+									[
+										49759,
+										49766
+									],
+									[
+										50638,
+										50645
+									],
+									[
+										54857,
+										54864
+									],
+									[
+										56642,
+										56649
+									],
+									[
+										56966,
+										56973
+									],
+									[
+										57291,
+										57298
+									],
+									[
+										57612,
+										57619
+									],
+									[
+										57940,
+										57947
+									],
+									[
+										58266,
+										58273
+									],
+									[
+										58600,
+										58607
+									],
+									[
+										58935,
+										58942
+									],
+									[
+										59261,
+										59268
+									],
+									[
+										59580,
+										59587
+									],
+									[
+										59894,
+										59901
+									],
+									[
+										60132,
+										60139
+									],
+									[
+										60278,
+										60285
+									],
+									[
+										60606,
+										60613
+									],
+									[
+										60722,
+										60729
+									],
+									[
+										60961,
+										60968
+									],
+									[
+										61235,
+										61242
+									],
+									[
+										61505,
+										61512
+									],
+									[
+										61782,
+										61789
+									],
+									[
+										62065,
+										62072
+									],
+									[
+										62349,
+										62356
+									],
+									[
+										62624,
+										62631
+									],
+									[
+										62892,
+										62899
+									],
+									[
+										63176,
+										63183
+									],
+									[
+										63390,
+										63397
+									],
+									[
+										63671,
+										63678
+									],
+									[
+										64505,
+										64512
+									],
+									[
+										68724,
+										68731
+									],
+									[
+										70464,
+										70471
+									],
+									[
+										70743,
+										70750
+									],
+									[
+										71023,
+										71030
+									],
+									[
+										71299,
+										71306
+									],
+									[
+										71582,
+										71589
+									],
+									[
+										71863,
+										71870
+									],
+									[
+										72152,
+										72159
+									],
+									[
+										72442,
+										72449
+									],
+									[
+										72723,
+										72730
+									],
+									[
+										72997,
+										73004
+									],
+									[
+										73266,
+										73273
+									],
+									[
+										73501,
+										73508
+									],
+									[
+										73624,
+										73631
+									],
+									[
+										73764,
+										73771
+									],
+									[
+										73932,
+										73939
+									],
+									[
+										74102,
+										74109
+									],
+									[
+										74372,
+										74379
+									],
+									[
+										74495,
+										74502
+									],
+									[
+										74635,
+										74642
+									],
+									[
+										74803,
+										74810
+									],
+									[
+										75119,
+										75126
+									],
+									[
+										75242,
+										75249
+									],
+									[
+										75382,
+										75389
+									],
+									[
+										75550,
+										75557
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								152,
-								152
+								75553,
+								75553
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 4,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1368.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "src/core/assignClassProperty.js",
+					"file": "src/extendClass.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1825,
+						"buffer_size": 235,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1271,
-								1271
+								201,
+								201
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -572,19 +1239,19 @@
 				},
 				{
 					"buffer": 9,
-					"file": "src/core/buildClassFunctions.js",
+					"file": "test/ClassGetterTests.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5268,
+						"buffer_size": 2908,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2868,
-								2868
+								2845,
+								2845
 							]
 						],
 						"settings":
@@ -594,69 +1261,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1134.0,
+						"translation.y": 1548.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "package.json",
+					"buffer": 10,
+					"file": "dist/classy.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1092,
+						"buffer_size": 54891,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								96,
-								96
+								54891,
+								54891
 							]
 						],
 						"settings":
 						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "node_modules/newify/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 161,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								105,
-								105
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -719,6 +1357,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"define",
+				"src/define.js"
+			],
 			[
 				"pac",
 				"package.json"
@@ -788,6 +1434,14 @@
 		"selected_items":
 		[
 			[
+				"z",
+				"~/code/ZippyUI/zippyui.sublime-project"
+			],
+			[
+				"f",
+				"~/code/functionally/functionally.sublime-project"
+			],
+			[
 				"a",
 				"~/code/alchemy/alchemy.sublime-project"
 			],
@@ -812,7 +1466,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 374.0,
 	"status_bar_visible": true,
 	"template_settings":

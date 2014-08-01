@@ -111,7 +111,7 @@ module.exports = _dereq_('./define')({
         }
     }
 })
-},{"./core":10,"./define":13,"./utils/copy":28}],4:[function(_dereq_,module,exports){
+},{"./core":11,"./define":14,"./utils/copy":29}],4:[function(_dereq_,module,exports){
 module.exports = {}
 },{}],5:[function(_dereq_,module,exports){
 'use strict'
@@ -119,7 +119,8 @@ module.exports = {}
 var copy = _dereq_('../utils/copy').copy
 var modifyFn = _dereq_('./modifyFn')
 
-var canDefineProperty    = _dereq_('./canDefineProperty')
+var canDefineProperty           = _dereq_('./canDefineProperty')
+var canGetOwnPropertyDescriptor = _dereq_('./canGetOwnPropertyDescriptor')
 
 var assignClassProperty = function(Class, propName, propDescriptor, config){
 
@@ -131,7 +132,22 @@ var assignClassProperty = function(Class, propName, propDescriptor, config){
     var superTarget = config.proto?
                         superClass.prototype:
                         superClass
+
     var own = config.own
+    var targetPropDescriptor
+
+    if (canGetOwnPropertyDescriptor && (propDescriptor.get === undefined || propDescriptor.set == undefined)){
+        targetPropDescriptor = Object.getOwnPropertyDescriptor(target, propName)
+
+        if (targetPropDescriptor && propDescriptor.get === undefined && targetPropDescriptor.get !== undefined){
+            propDescriptor.get = targetPropDescriptor.get
+        }
+        if (targetPropDescriptor && propDescriptor.set === undefined && targetPropDescriptor.set !== undefined){
+            propDescriptor.set = targetPropDescriptor.set
+        }
+    }
+    // propDescriptor.get = propDescriptor.get || superTarget.get
+    // propDescriptor.set = propDescriptor.set || superTarget.set
 
     var getterOrSetter = propDescriptor.get || propDescriptor.set
     var newPropDescriptor
@@ -144,7 +160,7 @@ var assignClassProperty = function(Class, propName, propDescriptor, config){
             newPropDescriptor.get = modifyFn(propName, propDescriptor.get, superTarget, superClass, target, { getter: true })
         }
         if (propDescriptor.set !== undefined){
-            newPropDescriptor.set = modifyFn(propName, propDescriptor.get, superTarget, superClass, target, { setter: true })
+            newPropDescriptor.set = modifyFn(propName, propDescriptor.set, superTarget, superClass, target, { setter: true })
         }
         propDescriptor = newPropDescriptor
     } else {
@@ -178,7 +194,7 @@ var assignClassProperty = function(Class, propName, propDescriptor, config){
 }
 
 module.exports = assignClassProperty
-},{"../utils/copy":28,"./canDefineProperty":7,"./modifyFn":11}],6:[function(_dereq_,module,exports){
+},{"../utils/copy":29,"./canDefineProperty":7,"./canGetOwnPropertyDescriptor":8,"./modifyFn":12}],6:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict'
@@ -350,6 +366,25 @@ module.exports = (function(){
     return 'getOwnPropertyDescriptor' in Object && typeof Object.getOwnPropertyDescriptor == 'function'
 })()
 },{}],9:[function(_dereq_,module,exports){
+'use strict'
+
+var canGetOwnPropertyDescriptor = _dereq_('./canGetOwnPropertyDescriptor')
+
+function copy(source, target){
+    Object.getOwnPropertyNames(source).forEach(function(name){
+        var sourceDescriptor = Object.getOwnPropertyDescriptor(source, name)
+
+        if (!sourceDescriptor.get && !sourceDescriptor.set){
+            //dont copy non getters/setters, since this is handled by prototype inheritance
+            return
+        }
+
+        Object.defineProperty(target, name, sourceDescriptor)
+    })
+}
+
+module.exports = canGetOwnPropertyDescriptor? copy: function(){}
+},{"./canGetOwnPropertyDescriptor":8}],10:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict'
@@ -375,7 +410,7 @@ module.exports = function(){
         return child
     }
 }()
-},{}],10:[function(_dereq_,module,exports){
+},{}],11:[function(_dereq_,module,exports){
 module.exports = function(){
 
     'use strict'
@@ -390,6 +425,8 @@ module.exports = function(){
     var canGetOwnPropertyDescriptor = _dereq_('./canGetOwnPropertyDescriptor')
 
     var getOwnPropertyDescriptor = canGetOwnPropertyDescriptor? Object.getOwnPropertyDescriptor: null
+
+    var copyDescriptors = _dereq_('./copyDescriptors')
 
     var Base = function(){}
 
@@ -453,6 +490,9 @@ module.exports = function(){
 
         extend(Parent, Class)
 
+        copyDescriptors(Parent.prototype, Class.prototype)
+        copyDescriptors(Parent, Class)
+
         //remove statics from config
         var statics = config.statics || {}
         var $own    = statics.$own
@@ -466,6 +506,7 @@ module.exports = function(){
             prepareSingletonStatics(statics)
         }
 
+        //copy static properties from Parent to Class
         copyClassConfig( Class,  Parent, {
             proto     : false,
             skipOwn   : true,
@@ -477,8 +518,10 @@ module.exports = function(){
             })
         })
 
+        //copy static properties from config statics to class
         copyClassConfig( Class, statics, { proto: false })
 
+        //copy static own properties
         if ($own){
             copyClassConfig( Class, $own, { proto: false, own: true })
         }
@@ -516,7 +559,7 @@ module.exports = function(){
         for (key in config) if (hasOwnProperty.call(config, key)) {
 
             if (skipOwn && configOwn[key]){
-                //this property should not be copied, to skip to next property
+                //this property should not be copied -> skip to next property
                 continue
             }
 
@@ -533,7 +576,11 @@ module.exports = function(){
             if (own){
                 result[key] = 1
             } else {
-                result[key] = keyResult
+                if (canGetOwnPropertyDescriptor){
+                    Object.defineProperty(result, key, valueDescriptor)
+                } else {
+                    result[key] = keyResult
+                }
             }
 
         }
@@ -580,7 +627,7 @@ module.exports = function(){
         BaseClass        : Base
     }
 }()
-},{"../utils/copy":28,"./assignClassProperty":5,"./canDefineProperty":7,"./canGetOwnPropertyDescriptor":8,"./extend":9,"newify":2}],11:[function(_dereq_,module,exports){
+},{"../utils/copy":29,"./assignClassProperty":5,"./canDefineProperty":7,"./canGetOwnPropertyDescriptor":8,"./copyDescriptors":9,"./extend":10,"newify":2}],12:[function(_dereq_,module,exports){
 var callSuperRe     = /\bcallSuper|callSuperWith\b/
 var callOverridenRe = /\bcallOverriden|callOverridenWith\b/
 
@@ -608,7 +655,7 @@ function modify(name, fn, superTarget, superClass, target, getterSetterConfig){
 }
 
 module.exports = modify
-},{"./buildClassFunctions":6}],12:[function(_dereq_,module,exports){
+},{"./buildClassFunctions":6}],13:[function(_dereq_,module,exports){
 var SLICE = Array.prototype.slice
 
 var getClass = _dereq_('./getClass')
@@ -641,7 +688,7 @@ module.exports = function(alias /* args... */){
 
     return newify(Class, args)
 }
-},{"./getClass":17,"newify":2}],13:[function(_dereq_,module,exports){
+},{"./getClass":18,"newify":2}],14:[function(_dereq_,module,exports){
 var getClass     = _dereq_('./getClass')
 var processClass = _dereq_('./processClass')
 
@@ -697,7 +744,7 @@ module.exports = function(parentClass, classConfig){
         processClass(Class)
     })
 }
-},{"./Registry":4,"./core":10,"./getClass":17,"./processClass":24,"./processors/ClassProcessor":25}],14:[function(_dereq_,module,exports){
+},{"./Registry":4,"./core":11,"./getClass":18,"./processClass":25,"./processors/ClassProcessor":26}],15:[function(_dereq_,module,exports){
 var define = _dereq_('./define')
 var copyIf = _dereq_('./utils/copy').copyIf
 
@@ -707,7 +754,7 @@ module.exports = function(members){
 
     return define(copyIf({ extend: 'z.mixin'}, members))
 }
-},{"./define":13,"./utils/copy":28}],15:[function(_dereq_,module,exports){
+},{"./define":14,"./utils/copy":29}],16:[function(_dereq_,module,exports){
 /**
  * @method destroyClass
  *
@@ -731,7 +778,7 @@ module.exports = function(Class){
         Class.destroy()
     }
 }
-},{"./core":10,"./getClass":17}],16:[function(_dereq_,module,exports){
+},{"./core":11,"./getClass":18}],17:[function(_dereq_,module,exports){
 
 module.exports = function(config){
 
@@ -746,7 +793,7 @@ module.exports = function(config){
 
     return define(config)
 }
-},{"./define":13}],17:[function(_dereq_,module,exports){
+},{"./define":14}],18:[function(_dereq_,module,exports){
 /**
  * @method getClass
  *
@@ -774,7 +821,7 @@ module.exports = function getClass(alias){
     return REGISTRY[alias]
 
 }
-},{"./Registry":4,"./core":10}],18:[function(_dereq_,module,exports){
+},{"./Registry":4,"./core":11}],19:[function(_dereq_,module,exports){
 var BaseClass = _dereq_('./core').BaseClass
 var getClass  = _dereq_('./getClass')
 
@@ -818,7 +865,7 @@ module.exports = function(config){
 
     return new klass(config)
 }
-},{"./core":10,"./getClass":17}],19:[function(_dereq_,module,exports){
+},{"./core":11,"./getClass":18}],20:[function(_dereq_,module,exports){
 var BaseClass = _dereq_('./core').BaseClass
 var getClass  = _dereq_('./getClass')
 
@@ -844,7 +891,7 @@ module.exports = function(alias){
         return Class
     }
 }
-},{"./core":10,"./getClass":17}],20:[function(_dereq_,module,exports){
+},{"./core":11,"./getClass":18}],21:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -902,7 +949,7 @@ module.exports = function(){
         isClassLike        : isSameOrSubclassOf
     }
 }()
-},{"./Mixin":3,"./Registry":4,"./core":10,"./create":12,"./define":13,"./defineMixin":14,"./destroyClass":15,"./getClass":17,"./getInstance":18,"./getParentClass":19,"./isSubclassOf":21,"./override":22,"./processors/MixinProcessor":26,"./utils/copy":28}],21:[function(_dereq_,module,exports){
+},{"./Mixin":3,"./Registry":4,"./core":11,"./create":13,"./define":14,"./defineMixin":15,"./destroyClass":16,"./getClass":18,"./getInstance":19,"./getParentClass":20,"./isSubclassOf":22,"./override":23,"./processors/MixinProcessor":27,"./utils/copy":29}],22:[function(_dereq_,module,exports){
 var getClass = _dereq_('./getClass')
 
 module.exports = function(subClass, superClass, config){
@@ -926,7 +973,7 @@ module.exports = function(subClass, superClass, config){
 
     return !!subClass
 }
-},{"./getClass":17}],22:[function(_dereq_,module,exports){
+},{"./getClass":18}],23:[function(_dereq_,module,exports){
 var getClass = _dereq_('./getClass')
 
 /**
@@ -957,7 +1004,7 @@ module.exports = function(Class, classConfig){
 
     return TheClass
 }
-},{"./getClass":17}],23:[function(_dereq_,module,exports){
+},{"./getClass":18}],24:[function(_dereq_,module,exports){
 module.exports = function(config){
 
     'use strict'
@@ -965,7 +1012,7 @@ module.exports = function(config){
     //this refers to a Class
     return _dereq_('./core').overrideClass(this, config)
 }
-},{"./core":10}],24:[function(_dereq_,module,exports){
+},{"./core":11}],25:[function(_dereq_,module,exports){
 var copyKeys = _dereq_('./utils/copy').copyKeys
 
 function aliasMethods(config){
@@ -1006,7 +1053,7 @@ module.exports = function(Class){
         Class.init()
     }
 }
-},{"./extendClass":16,"./overrideClass":23,"./processors/ClassProcessor":25,"./unregisterClass":27,"./utils/copy":28}],25:[function(_dereq_,module,exports){
+},{"./extendClass":17,"./overrideClass":24,"./processors/ClassProcessor":26,"./unregisterClass":28,"./utils/copy":29}],26:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -1047,7 +1094,7 @@ module.exports = function(){
 
     return result
 }()
-},{"./MixinProcessor":26}],26:[function(_dereq_,module,exports){
+},{"./MixinProcessor":27}],27:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -1434,7 +1481,7 @@ module.exports = function(){
 
     }
 }()
-},{"../core":10,"../getClass":17,"../utils/copy":28,"../utils/function":29}],27:[function(_dereq_,module,exports){
+},{"../core":11,"../getClass":18,"../utils/copy":29,"../utils/function":30}],28:[function(_dereq_,module,exports){
 var REGISTRY = _dereq_('./Registry')
 
 module.exports = function unregisterClass(){
@@ -1448,7 +1495,7 @@ module.exports = function unregisterClass(){
 
     delete REGISTRY[alias]
 }
-},{"./Registry":4}],28:[function(_dereq_,module,exports){
+},{"./Registry":4}],29:[function(_dereq_,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -1791,7 +1838,7 @@ module.exports = function(){
     }
 
 }()
-},{}],29:[function(_dereq_,module,exports){
+},{}],30:[function(_dereq_,module,exports){
 module.exports = function(){
 
     var SLICE = Array.prototype.slice
@@ -1848,6 +1895,6 @@ module.exports = function(){
         bindArgsArray: bindArgsArray
     }
 }()
-},{}]},{},[20])
-(20)
+},{}]},{},[21])
+(21)
 });

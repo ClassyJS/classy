@@ -13,6 +13,8 @@ module.exports = function(){
 
     var getOwnPropertyDescriptor = canGetOwnPropertyDescriptor? Object.getOwnPropertyDescriptor: null
 
+    var copyDescriptors = require('./copyDescriptors')
+
     var Base = function(){}
 
     Base.prototype.init = function(){
@@ -75,6 +77,9 @@ module.exports = function(){
 
         extend(Parent, Class)
 
+        copyDescriptors(Parent.prototype, Class.prototype)
+        copyDescriptors(Parent, Class)
+
         //remove statics from config
         var statics = config.statics || {}
         var $own    = statics.$own
@@ -88,6 +93,7 @@ module.exports = function(){
             prepareSingletonStatics(statics)
         }
 
+        //copy static properties from Parent to Class
         copyClassConfig( Class,  Parent, {
             proto     : false,
             skipOwn   : true,
@@ -99,8 +105,10 @@ module.exports = function(){
             })
         })
 
+        //copy static properties from config statics to class
         copyClassConfig( Class, statics, { proto: false })
 
+        //copy static own properties
         if ($own){
             copyClassConfig( Class, $own, { proto: false, own: true })
         }
@@ -138,7 +146,7 @@ module.exports = function(){
         for (key in config) if (hasOwnProperty.call(config, key)) {
 
             if (skipOwn && configOwn[key]){
-                //this property should not be copied, to skip to next property
+                //this property should not be copied -> skip to next property
                 continue
             }
 
@@ -155,7 +163,11 @@ module.exports = function(){
             if (own){
                 result[key] = 1
             } else {
-                result[key] = keyResult
+                if (canGetOwnPropertyDescriptor){
+                    Object.defineProperty(result, key, valueDescriptor)
+                } else {
+                    result[key] = keyResult
+                }
             }
 
         }
