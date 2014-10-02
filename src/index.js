@@ -33,6 +33,7 @@ module.exports = function(){
         extend         : core.extend,
         createClass    : core.createClass,
         overrideClass  : core.overrideClass,
+        core: core,
 
         //enhanced
         define   : require('./define'),
