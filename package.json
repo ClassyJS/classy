@@ -1,6 +1,6 @@
 {
   "name": "classy",
-  "version": "1.4.8",
+  "version": "1.4.10",
   "scripts": {
     "build": "browserify src/index.js -s classy o-np dist/classy.js",
     "watch": "watchify src/index.js -s classy -o dist/classy.js",
