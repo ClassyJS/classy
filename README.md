@@ -19,7 +19,7 @@ dist/classy.js
 
 ## Contributing
 
-See [CONTRIBUTING.md](./blob/master/CONTRIBUTING.md)
+See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Example
 ```js
