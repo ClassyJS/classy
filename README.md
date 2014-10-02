@@ -7,13 +7,15 @@ Meant to be used in the browser and in node. Well tested, with 50+ tests.
 
 ## Installation
 
+```sh
+$ npm install classy
 ```
-npm install classy
-```
-For the browser use
+For the browser please either use `webpack` or `browserify` to integrate classy into your app.
+<!--
 ```
 dist/classy.js
 ```
+ -->
 
 ## Example
 ```js
