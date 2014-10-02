@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zippyui/classy.git"
+    "url": "https://github.com/classyjs/classy.git"
   },
   "keywords": [
     "class",
@@ -39,9 +39,9 @@
   "author": "Radu Brehar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zippyui/classy/issues"
+    "url": "https://github.com/classyjs/classy/issues"
   },
-  "homepage": "https://github.com/zippyui/classy",
+  "homepage": "https://github.com/classyjs/classy",
   "dependencies": {
     "newify": "~1.1.3",
     "copy-utils": "~0.1.1"
