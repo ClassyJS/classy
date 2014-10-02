@@ -17,6 +17,10 @@ dist/classy.js
 ```
  -->
 
+## Contributing
+
+See [CONTRIBUTING.md](./blob/master/CONTRIBUTING.md)
+
 ## Example
 ```js
 var Vehicle = classy.define({
