@@ -13,9 +13,12 @@ var assignClassProperty = function(Class, propName, propDescriptor, config){
                         Class
 
     var superClass  = Class.$superClass
-    var superTarget = config.proto?
-                        superClass.prototype:
-                        superClass
+    var superTarget = superClass?
+                        config.proto?
+                            superClass.prototype:
+                            superClass
+                        :
+                        undefined
 
     var own = config.own
     var targetPropDescriptor

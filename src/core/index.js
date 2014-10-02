@@ -184,8 +184,8 @@ module.exports = function(){
             config = Class.beforeOverride(config)
         }
 
-        var statics = config.statics || {},
-            $own    = statics.$own
+        var statics = config.statics || {}
+        var $own    = statics.$own
 
         statics.$own   = null
         config.statics = null
@@ -194,14 +194,17 @@ module.exports = function(){
             prepareSingletonStatics(statics)
         }
 
-        copyClassConfig( Class,  config, null, Class.$initialConfig)
+        copyClassConfig( Class, config, null, Class.$initialConfig)
 
         copyClassConfig( Class, statics, { proto: false })
 
         if ($own){
             copyClassConfig( Class, $own, { proto: false, own: true })
         }
+    }
 
+    function overrideObject(targetObject, config){
+        copyClassConfig( targetObject, config, { proto: false })
     }
 
     return {
@@ -209,6 +212,7 @@ module.exports = function(){
         extend           : extend,
         createClass      : createClass,
         overrideClass    : overrideClass,
+        overrideObject   : overrideObject,
 
         copyClassConfig  : copyClassConfig,
         BaseClass        : Base

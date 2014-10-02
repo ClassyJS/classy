@@ -1,4 +1,333 @@
-!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.classy=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.classy=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+module.exports = function(){
+
+    'use strict'
+
+    var HAS_OWN       = Object.prototype.hasOwnProperty,
+        STR_OBJECT    = 'object',
+        STR_UNDEFINED = 'undefined'
+
+    return {
+
+        /**
+         * Copies all properties from source to destination
+         *
+         *      copy({name: 'jon',age:5}, this);
+         *      // => this will have the 'name' and 'age' properties set to 'jon' and 5 respectively
+         *
+         * @param {Object} source
+         * @param {Object} destination
+         *
+         * @return {Object} destination
+         */
+        copy: function(source, destination){
+
+            destination = destination || {}
+
+            if (source != null && typeof source === STR_OBJECT ){
+
+                for (var i in source) if ( HAS_OWN.call(source, i) ) {
+                    destination[i] = source[i]
+                }
+
+            }
+
+            return destination
+        },
+
+        /**
+         * Copies all properties from source to destination, if the property does not exist into the destination
+         *
+         *      copyIf({name: 'jon',age:5}, {age:7})
+         *      // => { name: 'jon', age: 7}
+         *
+         * @param {Object} source
+         * @param {Object} destination
+         *
+         * @return {Object} destination
+         */
+        copyIf: function(source, destination){
+            destination = destination || {}
+
+            if (source != null && typeof source === STR_OBJECT){
+
+                for (var i in source) if ( HAS_OWN.call(source, i) && (typeof destination[i] === STR_UNDEFINED) ) {
+
+                    destination[i] = source[i]
+
+                }
+            }
+
+            return destination
+        },
+
+        /**
+         * Copies all properties from source to a new object, with the given value. This object is returned
+         *
+         *      copyAs({name: 'jon',age:5})
+         *      // => the resulting object will have the 'name' and 'age' properties set to 1
+         *
+         * @param {Object} source
+         * @param {Object/Number/String} [value=1]
+         *
+         * @return {Object} destination
+         */
+        copyAs: function(source, value){
+
+            var destination = {}
+
+            value = value || 1
+
+            if (source != null && typeof source === STR_OBJECT ){
+
+                for (var i in source) if ( HAS_OWN.call(source, i) ) {
+                    destination[i] = value
+                }
+
+            }
+
+            return destination
+        },
+
+        /**
+         * Copies all properties named in the list, from source to destination
+         *
+         *      copyList({name: 'jon',age:5, year: 2006}, {}, ['name','age'])
+         *      // => {name: 'jon', age: 5}
+         *
+         * @param {Object} source
+         * @param {Object} destination
+         * @param {Array} list the array with the names of the properties to copy
+         *
+         * @return {Object} destination
+         */
+        copyList: function(source, destination, list){
+            if (arguments.length == 2){
+                list = destination
+                destination = null
+            }
+
+            destination = destination || {}
+            list        = list || []
+
+            var i   = 0,
+                len = list.length,
+                propName
+
+            for( ; i < len; i++ ){
+                propName = list[i]
+
+                if ( typeof source[propName] !== STR_UNDEFINED ) {
+                    destination[list[i]] = source[list[i]]
+                }
+            }
+
+            return destination
+        },
+
+        /**
+         * Copies all properties named in the list, from source to destination, if the property does not exist into the destination
+         *
+         *      copyListIf({name: 'jon',age:5, year: 2006}, {age: 10}, ['name','age'])
+         *      // => {name: 'jon', age: 10}
+         *
+         * @param {Object} source
+         * @param {Object} destination
+         * @param {Array} list the array with the names of the properties to copy
+         *
+         * @return {Object} destination
+         */
+        copyListIf: function(source, destination, list){
+            if (arguments.length == 2){
+                list = destination
+                destination = null
+            }
+
+            destination = destination || {}
+            list        = list || []
+
+            var propName,
+                i   = 0,
+                len = list.length
+
+            for(; i<len ; i++){
+                propName = list[i]
+                if (
+                        (typeof source[propName]      !== STR_UNDEFINED) &&
+                        (typeof destination[propName] === STR_UNDEFINED)
+                    ){
+                    destination[propName] = source[propName]
+                }
+            }
+
+            return destination
+        },
+
+        /**
+         * Copies all properties named in the namedKeys, from source to destination
+         *
+         *      copyKeys({name: 'jon',age:5, year: 2006, date: '2010/05/12'}, {}, {name:1 ,age: true, year: 'theYear'})
+         *      // => {name: 'jon', age: 5, theYear: 2006}
+         *
+         * @param {Object} source
+         * @param {Object} destination
+         * @param {Object} namedKeys an object with keys denoting the properties to be copied
+         *
+         * @return {Object} destination
+         */
+        copyKeys: function(source, destination, namedKeys){
+            if (arguments.length == 2){
+                namedKeys = destination
+                destination = null
+            }
+
+            destination = destination || {}
+
+            if (
+                   source != null && typeof source    === STR_OBJECT &&
+                namedKeys != null && typeof namedKeys === STR_OBJECT
+            ) {
+                var typeOfNamedProperty,
+                    namedPropertyValue
+
+                for  (var propName in namedKeys) if ( HAS_OWN.call(namedKeys, propName) ) {
+                    namedPropertyValue  = namedKeys[propName]
+                    typeOfNamedProperty = typeof namedPropertyValue
+
+                    if (typeof source[propName] !== STR_UNDEFINED){
+                        destination[typeOfNamedProperty == 'string'? namedPropertyValue : propName] = source[propName]
+                    }
+                }
+            }
+
+            return destination
+        },
+
+        /**
+         * Copies all properties named in the namedKeys, from source to destination,
+         * but only if the property does not already exist in the destination object
+         *
+         *      copyKeysIf({name: 'jon',age:5, year: 2006}, {aname: 'test'}, {name:'aname' ,age: true})
+         *      // => {aname: 'test', age: 5}
+         *
+         * @param {Object} source
+         * @param {Object} destination
+         * @param {Object} namedKeys an object with keys denoting the properties to be copied
+         *
+         * @return {Object} destination
+         */
+        copyKeysIf: function(source, destination, namedKeys){
+            if (arguments.length == 2){
+                namedKeys   = destination
+                destination = null
+            }
+
+            destination = destination || {}
+
+            if (
+                       source != null && typeof source    === STR_OBJECT &&
+                    namedKeys != null && typeof namedKeys === STR_OBJECT
+                ) {
+
+                    var typeOfNamedProperty,
+                        namedPropertyValue,
+                        newPropertyName
+
+                    for (var propName in namedKeys) if ( HAS_OWN.call(namedKeys, propName) ) {
+
+                        namedPropertyValue  = namedKeys[propName]
+                        typeOfNamedProperty = typeof namedPropertyValue
+                        newPropertyName     = typeOfNamedProperty == 'string'? namedPropertyValue : propName
+
+                        if (
+                                typeof      source[propName]        !== STR_UNDEFINED &&
+                                typeof destination[newPropertyName] === STR_UNDEFINED
+                            ) {
+                            destination[newPropertyName] = source[propName]
+                        }
+
+                    }
+                }
+
+            return destination
+        },
+
+        copyExceptKeys: function(source, destination, exceptKeys){
+            destination = destination || {}
+            exceptKeys  = exceptKeys  || {}
+
+            if (source != null && typeof source === STR_OBJECT ){
+
+                for (var i in source) if ( HAS_OWN.call(source, i) && !HAS_OWN.call(exceptKeys, i) ) {
+
+                    destination[i] = source[i]
+                }
+
+            }
+
+            return destination
+        },
+
+        /**
+         * Copies the named keys from source to destination.
+         * For the keys that are functions, copies the functions bound to the source
+         *
+         * @param  {Object} source      The source object
+         * @param  {Object} destination The target object
+         * @param  {Object} namedKeys   An object with the names of the keys to copy The values from the keys in this object
+         *                              need to be either numbers or booleans if you want to copy the property under the same name,
+         *                              or a string if you want to copy the property under a different name
+         * @return {Object}             Returns the destination object
+         */
+        bindCopyKeys: function(source, destination, namedKeys){
+            if (arguments.length == 2){
+                namedKeys = destination
+                destination = null
+            }
+
+            destination = destination || {}
+
+            if (
+                       source != null && typeof source    === STR_OBJECT &&
+                    namedKeys != null && typeof namedKeys === STR_OBJECT
+                ) {
+
+
+                var typeOfNamedProperty,
+                    namedPropertyValue,
+
+                    typeOfSourceProperty,
+                    propValue
+
+
+                for(var propName in namedKeys) if (HAS_OWN.call(namedKeys, propName)) {
+
+                    namedPropertyValue = namedKeys[propName]
+                    typeOfNamedProperty = typeof namedPropertyValue
+
+                    propValue = source[propName]
+                    typeOfSourceProperty = typeof propValue
+
+
+                    if ( typeOfSourceProperty !== STR_UNDEFINED ) {
+
+                        destination[
+                            typeOfNamedProperty == 'string'?
+                                            namedPropertyValue :
+                                            propName
+                            ] = typeOfSourceProperty == 'function' ?
+                                            propValue.bind(source):
+                                            propValue
+                    }
+                }
+            }
+
+            return destination
+        }
+    }
+
+}()
+},{}],2:[function(require,module,exports){
 module.exports = function(){
 
     'use strict';
@@ -27,13 +356,13 @@ module.exports = function(){
     }
 
 }()
-},{}],2:[function(_dereq_,module,exports){
-var getInstantiatorFunction = _dereq_('./getInstantiatorFunction')
+},{}],3:[function(require,module,exports){
+var getInstantiatorFunction = require('./getInstantiatorFunction')
 
 module.exports = function(fn, args){
 	return getInstantiatorFunction(args.length)(fn, args)
 }
-},{"./getInstantiatorFunction":1}],3:[function(_dereq_,module,exports){
+},{"./getInstantiatorFunction":2}],4:[function(require,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -47,11 +376,11 @@ module.exports = function(fn, args){
 
 'use strict'
 
-var core = _dereq_('./core')
-var copy = _dereq_('./utils/copy').copy
+var core = require('./core')
+var copy = require('./utils/copy').copy
 var when = [ '$before', '$after', '$override', '$copyIf' ]
 
-module.exports = _dereq_('./define')({
+module.exports = require('./define')({
 
     alias: 'z.mixin',
 
@@ -111,16 +440,16 @@ module.exports = _dereq_('./define')({
         }
     }
 })
-},{"./core":11,"./define":14,"./utils/copy":29}],4:[function(_dereq_,module,exports){
+},{"./core":12,"./define":15,"./utils/copy":30}],5:[function(require,module,exports){
 module.exports = {}
-},{}],5:[function(_dereq_,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict'
 
-var copy = _dereq_('../utils/copy').copy
-var modifyFn = _dereq_('./modifyFn')
+var copy = require('../utils/copy').copy
+var modifyFn = require('./modifyFn')
 
-var canDefineProperty           = _dereq_('./canDefineProperty')
-var canGetOwnPropertyDescriptor = _dereq_('./canGetOwnPropertyDescriptor')
+var canDefineProperty           = require('./canDefineProperty')
+var canGetOwnPropertyDescriptor = require('./canGetOwnPropertyDescriptor')
 
 var assignClassProperty = function(Class, propName, propDescriptor, config){
 
@@ -146,8 +475,6 @@ var assignClassProperty = function(Class, propName, propDescriptor, config){
             propDescriptor.set = targetPropDescriptor.set
         }
     }
-    // propDescriptor.get = propDescriptor.get || superTarget.get
-    // propDescriptor.set = propDescriptor.set || superTarget.set
 
     var getterOrSetter = propDescriptor.get || propDescriptor.set
     var newPropDescriptor
@@ -194,7 +521,7 @@ var assignClassProperty = function(Class, propName, propDescriptor, config){
 }
 
 module.exports = assignClassProperty
-},{"../utils/copy":29,"./canDefineProperty":7,"./canGetOwnPropertyDescriptor":8,"./modifyFn":12}],6:[function(_dereq_,module,exports){
+},{"../utils/copy":30,"./canDefineProperty":8,"./canGetOwnPropertyDescriptor":9,"./modifyFn":13}],7:[function(require,module,exports){
 module.exports = function(){
 
     'use strict'
@@ -342,7 +669,7 @@ module.exports = function(){
         buildOverridenFn : buildOverridenFn
     }
 }()
-},{}],7:[function(_dereq_,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict'
 
 module.exports = (function(){
@@ -359,16 +686,16 @@ module.exports = (function(){
     return false
 
 })()
-},{}],8:[function(_dereq_,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict'
 
 module.exports = (function(){
     return 'getOwnPropertyDescriptor' in Object && typeof Object.getOwnPropertyDescriptor == 'function'
 })()
-},{}],9:[function(_dereq_,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict'
 
-var canGetOwnPropertyDescriptor = _dereq_('./canGetOwnPropertyDescriptor')
+var canGetOwnPropertyDescriptor = require('./canGetOwnPropertyDescriptor')
 
 function copy(source, target){
     Object.getOwnPropertyNames(source).forEach(function(name){
@@ -384,7 +711,7 @@ function copy(source, target){
 }
 
 module.exports = canGetOwnPropertyDescriptor? copy: function(){}
-},{"./canGetOwnPropertyDescriptor":8}],10:[function(_dereq_,module,exports){
+},{"./canGetOwnPropertyDescriptor":9}],11:[function(require,module,exports){
 module.exports = function(){
 
     'use strict'
@@ -410,23 +737,23 @@ module.exports = function(){
         return child
     }
 }()
-},{}],11:[function(_dereq_,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = function(){
 
     'use strict'
 
-    var newify = _dereq_('newify')
+    var newify = require('newify')
 
-    var extend = _dereq_('./extend')
-    var copy   = _dereq_('../utils/copy').copy
+    var extend = require('./extend')
+    var copy   = require('../utils/copy').copy
 
     var hasOwnProperty = Object.prototype.hasOwnProperty
-    var canDefineProperty = _dereq_('./canDefineProperty')
-    var canGetOwnPropertyDescriptor = _dereq_('./canGetOwnPropertyDescriptor')
+    var canDefineProperty = require('./canDefineProperty')
+    var canGetOwnPropertyDescriptor = require('./canGetOwnPropertyDescriptor')
 
     var getOwnPropertyDescriptor = canGetOwnPropertyDescriptor? Object.getOwnPropertyDescriptor: null
 
-    var copyDescriptors = _dereq_('./copyDescriptors')
+    var copyDescriptors = require('./copyDescriptors')
 
     var Base = function(){}
 
@@ -540,7 +867,7 @@ module.exports = function(){
         return Class
     }
 
-    var assignClassProperty = _dereq_('./assignClassProperty')
+    var assignClassProperty = require('./assignClassProperty')
 
     function copyClassConfig(Class, config, targetConfig, resultConfig){
         targetConfig = targetConfig || { proto: true }
@@ -627,11 +954,11 @@ module.exports = function(){
         BaseClass        : Base
     }
 }()
-},{"../utils/copy":29,"./assignClassProperty":5,"./canDefineProperty":7,"./canGetOwnPropertyDescriptor":8,"./copyDescriptors":9,"./extend":10,"newify":2}],12:[function(_dereq_,module,exports){
+},{"../utils/copy":30,"./assignClassProperty":6,"./canDefineProperty":8,"./canGetOwnPropertyDescriptor":9,"./copyDescriptors":10,"./extend":11,"newify":3}],13:[function(require,module,exports){
 var callSuperRe     = /\bcallSuper|callSuperWith\b/
 var callOverridenRe = /\bcallOverriden|callOverridenWith\b/
 
-var ClassFunctionBuilder = _dereq_('./buildClassFunctions')
+var ClassFunctionBuilder = require('./buildClassFunctions')
 var buildSuperFn         = ClassFunctionBuilder.buildSuperFn
 var buildOverridenFn     = ClassFunctionBuilder.buildOverridenFn
 
@@ -655,11 +982,11 @@ function modify(name, fn, superTarget, superClass, target, getterSetterConfig){
 }
 
 module.exports = modify
-},{"./buildClassFunctions":6}],13:[function(_dereq_,module,exports){
+},{"./buildClassFunctions":7}],14:[function(require,module,exports){
 var SLICE = Array.prototype.slice
 
-var getClass = _dereq_('./getClass')
-var newify   = _dereq_('newify')
+var getClass = require('./getClass')
+var newify   = require('newify')
 
 /**
  * @method create
@@ -688,14 +1015,14 @@ module.exports = function(alias /* args... */){
 
     return newify(Class, args)
 }
-},{"./getClass":18,"newify":2}],14:[function(_dereq_,module,exports){
-var getClass     = _dereq_('./getClass')
-var processClass = _dereq_('./processClass')
+},{"./getClass":19,"newify":3}],15:[function(require,module,exports){
+var getClass     = require('./getClass')
+var processClass = require('./processClass')
 
-var Registry = _dereq_('./Registry')
-var core     = _dereq_('./core')
+var Registry = require('./Registry')
+var core     = require('./core')
 
-var ClassProcessor = _dereq_('./processors/ClassProcessor')
+var ClassProcessor = require('./processors/ClassProcessor')
 
 function preprocessClass(classConfig, parent){
     ClassProcessor.preprocess(classConfig)
@@ -744,9 +1071,9 @@ module.exports = function(parentClass, classConfig){
         processClass(Class)
     })
 }
-},{"./Registry":4,"./core":11,"./getClass":18,"./processClass":25,"./processors/ClassProcessor":26}],15:[function(_dereq_,module,exports){
-var define = _dereq_('./define')
-var copyIf = _dereq_('./utils/copy').copyIf
+},{"./Registry":5,"./core":12,"./getClass":19,"./processClass":26,"./processors/ClassProcessor":27}],16:[function(require,module,exports){
+var define = require('./define')
+var copyIf = require('./utils/copy').copyIf
 
 module.exports = function(members){
 
@@ -754,7 +1081,7 @@ module.exports = function(members){
 
     return define(copyIf({ extend: 'z.mixin'}, members))
 }
-},{"./define":14,"./utils/copy":29}],16:[function(_dereq_,module,exports){
+},{"./define":15,"./utils/copy":30}],17:[function(require,module,exports){
 /**
  * @method destroyClass
  *
@@ -764,8 +1091,8 @@ module.exports = function(members){
  *
  */
 
-var getClass   = _dereq_('./getClass')
-var core       = _dereq_('./core')
+var getClass   = require('./getClass')
+var core       = require('./core')
 var BaseClass  = core.BaseClass
 
 module.exports = function(Class){
@@ -778,13 +1105,13 @@ module.exports = function(Class){
         Class.destroy()
     }
 }
-},{"./core":11,"./getClass":18}],17:[function(_dereq_,module,exports){
+},{"./core":12,"./getClass":19}],18:[function(require,module,exports){
 
 module.exports = function(config){
 
     'use strict'
 
-    var define = _dereq_('./define')
+    var define = require('./define')
 
     //this refers to a Class
 
@@ -793,7 +1120,7 @@ module.exports = function(config){
 
     return define(config)
 }
-},{"./define":14}],18:[function(_dereq_,module,exports){
+},{"./define":15}],19:[function(require,module,exports){
 /**
  * @method getClass
  *
@@ -805,8 +1132,8 @@ module.exports = function(config){
  * @return {Class}       The class or undefined if no class is found
  */
 
-var REGISTRY   = _dereq_('./Registry')
-var BASE_CLASS = _dereq_('./core').BaseClass
+var REGISTRY   = require('./Registry')
+var BASE_CLASS = require('./core').BaseClass
 
 module.exports = function getClass(alias){
     if (!alias){
@@ -821,9 +1148,9 @@ module.exports = function getClass(alias){
     return REGISTRY[alias]
 
 }
-},{"./Registry":4,"./core":11}],19:[function(_dereq_,module,exports){
-var BaseClass = _dereq_('./core').BaseClass
-var getClass  = _dereq_('./getClass')
+},{"./Registry":5,"./core":12}],20:[function(require,module,exports){
+var BaseClass = require('./core').BaseClass
+var getClass  = require('./getClass')
 
 /**
  * @method getInstance
@@ -865,9 +1192,9 @@ module.exports = function(config){
 
     return new klass(config)
 }
-},{"./core":11,"./getClass":18}],20:[function(_dereq_,module,exports){
-var BaseClass = _dereq_('./core').BaseClass
-var getClass  = _dereq_('./getClass')
+},{"./core":12,"./getClass":19}],21:[function(require,module,exports){
+var BaseClass = require('./core').BaseClass
+var getClass  = require('./getClass')
 
 /**
  * @method getParentClass
@@ -891,7 +1218,7 @@ module.exports = function(alias){
         return Class
     }
 }
-},{"./core":11,"./getClass":18}],21:[function(_dereq_,module,exports){
+},{"./core":12,"./getClass":19}],22:[function(require,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -906,17 +1233,17 @@ module.exports = function(){
 
     'use strict'
 
-    var core = _dereq_('./core')
+    var core = require('./core')
 
-    var isSubclassOf = _dereq_('./isSubclassOf')
+    var isSubclassOf = require('./isSubclassOf')
 
     function isSameOrSubclassOf(subClass, superClass){
         return isSubclassOf(subClass, superClass, { allowSame: true })
     }
 
-    _dereq_('./Mixin')
+    require('./Mixin')
 
-    var copyUtils = _dereq_('./utils/copy')
+    var copyUtils = require('./utils/copy')
 
     return {
 
@@ -929,28 +1256,28 @@ module.exports = function(){
         overrideClass  : core.overrideClass,
 
         //enhanced
-        define   : _dereq_('./define'),
-        override : _dereq_('./override'),
-        getClass : _dereq_('./getClass'),
+        define   : require('./define'),
+        override : require('./override'),
+        getClass : require('./getClass'),
 
-        classRegistry: _dereq_('./Registry'),
+        classRegistry: require('./Registry'),
 
-        defineMixin: _dereq_('./defineMixin'),
-        mixin      : _dereq_('./processors/MixinProcessor').mixin,
+        defineMixin: require('./defineMixin'),
+        mixin      : require('./processors/MixinProcessor').mixin,
 
-        create      : _dereq_('./create'),
-        getInstance : _dereq_('./getInstance'),
+        create      : require('./create'),
+        getInstance : require('./getInstance'),
 
-        destroyClass   : _dereq_('./destroyClass'),
-        getParentClass : _dereq_('./getParentClass'),
+        destroyClass   : require('./destroyClass'),
+        getParentClass : require('./getParentClass'),
 
         isSubclassOf       : isSubclassOf,
         isSameOrSubclassOf : isSameOrSubclassOf,
         isClassLike        : isSameOrSubclassOf
     }
 }()
-},{"./Mixin":3,"./Registry":4,"./core":11,"./create":13,"./define":14,"./defineMixin":15,"./destroyClass":16,"./getClass":18,"./getInstance":19,"./getParentClass":20,"./isSubclassOf":22,"./override":23,"./processors/MixinProcessor":27,"./utils/copy":29}],22:[function(_dereq_,module,exports){
-var getClass = _dereq_('./getClass')
+},{"./Mixin":4,"./Registry":5,"./core":12,"./create":14,"./define":15,"./defineMixin":16,"./destroyClass":17,"./getClass":19,"./getInstance":20,"./getParentClass":21,"./isSubclassOf":23,"./override":24,"./processors/MixinProcessor":28,"./utils/copy":30}],23:[function(require,module,exports){
+var getClass = require('./getClass')
 
 module.exports = function(subClass, superClass, config){
 
@@ -973,8 +1300,8 @@ module.exports = function(subClass, superClass, config){
 
     return !!subClass
 }
-},{"./getClass":18}],23:[function(_dereq_,module,exports){
-var getClass = _dereq_('./getClass')
+},{"./getClass":19}],24:[function(require,module,exports){
+var getClass = require('./getClass')
 
 /**
  * @method override
@@ -1004,16 +1331,16 @@ module.exports = function(Class, classConfig){
 
     return TheClass
 }
-},{"./getClass":18}],24:[function(_dereq_,module,exports){
+},{"./getClass":19}],25:[function(require,module,exports){
 module.exports = function(config){
 
     'use strict'
 
     //this refers to a Class
-    return _dereq_('./core').overrideClass(this, config)
+    return require('./core').overrideClass(this, config)
 }
-},{"./core":11}],25:[function(_dereq_,module,exports){
-var copyKeys = _dereq_('./utils/copy').copyKeys
+},{"./core":12}],26:[function(require,module,exports){
+var copyKeys = require('./utils/copy').copyKeys
 
 function aliasMethods(config){
     //this refers to a class
@@ -1022,11 +1349,11 @@ function aliasMethods(config){
     return this
 }
 
-var extendClass     = _dereq_('./extendClass')
-var overrideClass   = _dereq_('./overrideClass')
-var unregisterClass = _dereq_('./unregisterClass')
+var extendClass     = require('./extendClass')
+var overrideClass   = require('./overrideClass')
+var unregisterClass = require('./unregisterClass')
 
-var ClassProcessor = _dereq_('./processors/ClassProcessor')
+var ClassProcessor = require('./processors/ClassProcessor')
 
 module.exports = function(Class){
 
@@ -1053,7 +1380,7 @@ module.exports = function(Class){
         Class.init()
     }
 }
-},{"./extendClass":17,"./overrideClass":24,"./processors/ClassProcessor":26,"./unregisterClass":28,"./utils/copy":29}],26:[function(_dereq_,module,exports){
+},{"./extendClass":18,"./overrideClass":25,"./processors/ClassProcessor":27,"./unregisterClass":29,"./utils/copy":30}],27:[function(require,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -1090,11 +1417,11 @@ module.exports = function(){
         }
     }
 
-    result.attach(_dereq_('./MixinProcessor'))
+    result.attach(require('./MixinProcessor'))
 
     return result
 }()
-},{"./MixinProcessor":27}],27:[function(_dereq_,module,exports){
+},{"./MixinProcessor":28}],28:[function(require,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -1109,12 +1436,12 @@ module.exports = function(){
 
     'use strict'
 
-    var core = _dereq_('../core')
+    var core = require('../core')
 
-    var FN = _dereq_('../utils/function')
+    var FN = require('../utils/function')
     var bindArgs = FN.bindArgs
-    var copyIf   = _dereq_('../utils/copy').copyIf
-    var getClass = _dereq_('../getClass')
+    var copyIf   = require('../utils/copy').copyIf
+    var getClass = require('../getClass')
 
     var HAS_OWN   = Object.prototype.hasOwnProperty
     var hasOwn    = function(obj, name){ return HAS_OWN.call(obj, name) }
@@ -1481,8 +1808,8 @@ module.exports = function(){
 
     }
 }()
-},{"../core":11,"../getClass":18,"../utils/copy":29,"../utils/function":30}],28:[function(_dereq_,module,exports){
-var REGISTRY = _dereq_('./Registry')
+},{"../core":12,"../getClass":19,"../utils/copy":30,"../utils/function":31}],29:[function(require,module,exports){
+var REGISTRY = require('./Registry')
 
 module.exports = function unregisterClass(){
 
@@ -1495,7 +1822,7 @@ module.exports = function unregisterClass(){
 
     delete REGISTRY[alias]
 }
-},{"./Registry":4}],29:[function(_dereq_,module,exports){
+},{"./Registry":5}],30:[function(require,module,exports){
 /*
 
  This file is part of the ZippyUI Framework
@@ -1506,339 +1833,8 @@ module.exports = function unregisterClass(){
  See https://github.com/zippyui/ZippyUI/blob/master/LICENCE
 
  */
-module.exports = function(){
-
-    'use strict'
-
-    var HAS_OWN       = Object.prototype.hasOwnProperty,
-        STR_OBJECT    = 'object',
-        STR_UNDEFINED = 'undefined'
-
-    return {
-
-        /**
-         * @class Zpy
-         */
-
-        /**
-         * Copies all properties from source to destination
-         *
-         *      Zpy.copy({name: 'jon',age:5}, this);
-         *      // => this will have the 'name' and 'age' properties set to 'jon' and 5 respectively
-         *
-         * @param {Object} source
-         * @param {Object} destination
-         *
-         * @return {Object} destination
-         */
-        copy: function(source, destination){
-
-            destination = destination || {}
-
-            if (source != null && typeof source === STR_OBJECT ){
-
-                for (var i in source) if ( HAS_OWN.call(source, i) ) {
-                    destination[i] = source[i]
-                }
-
-            }
-
-            return destination
-        },
-
-        /**
-         * Copies all properties from source to destination, if the property does not exist into the destination
-         *
-         *      Zpy.copyIf({name: 'jon',age:5}, {age:7})
-         *      // => { name: 'jon', age: 7}
-         *
-         * @param {Object} source
-         * @param {Object} destination
-         *
-         * @return {Object} destination
-         */
-        copyIf: function(source, destination){
-            destination = destination || {}
-
-            if (source != null && typeof source === STR_OBJECT){
-
-                for (var i in source) if ( HAS_OWN.call(source, i) && (typeof destination[i] === STR_UNDEFINED) ) {
-
-                    destination[i] = source[i]
-
-                }
-            }
-
-            return destination
-        },
-
-        /**
-         * Copies all properties from source to a new object, with the given value. This object is returned
-         *
-         *      Zpy.copyAs({name: 'jon',age:5})
-         *      // => the resulting object will have the 'name' and 'age' properties set to 1
-         *
-         * @param {Object} source
-         * @param {Object/Number/String} [value=1]
-         *
-         * @return {Object} destination
-         */
-        copyAs: function(source, value){
-
-            var destination = {}
-
-            value = value || 1
-
-            if (source != null && typeof source === STR_OBJECT ){
-
-                for (var i in source) if ( HAS_OWN.call(source, i) ) {
-                    destination[i] = value
-                }
-
-            }
-
-            return destination
-        },
-
-        /**
-         * Copies all properties named in the list, from source to destination
-         *
-         *      Zpy.copyList({name: 'jon',age:5, year: 2006}, {}, ['name','age'])
-         *      // => {name: 'jon', age: 5}
-         *
-         * @param {Object} source
-         * @param {Object} destination
-         * @param {Array} list the array with the names of the properties to copy
-         *
-         * @return {Object} destination
-         */
-        copyList: function(source, destination, list){
-            if (arguments.length == 2){
-                list = destination
-                destination = null
-            }
-
-            destination = destination || {}
-            list        = list || []
-
-            var i   = 0,
-                len = list.length,
-                propName
-
-            for( ; i < len; i++ ){
-                propName = list[i]
-
-                if ( typeof source[propName] !== STR_UNDEFINED ) {
-                    destination[list[i]] = source[list[i]]
-                }
-            }
-
-            return destination
-        },
-
-        /**
-         * Copies all properties named in the list, from source to destination, if the property does not exist into the destination
-         *
-         *      Zpy.copyListIf({name: 'jon',age:5, year: 2006}, {age: 10}, ['name','age'])
-         *      // => {name: 'jon', age: 10}
-         *
-         * @param {Object} source
-         * @param {Object} destination
-         * @param {Array} list the array with the names of the properties to copy
-         *
-         * @return {Object} destination
-         */
-        copyListIf: function(source, destination, list){
-            if (arguments.length == 2){
-                list = destination
-                destination = null
-            }
-
-            destination = destination || {}
-            list        = list || []
-
-            var propName,
-                i   = 0,
-                len = list.length
-
-            for(; i<len ; i++){
-                propName = list[i]
-                if (
-                        (typeof source[propName]      !== STR_UNDEFINED) &&
-                        (typeof destination[propName] === STR_UNDEFINED)
-                    ){
-                    destination[propName] = source[propName]
-                }
-            }
-
-            return destination
-        },
-
-        /**
-         * Copies all properties named in the namedKeys, from source to destination
-         *
-         *      Zpy.copyKeys({name: 'jon',age:5, year: 2006, date: '2010/05/12'}, {}, {name:1 ,age: true, year: 'theYear'})
-         *      // => {name: 'jon', age: 5, theYear: 2006}
-         *
-         * @param {Object} source
-         * @param {Object} destination
-         * @param {Object} namedKeys an object with keys denoting the properties to be copied
-         *
-         * @return {Object} destination
-         */
-        copyKeys: function(source, destination, namedKeys){
-            if (arguments.length == 2){
-                namedKeys = destination
-                destination = null
-            }
-
-            destination = destination || {}
-
-            if (
-                   source != null && typeof source    === STR_OBJECT &&
-                namedKeys != null && typeof namedKeys === STR_OBJECT
-            ) {
-                var typeOfNamedProperty,
-                    namedPropertyValue
-
-                for  (var propName in namedKeys) if ( HAS_OWN.call(namedKeys, propName) ) {
-                    namedPropertyValue  = namedKeys[propName]
-                    typeOfNamedProperty = typeof namedPropertyValue
-
-                    if (typeof source[propName] !== STR_UNDEFINED){
-                        destination[typeOfNamedProperty == 'string'? namedPropertyValue : propName] = source[propName]
-                    }
-                }
-            }
-
-            return destination
-        },
-
-        /**
-         * Copies all properties named in the namedKeys, from source to destination,
-         * but only if the property does not already exist in the destination object
-         *
-         *      Zpy.copyKeysIf({name: 'jon',age:5, year: 2006}, {aname: 'test'}, {name:'aname' ,age: true})
-         *      // => {aname: 'test', age: 5}
-         *
-         * @param {Object} source
-         * @param {Object} destination
-         * @param {Object} namedKeys an object with keys denoting the properties to be copied
-         *
-         * @return {Object} destination
-         */
-        copyKeysIf: function(source, destination, namedKeys){
-            if (arguments.length == 2){
-                namedKeys   = destination
-                destination = null
-            }
-
-            destination = destination || {}
-
-            if (
-                       source != null && typeof source    === STR_OBJECT &&
-                    namedKeys != null && typeof namedKeys === STR_OBJECT
-                ) {
-
-                    var typeOfNamedProperty,
-                        namedPropertyValue,
-                        newPropertyName
-
-                    for (var propName in namedKeys) if ( HAS_OWN.call(namedKeys, propName) ) {
-
-                        namedPropertyValue  = namedKeys[propName]
-                        typeOfNamedProperty = typeof namedPropertyValue
-                        newPropertyName     = typeOfNamedProperty == 'string'? namedPropertyValue : propName
-
-                        if (
-                                typeof      source[propName]        !== STR_UNDEFINED &&
-                                typeof destination[newPropertyName] === STR_UNDEFINED
-                            ) {
-                            destination[newPropertyName] = source[propName]
-                        }
-
-                    }
-                }
-
-            return destination
-        },
-
-        copyExceptKeys: function(source, destination, exceptKeys){
-            destination = destination || {}
-            exceptKeys  = exceptKeys  || {}
-
-            if (source != null && typeof source === STR_OBJECT ){
-
-                for (var i in source) if ( HAS_OWN.call(source, i) && !HAS_OWN.call(exceptKeys, i) ) {
-
-                    destination[i] = source[i]
-                }
-
-            }
-
-            return destination
-        },
-
-        /**
-         * Copies the named keys from source to destination.
-         * For the keys that are functions, copies the functions bound to the source
-         *
-         * @param  {Object} source      The source object
-         * @param  {Object} destination The target object
-         * @param  {Object} namedKeys   An object with the names of the keys to copy The values from the keys in this object
-         *                              need to be either numbers or booleans if you want to copy the property under the same name,
-         *                              or a string if you want to copy the property under a different name
-         * @return {Object}             Returns the destination object
-         */
-        bindCopyKeys: function(source, destination, namedKeys){
-            if (arguments.length == 2){
-                namedKeys = destination
-                destination = null
-            }
-
-            destination = destination || {}
-
-            if (
-                       source != null && typeof source    === STR_OBJECT &&
-                    namedKeys != null && typeof namedKeys === STR_OBJECT
-                ) {
-
-
-                var typeOfNamedProperty,
-                    namedPropertyValue,
-
-                    typeOfSourceProperty,
-                    propValue
-
-
-                for(var propName in namedKeys) if (HAS_OWN.call(namedKeys, propName)) {
-
-                    namedPropertyValue = namedKeys[propName]
-                    typeOfNamedProperty = typeof namedPropertyValue
-
-                    propValue = source[propName]
-                    typeOfSourceProperty = typeof propValue
-
-
-                    if ( typeOfSourceProperty !== STR_UNDEFINED ) {
-
-                        destination[
-                            typeOfNamedProperty == 'string'?
-                                            namedPropertyValue :
-                                            propName
-                            ] = typeOfSourceProperty == 'function' ?
-                                            propValue.bind(source):
-                                            propValue
-                    }
-                }
-            }
-
-            return destination
-        }
-    }
-
-}()
-},{}],30:[function(_dereq_,module,exports){
+module.exports = require('copy-utils')
+},{"copy-utils":1}],31:[function(require,module,exports){
 module.exports = function(){
 
     var SLICE = Array.prototype.slice
@@ -1895,6 +1891,5 @@ module.exports = function(){
         bindArgsArray: bindArgsArray
     }
 }()
-},{}]},{},[21])
-(21)
+},{}]},{},[22])(22)
 });

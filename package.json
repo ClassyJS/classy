@@ -18,7 +18,9 @@
     "watchify": "~0.8.2",
     "karma": "~0.12.14",
     "karma-jasmine": "~0.1.5",
-    "karma-chrome-launcher": "~0.1.3"
+    "karma-chrome-launcher": "~0.1.3",
+    "should": "~4.0.4",
+    "mocha": "~1.21.4"
   },
   "repository": {
     "type": "git",
@@ -41,6 +43,7 @@
   },
   "homepage": "https://github.com/zippyui/classy",
   "dependencies": {
-    "newify": "~1.1.3"
+    "newify": "~1.1.3",
+    "copy-utils": "~0.1.1"
   }
 }
