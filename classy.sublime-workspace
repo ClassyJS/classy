@@ -111,7 +111,15 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 12044,
+				"buffer_size": 12192,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "CONTRIBUTING.md",
+			"settings":
+			{
+				"buffer_size": 530,
 				"line_ending": "Unix"
 			}
 		},
@@ -119,7 +127,34 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 1168,
+				"buffer_size": 1166,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/index.js",
+			"settings":
+			{
+				"buffer_size": 1487,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{\n	\"folders\":\n	[\n		{\n			\"follow_symlinks\": true,\n			\"path\": \".\"\n		}\n	]\n}\n",
+			"file": "zippy-class.sublime-project",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 73,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 30,
 				"line_ending": "Unix"
 			}
 		},
@@ -127,22 +162,41 @@
 			"file": "dist/classy.js",
 			"settings":
 			{
-				"buffer_size": 56813,
+				"buffer_size": 60107,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 28 files for \"Object.getOwnPropertyNames(source).forEach(function(name){\"\n\n/home/radu/code/classy/src/core/copyDescriptors.js:\n    4  \n    5  function copy(source, target){\n    6:     Object.getOwnPropertyNames(source).forEach(function(name){\n    7          var sourceDescriptor = Object.getOwnPropertyDescriptor(source, name)\n    8  \n\n1 match in 1 file\n\n\nSearching 8 files for \"overriden\"\n\n/home/radu/code/classy/src/core/buildClassFunctions.js:\n   76      }\n   77  \n   78:     function buildOverridenFn(name, currentFn, host, getterSetterConfig){\n   79  \n   80          var accessor = getterSetterConfig.getter?\n   ..\n   88                              null\n   89  \n   90:         var overridenFn = accessor?\n   91                              descriptor? descriptor[accessor]: null\n   92                              :\n   93                              host[name]\n   94  \n   95:         if (typeof overridenFn == 'undefined') {\n   96:             //this check is needed for the following scenario - if a method is overriden, and it also calls\n   97:             //to callOverriden, but has no method to override (so is the first in the override chain)\n   98  \n   99:             //in this case, currentFn calls to callOverriden, and will later be also overriden.\n  100              //so on the callStack, when currentFn is called in the context of another function,\n  101:             //callOverriden will still be bound, and currentFn will call it, while it should be a no-op\n  102  \n  103              //so in order to avoid all this scenario\n  104:             //just make sure we have one more method in the override chain (the base overriden method)\n  105              //and that this method is the empty function\n  106:             overridenFn = emptyFn\n  107          }\n  108  \n  109          return function() {\n  110:             var tmpOverriden     = this.callOverriden,\n  111:                 tmpOverridenWith = this.callOverridenWith,\n  112                  args             = arguments\n  113  \n  114              /*\n  115:              * Use callOverridenWith method in order to pass in different parameter values from those that have been used\n  116:              * @return {Mixed} the result of the overriden method\n  117               */\n  118:             this.callOverridenWith = function(){\n  119:                 return overridenFn.apply(this, arguments)\n  120              }\n  121  \n  122              /*\n  123:              * Use the callOverriden method to call the overriden method and pass the arguments array\n  124               * Example usage:\n  125               *      setName: function(name){\n  126:              *          this.callOverriden() //you don't have to explicitly pass 'arguments', since it automagically does so :)\n  127               *      }\n  128:              * @return {Mixed} the result of the overriden method\n  129               */\n  130:             this.callOverriden = function(){\n  131:                 return overridenFn.apply(this, args)\n  132              }\n  133  \n  134              var ret = currentFn.apply(this, args)\n  135  \n  136:             this.callOverriden     = tmpOverriden\n  137:             this.callOverridenWith = tmpOverridenWith\n  138  \n  139              return ret\n  ...\n  143      return {\n  144          buildSuperFn     : buildSuperFn,\n  145:         buildOverridenFn : buildOverridenFn\n  146      }\n  147  }()\n\n/home/radu/code/classy/src/core/modifyFn.js:\n    1  var callSuperRe     = /\\bcallSuper|callSuperWith\\b/\n    2: var callOverridenRe = /\\bcallOverriden|callOverridenWith\\b/\n    3  \n    4  var ClassFunctionBuilder = require('./buildClassFunctions')\n    5  var buildSuperFn         = ClassFunctionBuilder.buildSuperFn\n    6: var buildOverridenFn     = ClassFunctionBuilder.buildOverridenFn\n    7  \n    8  var emptyObject = {}\n    .\n   10  function modify(name, fn, superTarget, superClass, target, getterSetterConfig){\n   11      var hasCallSuper     = callSuperRe.test    (fn)\n   12:     var hasCallOverriden = callOverridenRe.test(fn)\n   13  \n   14      getterSetterConfig = getterSetterConfig || {}\n   ..\n   18      }\n   19  \n   20:     if ( hasCallOverriden ){\n   21:         fn = buildOverridenFn(name, fn, target, getterSetterConfig)\n   22      }\n   23  \n\n39 matches across 2 files\n",
+			"contents": "Searching 28 files for \"Object.getOwnPropertyNames(source).forEach(function(name){\"\n\n/home/radu/code/classy/src/core/copyDescriptors.js:\n    4  \n    5  function copy(source, target){\n    6:     Object.getOwnPropertyNames(source).forEach(function(name){\n    7          var sourceDescriptor = Object.getOwnPropertyDescriptor(source, name)\n    8  \n\n1 match in 1 file\n\n\nSearching 8 files for \"overriden\"\n\n/home/radu/code/classy/src/core/buildClassFunctions.js:\n   76      }\n   77  \n   78:     function buildOverridenFn(name, currentFn, host, getterSetterConfig){\n   79  \n   80          var accessor = getterSetterConfig.getter?\n   ..\n   88                              null\n   89  \n   90:         var overridenFn = accessor?\n   91                              descriptor? descriptor[accessor]: null\n   92                              :\n   93                              host[name]\n   94  \n   95:         if (typeof overridenFn == 'undefined') {\n   96:             //this check is needed for the following scenario - if a method is overriden, and it also calls\n   97:             //to callOverriden, but has no method to override (so is the first in the override chain)\n   98  \n   99:             //in this case, currentFn calls to callOverriden, and will later be also overriden.\n  100              //so on the callStack, when currentFn is called in the context of another function,\n  101:             //callOverriden will still be bound, and currentFn will call it, while it should be a no-op\n  102  \n  103              //so in order to avoid all this scenario\n  104:             //just make sure we have one more method in the override chain (the base overriden method)\n  105              //and that this method is the empty function\n  106:             overridenFn = emptyFn\n  107          }\n  108  \n  109          return function() {\n  110:             var tmpOverriden     = this.callOverriden,\n  111:                 tmpOverridenWith = this.callOverridenWith,\n  112                  args             = arguments\n  113  \n  114              /*\n  115:              * Use callOverridenWith method in order to pass in different parameter values from those that have been used\n  116:              * @return {Mixed} the result of the overriden method\n  117               */\n  118:             this.callOverridenWith = function(){\n  119:                 return overridenFn.apply(this, arguments)\n  120              }\n  121  \n  122              /*\n  123:              * Use the callOverriden method to call the overriden method and pass the arguments array\n  124               * Example usage:\n  125               *      setName: function(name){\n  126:              *          this.callOverriden() //you don't have to explicitly pass 'arguments', since it automagically does so :)\n  127               *      }\n  128:              * @return {Mixed} the result of the overriden method\n  129               */\n  130:             this.callOverriden = function(){\n  131:                 return overridenFn.apply(this, args)\n  132              }\n  133  \n  134              var ret = currentFn.apply(this, args)\n  135  \n  136:             this.callOverriden     = tmpOverriden\n  137:             this.callOverridenWith = tmpOverridenWith\n  138  \n  139              return ret\n  ...\n  143      return {\n  144          buildSuperFn     : buildSuperFn,\n  145:         buildOverridenFn : buildOverridenFn\n  146      }\n  147  }()\n\n/home/radu/code/classy/src/core/modifyFn.js:\n    1  var callSuperRe     = /\\bcallSuper|callSuperWith\\b/\n    2: var callOverridenRe = /\\bcallOverriden|callOverridenWith\\b/\n    3  \n    4  var ClassFunctionBuilder = require('./buildClassFunctions')\n    5  var buildSuperFn         = ClassFunctionBuilder.buildSuperFn\n    6: var buildOverridenFn     = ClassFunctionBuilder.buildOverridenFn\n    7  \n    8  var emptyObject = {}\n    .\n   10  function modify(name, fn, superTarget, superClass, target, getterSetterConfig){\n   11      var hasCallSuper     = callSuperRe.test    (fn)\n   12:     var hasCallOverriden = callOverridenRe.test(fn)\n   13  \n   14      getterSetterConfig = getterSetterConfig || {}\n   ..\n   18      }\n   19  \n   20:     if ( hasCallOverriden ){\n   21:         fn = buildOverridenFn(name, fn, target, getterSetterConfig)\n   22      }\n   23  \n\n39 matches across 2 files\n\n\nSearching 8 files for \"calltarget\"\n\n0 matches across 0 files\n\n\nSearching 28 files for \"calltarget\"\n\n/home/radu/code/classy/src/Mixin.js:\n   20      alias: 'z.mixin',\n   21  \n   22:     callTarget: function(){},\n   23  \n   24      statics: {\n\n/home/radu/code/classy/src/processors/MixinProcessor.js:\n  215          return function(){\n  216              var args = arguments,\n  217:                 oldCallTarget     = this.callTarget,\n  218:                 oldCallTargetWith = this.callTargetWith\n  219  \n  220:             this.callTarget = function(){\n  221                  return targetFn.apply(this, args)\n  222              }\n  223:             this.callTargetWith = function(){\n  224                  return targetFn.apply(this, arguments)\n  225              }\n  ...\n  227              var result = newFn.apply(this, args)\n  228  \n  229:             this.callTarget = oldCallTarget\n  230:             this.callTargetWith = oldCallTargetWith\n  231  \n  232              return result\n  ...\n  350      function applyMixin(target, mixin, config){\n  351  \n  352:         target.callTarget = target.callTarget || emptyFn\n  353  \n  354          config = config || {}\n\n13 matches across 2 files\n",
 			"settings":
 			{
-				"buffer_size": 4295,
+				"buffer_size": 5491,
 				"line_ending": "Unix",
 				"name": "Find Results",
 				"scratch": true
 			}
 		},
 		{
+			"file": "src/processors/MixinProcessor.js",
+			"settings":
+			{
+				"buffer_size": 11509,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/mixins/MixinInheritanceTests.js",
+			"settings":
+			{
+				"buffer_size": 6234,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{\n  \"name\": \"Classy\",\n  \"version\": \"1.4.1\",\n  \"homepage\": \"https://github.com/zippyui/classy\",\n  \"authors\": [\n    \"radubrehar <radu@jslog.com>\"\n  ],\n  \"description\": \"Smart classes for JavaScript\",\n  \"main\": \"dist/classy.js\",\n  \"keywords\": [\n    \"classes\",\n    \"JavaScript\",\n    \"class\",\n    \"super\",\n    \"inheritance\",\n    \"mixin\",\n    \"mixins\",\n    \"override\",\n    \"class\",\n    \"hierarchy\",\n    \"method\",\n    \"getter\",\n    \"setter\"\n  ],\n  \"license\": \"MIT\",\n  \"ignore\": [\n    \"**/.*\",\n    \"node_modules\",\n    \"bower_components\",\n    \"test\",\n    \"tests\"\n  ]\n}\n",
 			"file": "bower.json",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
 				"buffer_size": 560,
@@ -154,6 +208,14 @@
 			"settings":
 			{
 				"buffer_size": 6037,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "LICENSE",
+			"settings":
+			{
+				"buffer_size": 1077,
 				"line_ending": "Unix"
 			}
 		},
@@ -188,22 +250,18 @@
 				"buffer_size": 815,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "src/core/buildClassFunctions.js",
-			"settings":
-			{
-				"buffer_size": 5268,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 232.0,
 		"selected_items":
 		[
+			[
+				"dele",
+				"File: Delete"
+			],
 			[
 				"du",
 				"File: Duplicate"
@@ -274,9 +332,21 @@
 	},
 	"file_history":
 	[
+		"/home/radu/code/classy/test/mixins/MixinCopyIfTests.js",
+		"/home/radu/code/classy/test/mixins/MixinTests.js",
+		"/home/radu/code/classy/test/mixins/MixinInitOnTests.js",
+		"/home/radu/code/classy/node_modules/watchify/test/many_immediate.js",
+		"/home/radu/code/classy/node_modules/browserify/test/id_hash.js",
+		"/home/radu/code/classy/test/CoreTests.js",
+		"/home/radu/code/classy/node_modules/karma/node_modules/log4js/test/configureNoLevels-test.js",
+		"/home/radu/code/classy/test/ClassOverrideTests.js",
+		"/home/radu/code/classy/dist/classy.js",
+		"/home/radu/code/classy/src/core/index.js",
+		"/home/radu/code/classy/node_modules/mocha/node_modules/jade/node_modules/mkdirp/.gitignore.orig",
+		"/home/radu/code/classy/node_modules/karma/node_modules/connect/node_modules/qs/.gitmodules",
+		"/home/radu/code/classy/.idea/.name",
 		"/home/radu/code/classy/src/core/canDefineProperty.js",
 		"/home/radu/code/classy/node_modules/karma/node_modules/log4js/test/consoleAppender-test.js",
-		"/home/radu/code/classy/dist/classy.js",
 		"/home/radu/code/classy/mocha-test/core/TestOverrideClass.js",
 		"/home/radu/code/classy/Makefile",
 		"/home/radu/code/classy/src/utils/copy.js",
@@ -284,7 +354,6 @@
 		"/home/radu/code/classy/src/core/assignClassProperty.js",
 		"/home/radu/code/classy/mocha-test/tests.js",
 		"/home/radu/code/classy/src/core/canGetOwnPropertyDescriptor.js",
-		"/home/radu/code/classy/test/ClassOverrideTests.js",
 		"/home/radu/code/classy/src/getParentClass.js",
 		"/home/radu/code/classy/src/extendClass.js",
 		"/home/radu/code/classy/src/core/modifyFn.js",
@@ -313,7 +382,6 @@
 		"/home/radu/code/classy/zippy-class.sublime-project",
 		"/home/radu/code/classy/src/processors/ClassProcessor.js",
 		"/home/radu/code/classy/test/ClassCreateTests.js",
-		"/home/radu/code/classy/src/core/index.js",
 		"/home/radu/code/classy/exportClassy.js",
 		"/home/radu/code/classy/test/mixins/MixinWithStaticMethodsTests.js",
 		"/home/radu/code/classy/test/mixins/MixinWithStaticsTests.js",
@@ -361,6 +429,7 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"/home/radu/code/classy/src/",
 			"/home/radu/code/classy/src/core",
 			"/home/radu/code/classy/src",
 			"/home/radu/code/classy/",
@@ -374,6 +443,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"calltarget",
+			"callTarget",
+			"prepareTargetFn",
+			"this.callTarget",
+			"callTarget",
+			"prepareTargetFn",
+			"calltarget",
+			"core",
 			"canDefineProperty",
 			"bob",
 			"overriden",
@@ -445,7 +522,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 12,
 			"sheets":
 			[
 				{
@@ -475,7 +552,7 @@
 						"translation.y": 1533.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -506,7 +583,7 @@
 						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -534,7 +611,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
@@ -563,7 +640,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -572,15 +649,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12044,
+						"buffer_size": 12192,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1314,
-								1314
+								468,
+								468
 							]
 						],
 						"settings":
@@ -592,27 +669,58 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 667.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "package.json",
+					"file": "CONTRIBUTING.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1168,
+						"buffer_size": 530,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								616,
-								616
+								233,
+								233
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21,
+								21
 							]
 						],
 						"settings":
@@ -626,16 +734,102 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								283,
+								283
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "zippy-class.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 73,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								73,
+								73
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30,
+								30
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 10,
 					"file": "dist/classy.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 56813,
+						"buffer_size": 60107,
 						"regions":
 						{
 						},
@@ -657,15 +851,15 @@
 						"translation.y": 6264.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 11,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4295,
+						"buffer_size": 5491,
 						"regions":
 						{
 							"match":
@@ -832,6 +1026,58 @@
 									[
 										4197,
 										4206
+									],
+									[
+										4482,
+										4492
+									],
+									[
+										4697,
+										4707
+									],
+									[
+										4719,
+										4729
+									],
+									[
+										4757,
+										4767
+									],
+									[
+										4779,
+										4789
+									],
+									[
+										4826,
+										4836
+									],
+									[
+										4953,
+										4963
+									],
+									[
+										5159,
+										5169
+									],
+									[
+										5175,
+										5185
+									],
+									[
+										5210,
+										5220
+									],
+									[
+										5230,
+										5240
+									],
+									[
+										5377,
+										5387
+									],
+									[
+										5397,
+										5407
 									]
 								],
 								"scope": ""
@@ -840,15 +1086,15 @@
 						"selection":
 						[
 							[
-								3532,
-								3532
+								4723,
+								4723
 							]
 						],
 						"settings":
 						{
 							"detect_indentation": false,
 							"line_numbers": false,
-							"output_tag": 2,
+							"output_tag": 4,
 							"result_base_dir": "",
 							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
 							"result_line_regex": "^ +([0-9]+):",
@@ -857,14 +1103,74 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 216.0,
+						"translation.y": 2214.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 12,
+					"file": "src/processors/MixinProcessor.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2236,
+								2236
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 981.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "test/mixins/MixinInheritanceTests.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6234,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4727,
+								4727
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2943.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
 					"file": "bower.json",
 					"semi_transient": false,
 					"settings":
@@ -890,17 +1196,47 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 21,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
-					"buffer": 9,
+					"buffer": 14,
+					"file": "bower.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
 					"file": "src/core/index.js",
 					"semi_transient": false,
 					"settings":
@@ -912,8 +1248,8 @@
 						"selection":
 						[
 							[
-								29,
-								29
+								5687,
+								5687
 							]
 						],
 						"settings":
@@ -923,14 +1259,73 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3042.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 6,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								110,
+								110
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "LICENSE",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
 					"file": "mocha-test/core/TestCreateClass.js",
 					"semi_transient": false,
 					"settings":
@@ -949,17 +1344,19 @@
 						"settings":
 						{
 							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 218.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 18,
 					"file": "mocha-test/core/TestOverride.js",
 					"semi_transient": false,
 					"settings":
@@ -986,11 +1383,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 19,
 					"file": "test/ClassGetterTests.js",
 					"semi_transient": false,
 					"settings":
@@ -1016,11 +1413,11 @@
 						"translation.y": 2250.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 20,
 					"file": "src/core/modifyFn.js",
 					"semi_transient": false,
 					"settings":
@@ -1047,37 +1444,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "src/core/buildClassFunctions.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 5268,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1809,
-								1809
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
+					"stack_index": 16,
 					"type": "text"
 				}
 			]
@@ -1111,7 +1478,7 @@
 		"cols":
 		[
 			0.0,
-			0.47063497327,
+			0.483792868007,
 			1.0
 		],
 		"rows":
@@ -1145,6 +1512,38 @@
 		"selected_items":
 		[
 			[
+				"mite",
+				"test/mixins/MixinInheritanceTests.js"
+			],
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"coreindex",
+				"src/core/index.js"
+			],
+			[
+				"pa",
+				"package.json"
+			],
+			[
+				".git",
+				".gitignore"
+			],
+			[
+				"bower",
+				"bower.json"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"rea",
+				"README.md"
+			],
+			[
 				"cande",
 				"src/core/canDefineProperty.js"
 			],
@@ -1157,20 +1556,12 @@
 				"src/core/assignClassProperty.js"
 			],
 			[
-				"pac",
-				"package.json"
-			],
-			[
 				"modif",
 				"src/core/modifyFn.js"
 			],
 			[
 				"read",
 				"README.md"
-			],
-			[
-				"packa",
-				"package.json"
 			],
 			[
 				"pack",
@@ -1195,10 +1586,6 @@
 			[
 				"classcreate",
 				"test/ClassCreateTests.js"
-			],
-			[
-				"pa",
-				"package.json"
 			],
 			[
 				"create",

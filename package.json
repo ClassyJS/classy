@@ -2,10 +2,10 @@
   "name": "classy",
   "version": "1.4.10",
   "scripts": {
-    "build": "browserify src/index.js -s classy o-np dist/classy.js",
+    "build": "browserify src/index.js -s classy -o dist/classy.js",
     "watch": "watchify src/index.js -s classy -o dist/classy.js",
     "dev": "npm run build | npm run watch",
-    "test": "karma start",
+    "test": "./node_modules/karma/bin/karma start",
     "start": "python -m SimpleHTTPServer"
   },
   "main": "src/index.js",
@@ -15,12 +15,12 @@
   },
   "devDependencies": {
     "browserify": "^3.44.2",
-    "watchify": "~0.8.2",
-    "karma": "~0.12.14",
-    "karma-jasmine": "~0.1.5",
-    "karma-chrome-launcher": "~0.1.3",
+    "karma": "^0.12.24",
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-jasmine": "^0.1.5",
+    "mocha": "~1.21.4",
     "should": "~4.0.4",
-    "mocha": "~1.21.4"
+    "watchify": "~0.8.2"
   },
   "repository": {
     "type": "git",
